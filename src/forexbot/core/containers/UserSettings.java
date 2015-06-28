@@ -79,6 +79,7 @@ public class UserSettings implements Serializable{
 			ObjectOutputStream save = new ObjectOutputStream(new FileOutputStream("user_settings.dat"));
 			save.writeObject(settings);
 			save.close();
+			ForexBot.log.addLogINFO("User settings saved.");
 		} catch (IOException e) {
 			ForexBot.log.addLogERROR("Can't save settings to file!");
 			if(ForexBot.DEBUG) e.printStackTrace();
@@ -94,6 +95,7 @@ public class UserSettings implements Serializable{
 			ObjectInputStream load = new ObjectInputStream(new FileInputStream("user_settings.dat"));
 			settings = (UserSettings) load.readObject();
 			load.close();
+			ForexBot.log.addLogINFO("User settings loaded.");
 			return settings;
 		} catch (IOException e) {
 			ForexBot.log.addLogERROR("Can't load settings from file! [user_settings.dat]");

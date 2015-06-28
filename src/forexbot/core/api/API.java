@@ -21,17 +21,21 @@ import pro.xstore.api.sync.SyncAPIConnector;
 public class API {
 	
 	public API(){
+	
+	}
+	
+	
+	public boolean Login(String user, String password, String mode){
+		
 		try {
 			// Create new connector
-			connector = new SyncAPIConnector(ServerEnum.DEMO);
+			if(mode.equals("DEMO"))		connector = new SyncAPIConnector(ServerEnum.DEMO); 
+			else if(mode.equals("REAL")) connector = new SyncAPIConnector(ServerEnum.REAL); 
 			
 		} catch (IOException e) {
 			ForexBot.log.addLogCRITICAL("API connector error!"); 
 			if(ForexBot.DEBUG) e.printStackTrace();
 		}	
-	}
-	
-	public boolean Login(String user, String password){
 
 		try {
 			// Create new credentials
@@ -46,7 +50,7 @@ public class API {
 			if(loginResponse.getStatus() == true){
 				
 				api_login = user;
-				
+				ForexBot.log.addLogINFO("xStation user ["+user+"] logged in."); 
 				return true;
 			}
 			

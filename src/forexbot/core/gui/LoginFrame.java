@@ -12,6 +12,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import forexbot.ForexBot;
+import forexbot.core.containers.UserSettings;
 
 public class LoginFrame extends JFrame {
 
@@ -32,8 +33,8 @@ public class LoginFrame extends JFrame {
 		add(l1);
 		
 		type = new JComboBox<String>();
-			type.addItem("Demo");
-			type.addItem("Real");
+			type.addItem("DEMO");
+			type.addItem("REAL");
 		type.setEditable(false);
 		type.setBounds(120, 10, 100, 30);
 		add(type);
@@ -67,6 +68,11 @@ public class LoginFrame extends JFrame {
 	private JPasswordField pass;
 	private JButton login;
 	
+	public void LoadFromSettings(){
+		if(ForexBot.user_settings.getApiMode() != null) type.setSelectedItem(ForexBot.user_settings.getApiMode());
+		if(ForexBot.user_settings.getApiLogin() != null) user.setText(ForexBot.user_settings.getApiLogin());
+	}
+	
 	private class LoginAction implements ActionListener {
 		
 		/*
@@ -87,9 +93,13 @@ public class LoginFrame extends JFrame {
 			
 			if(!l.equals("") && !p.equals("")){
 				
-					if(ForexBot.api.Login(l, p)){
+					if(ForexBot.api.Login(l, p, type.getSelectedItem().toString())){
 						
 						d.setVisible(false);
+						
+						ForexBot.user_settings.setApiLogin(l);
+						ForexBot.user_settings.setApiMode(type.getSelectedItem().toString());
+						UserSettings.SaveSettings(ForexBot.user_settings);
 						
 						ForexBot.work_frame.setVisible(true);
 						
@@ -98,8 +108,7 @@ public class LoginFrame extends JFrame {
 		          			    "Login or Password incorrect!",
 		          			    "Error!",
 		          			    JOptionPane.WARNING_MESSAGE);  
-					}
-					
+					}					
 				
 			}else{
 				
