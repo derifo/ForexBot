@@ -17,6 +17,10 @@ public class DBC {
 		
 	}
 	
+	public void SetCredentials(DBCcredentials c){
+		this.credentials = c;
+	}//accepts object container with db IP, login and password 
+	
 	public static boolean TestConnection(DBCcredentials credentials_test){
 		String url = "jdbc:mysql://"+credentials_test.getIP()+":"+credentials_test.getPort()+"/";
 
@@ -216,7 +220,7 @@ public class DBC {
 			return true;
 		}
 		
-		ForexBot.log.addLogDEBUG("Table creatin failed! ["+symbol+"]");
+		ForexBot.log.addLogCRITICAL("Table creation failed! ["+symbol+"]");
 		return false;
 	}//method invoked in order to create table structure for symbols defined by user
 	

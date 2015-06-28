@@ -18,7 +18,7 @@ public class Log implements Runnable{
 	/*
 	 * This is logging class with simple purpose of gathering activity data from other methods and threads
 	 * in order to enable future insight to internal processes and calculations all data (according to detail 
-	 * level specified by user) will be stored and saved in txt file
+	 * level specified by user) will be stored and saved in txt file (possible to redirect copy to database) 
 	 */
 	
 	private static String DIR = "logs\\";

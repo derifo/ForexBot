@@ -68,6 +68,12 @@ public class LoginFrame extends JFrame {
 	private JButton login;
 	
 	private class LoginAction implements ActionListener {
+		
+		/*
+		 * Login action invokes login method from API and upon successful connection with xStation 
+		 * brings up WorkFrame for further interaction with user
+		 */
+		
 		public LoginAction(JFrame d){
 			this.d = d;
 		}
@@ -84,6 +90,9 @@ public class LoginFrame extends JFrame {
 					if(ForexBot.api.Login(l, p)){
 						
 						d.setVisible(false);
+						
+						ForexBot.work_frame.setVisible(true);
+						
 					}else{
 						JOptionPane.showMessageDialog(null,        	  
 		          			    "Login or Password incorrect!",

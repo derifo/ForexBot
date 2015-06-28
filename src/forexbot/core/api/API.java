@@ -3,6 +3,7 @@ package forexbot.core.api;
 import java.io.IOException;
 import java.sql.Timestamp;
 
+import forexbot.ForexBot;
 import forexbot.core.containers.SymbolListing;
 import pro.xstore.api.message.command.APICommandFactory;
 import pro.xstore.api.message.error.APICommandConstructionException;
@@ -25,7 +26,8 @@ public class API {
 			connector = new SyncAPIConnector(ServerEnum.DEMO);
 			
 		} catch (IOException e) {
-			
+			ForexBot.log.addLogCRITICAL("API connector error!"); 
+			if(ForexBot.DEBUG) e.printStackTrace();
 		}	
 	}
 	
@@ -51,6 +53,9 @@ public class API {
 		} catch (APICommandConstructionException | APICommunicationException
 				| APIReplyParseException | APIErrorResponse | IOException e) {
 			
+			ForexBot.log.addLogCRITICAL("API login error!"); 
+			if(ForexBot.DEBUG) e.printStackTrace();
+			
 		}
 		
 		return false;
@@ -63,7 +68,8 @@ public class API {
 
 			return true;
 		} catch (APICommunicationException e) {
-			
+			ForexBot.log.addLogERROR("API logout error!"); 
+			if(ForexBot.DEBUG) e.printStackTrace();
 		}
 		
 		return false;
@@ -77,6 +83,9 @@ public class API {
 			return availableSymbols;
 		} catch (APICommandConstructionException | APIReplyParseException
 				| APICommunicationException | APIErrorResponse e) {
+			
+			ForexBot.log.addLogERROR("API can't load available symbols error!"); 
+			if(ForexBot.DEBUG) e.printStackTrace();
 			
 		}
         
@@ -94,9 +103,30 @@ public class API {
 		} catch (APICommandConstructionException | APIReplyParseException
 				| APIErrorResponse | APICommunicationException e) {
 			
+			ForexBot.log.addLogERROR("API can't get symbol listing error! ["+symbol+"]"); 
+			if(ForexBot.DEBUG) e.printStackTrace();
+			
 		}
 		
 		return null;
+	}
+	
+	//Transaction section (draft)
+	
+	public void getAvailableMoney(){
+		
+	}
+	
+	public void MakeTransaction(){
+		
+	}
+	
+	public void getOpenTransactions(){
+		
+	}
+	
+	public void CloseTransaction(){
+		
 	}
 
 	

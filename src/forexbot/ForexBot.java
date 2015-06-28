@@ -1,6 +1,8 @@
 package forexbot;
 
+import forexbot.core.CycleController;
 import forexbot.core.api.API;
+import forexbot.core.dbc.DBC;
 import forexbot.core.gui.LoginFrame;
 import forexbot.core.gui.OptionFrame;
 import forexbot.core.gui.WorkFrame;
@@ -31,6 +33,10 @@ public class ForexBot {
             	login_frame = new LoginFrame();
             	login_frame.setVisible(true);
             	
+            	option_frame = new OptionFrame();
+            	work_frame = new WorkFrame();
+            	
+            	
             	//if(api.Login("400826", "ea75aa2d")) System.out.println("Loged in!");
             }
             
@@ -46,4 +52,8 @@ public class ForexBot {
 	public static API api;
 	//Logger
 	public static Log log;
+	//DBC
+	public static DBC dbc;
+	//Main Cycle controller
+	public static CycleController CYCLE;
 }
