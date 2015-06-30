@@ -11,12 +11,17 @@ public interface Control extends Runnable{
 	 * for evolutionary algorithm 
 	 */
 	
+	//cycle control
 	public void InitializeCycle();
 	public void StartCycle();
 	public void StopCycle();
 	
+	//
 	public AvailableSymbols getAvailableSymbols();
 	public LocalCache getCache();
 	
+	//methods masks
+	public void LogEntry(String level, String msg);
+	public void UploaderQueue(String query);
 
 }
