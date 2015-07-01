@@ -47,8 +47,22 @@ public class Controller implements Control{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void LogEntry(String level, String msg) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void UploaderQueue(String query) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
+	//-----------------------------------------------------------------------
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub

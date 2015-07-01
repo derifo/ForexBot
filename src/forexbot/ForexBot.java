@@ -8,7 +8,6 @@ import forexbot.core.containers.UserSettings;
 import forexbot.core.dbc.DBC;
 import forexbot.core.dbc.DataUploader;
 import forexbot.core.gui.LoginFrame;
-import forexbot.core.gui.OptionFrame;
 import forexbot.core.gui.ReportFrame;
 import forexbot.core.gui.WorkFrame;
 import forexbot.core.log.Log;

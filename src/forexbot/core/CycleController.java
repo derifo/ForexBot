@@ -29,7 +29,7 @@ public class CycleController implements Control{
 		
 		//initialize cycle specifics 		
 		available_symbols = new AvailableSymbols();
-		cache = new LocalCache();
+		cache = new LocalCache(100, this);
 		scrobbler = new Scrobbler(available_symbols.getSymbolsAvailableNames());
 		
 		//do checking
@@ -62,6 +62,24 @@ public class CycleController implements Control{
 
 	public void EnableTrade(){
 		trade_flag = true;
+	}
+	
+	@Override
+	public void LogEntry(String level, String msg) {
+		
+		if(level.equals("DEBUG")) ForexBot.log.addLogDEBUG(msg);
+		if(level.equals("INFO")) ForexBot.log.addLogINFO(msg);
+		if(level.equals("WARNING")) ForexBot.log.addLogWARNING(msg);
+		if(level.equals("ERROR")) ForexBot.log.addLogERROR(msg);
+		if(level.equals("CRIRICAL")) ForexBot.log.addLogCRITICAL(msg);
+		
+	}
+
+	@Override
+	public void UploaderQueue(String query) {
+		
+		ForexBot.uploader.addUploadQuery(query);
+		
 	}
 	
 	
@@ -159,4 +177,6 @@ public class CycleController implements Control{
 		
 		return time_elapsed;
 	}
+
+	
 }

@@ -1,5 +1,6 @@
 package forexbot.modules.cyclecomponents;
 
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -7,6 +8,7 @@ import org.apache.commons.collections4.queue.CircularFifoQueue;
 
 import forexbot.ForexBot;
 import forexbot.core.containers.SymbolListing;
+import forexbot.core.dbc.DBC;
 import forexbot.interfaces.Control;
 
 public class LocalCache {
@@ -26,8 +28,60 @@ public class LocalCache {
 		cache.put(name, scache);
 	}
 	
-	public synchronized void LoadSymbolListings(String name){
-		
+	public static synchronized void LoadSymbolListings(String name, LocalCache exit_cache){
+		/*
+		 * Downloading records for specified symbol from database based on cache size
+		 * 
+		 * if there is not enough  
+		 */
+				long total_records = 0;
+				String[] s = {"total"};
+				
+			
+				Object[][] r = DBC.ResultSetToObject(s , ForexBot.dbc.SELECT("SELECT COUNT(ID) AS total FROM "+name));
+					
+				if(r != null){
+					total_records = (long) r[0][0];
+					exit_cache.CONTROLLER.LogEntry("DEBUG", "Total DB records for "+name+" -> "+total_records);
+				}
+				//if there are symbol records commencing download
+				if(total_records > 0){
+					int records_to_download;
+					if(total_records > exit_cache.cache.get(name).getMaxIndex()){
+						
+						records_to_download = exit_cache.cache.get(name).getMaxIndex();
+					
+					}else{
+						records_to_download = (int) total_records;				
+					}
+								
+						String query = "SELECT * FROM `"+name+"` WHERE id > ((SELECT COUNT(id) FROM `"+name+"`) - "+records_to_download+") ORDER BY id ASC ";
+							
+						s = new String[]{"id", "ask", "bid", "low", "high", "currency", "symbol", "date_time"};
+						r = DBC.ResultSetToObject(s , ForexBot.dbc.SELECT(query));
+								
+						if(r != null){
+							for(Object[] row : r){
+								double a,b,l,h;
+								String cu,sy;
+								Timestamp dt;
+								
+								a = Double.parseDouble(row[1].toString());
+								b = Double.parseDouble(row[2].toString());
+								l = Double.parseDouble(row[3].toString());
+								h = Double.parseDouble(row[4].toString());
+								cu = row[5].toString();
+								sy = row[6].toString();
+								Object o = row[7];
+								dt = (Timestamp) o;
+								
+								SymbolListing listing = new SymbolListing(b, a, h, l, cu, sy, dt);
+							
+								exit_cache.cache.get(name).setLastLoadedIndex(exit_cache.cache.get(name).add(listing));
+							}
+						}
+							
+				}		
 	}
 	
 	public void addListingToCache(String cache_name, SymbolListing listing){
@@ -136,6 +190,10 @@ public class LocalCache {
 			
 			return getLastIndex();
 		}
+		
+		public int getMaxIndex(){
+			return cache.maxSize()-1;
+		}//maxSize() returns maximum number of elements that can be stored
 		
 		public int getLastIndex(){
 			return cache.size() -1;
