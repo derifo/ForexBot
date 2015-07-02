@@ -6,6 +6,7 @@ import forexbot.core.containers.SymbolListing;
 import forexbot.core.dbc.DataUploader;
 import forexbot.interfaces.Control;
 import forexbot.modules.cyclecomponents.LocalCache;
+import forexbot.modules.cyclecomponents.indicators.Indicators;
 import forexbot.modules.cyclecomponents.listings.Scrobbler;
 import forexbot.modules.cyclecomponents.transactions.DecisionModule;
 
@@ -31,6 +32,8 @@ public class CycleController implements Control{
 		available_symbols = new AvailableSymbols();
 		cache = new LocalCache(100, this);
 		scrobbler = new Scrobbler(available_symbols.getSymbolsAvailableNames());
+		indicators = new Indicators(this);
+		decision_module = new DecisionModule();
 		
 		//do checking
 		if(PrepareDatabase()){
@@ -86,13 +89,13 @@ public class CycleController implements Control{
 	@Override
 	public AvailableSymbols getAvailableSymbols() {
 
-		return null;
+		return available_symbols;
 	}
 
 	@Override
 	public LocalCache getCache() {
 
-		return null;
+		return cache;
 	}
 
 	//Thread loop --------------------------------------------------
@@ -135,6 +138,7 @@ public class CycleController implements Control{
 	private AvailableSymbols available_symbols;
 	private LocalCache cache;
 	private Scrobbler scrobbler;
+	private Indicators indicators;
 	private DecisionModule decision_module;
 	
 	//variables (flags)
