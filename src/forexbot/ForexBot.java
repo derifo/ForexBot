@@ -11,6 +11,7 @@ import forexbot.core.gui.LoginFrame;
 import forexbot.core.gui.ReportFrame;
 import forexbot.core.gui.WorkFrame;
 import forexbot.core.log.Log;
+import forexbot.modules.cyclecomponents.transactions.TransactionModule;
 
 public class ForexBot {
 	public static final String VERSION = "v0.1.00";
@@ -63,6 +64,7 @@ public class ForexBot {
 	public static ReportFrame report_frame;
 	//xAPI
 	public static API api;
+	public static TransactionModule transaction_module;
 	//Logger
 	public static Log log;
 	//DBC
@@ -92,6 +94,11 @@ public class ForexBot {
     			
     			settings_symbols = false;
     			log.addLogWARNING("No trading symbols found! Select symbols in options window in order to start trade.");
+    			
+    			JOptionPane.showMessageDialog(null,        	  
+          			    "No user symbols found! Select symbols you want to trade in options window.",
+          			    "Error!",
+          			    JOptionPane.WARNING_MESSAGE);  
     			         			
     		}
     		

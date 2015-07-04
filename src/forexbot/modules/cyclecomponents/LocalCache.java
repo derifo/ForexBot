@@ -19,13 +19,15 @@ public class LocalCache {
 	public LocalCache(int cache_size, Control controller){
 		CACHE_SIZE =  cache_size;
 		CONTROLLER = controller;
-		
+		cache = new HashMap<String, SymbolCache>();
 	}
 	
 	public synchronized void CreateSymbolCache(String name){
-		CONTROLLER.LogEntry("DEBUG", "Cache for - "+name+" created!");
+		
 		SymbolCache scache = new SymbolCache(name, CACHE_SIZE);
 		cache.put(name, scache);
+		CONTROLLER.LogEntry("DEBUG", "Cache for - "+name+" created!");
+		
 	}
 	
 	public static synchronized void LoadSymbolListings(String name, LocalCache exit_cache){
@@ -136,8 +138,8 @@ public class LocalCache {
 	//debug method for printing cache 
 	public void DEBUG_PRINT_CACHE(){
 		if(ForexBot.DEBUG){
-			
-			CONTROLLER.LogEntry("DEBUG", "DEBUG CACHE DUMP ---------------------------------");
+			CONTROLLER.LogEntry("DEBUG", "===================================================");
+			CONTROLLER.LogEntry("DEBUG", "-----------------DEBUG CACHE DUMP ----------------");
 			
 			for(Entry<String, SymbolCache> entry : cache.entrySet()) {
 			    @SuppressWarnings("unused")
@@ -146,6 +148,8 @@ public class LocalCache {
 
 			    CONTROLLER.LogEntry("DEBUG", value.symbol_name+" / last index: "+value.getLastIndex()+" / last loaded: "+value.getLastloadedIndex());
 			}
+			
+			CONTROLLER.LogEntry("DEBUG", "===================================================");
 		}
 	}
 	

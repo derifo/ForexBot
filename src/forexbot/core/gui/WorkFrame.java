@@ -75,6 +75,8 @@ public class WorkFrame extends JFrame {
 
 	    });
 		
+		if(ForexBot.settings_symbols == false) LockButtons(false, true, true, true);
+		
 		ForexBot.log.addLogDEBUG("Main frame created.");		
 		
 	}
@@ -134,6 +136,8 @@ public class WorkFrame extends JFrame {
 				ForexBot.CYCLE.StartCycle();
 			}
 			
+			LockButtons(true, true, false, false);//lock start and options
+			UnlockButtons(false, false, true, true);//unlock stop and reports
 		}
 		
 	}
@@ -145,6 +149,9 @@ public class WorkFrame extends JFrame {
 			ForexBot.log.addLogDEBUG("Stop button pressed.");
 			
 			ForexBot.CYCLE.StopCycle();
+			
+			LockButtons(false, false, true, false);//lock stop
+			UnlockButtons(true, true, false, true);//unlock start and options
 		}
 		
 	}

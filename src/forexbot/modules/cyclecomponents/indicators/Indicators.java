@@ -48,7 +48,10 @@ public class Indicators {
 		int i2 = 0; 
 		for(int i = offset; i < max+offset; i++){
 			cache[i2] = p[i];
+			i2++;
 		}
+		
+		CONTROLLER.LogEntry("DEBUG", "Indicator cache for ["+name+"] loaded! Needed/Loaded/Offset: "+max+"/"+p.length+"/"+offset);
 	}
 	
 	//-------------------------------------------------------------------------------------------------
@@ -87,13 +90,14 @@ public class Indicators {
 			}
 		}
 		
+		if(G == 0.0 || L == 0.0) return RS;
 		RS = ( G / periods.get("RSI_period") ) / ( L / periods.get("RSI_period") );
 		
 		return RS;
 	}
 	
 	public double Calculate_RSI(){
-		return 100 - (100/Partial_RS());
+		return 100 - (100 / (1-Partial_RS()) );
 	}
 	
 	//============================ MACD
@@ -121,7 +125,7 @@ public class Indicators {
 				if(cache[i+offset].bid < min) min = cache[i+offset].bid;
 			}
 		}
-		
+		if(max == min) return cache[0+offset].bid - min;
 		K = 100 * ((cache[0+offset].bid - min) / (max - min));
 		
 		return K;

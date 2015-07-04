@@ -98,8 +98,8 @@ public class OptionFrame extends JDialog implements Table{
 	        public void windowClosing(WindowEvent e) {
 	        	if(symbols_changed){
 
-	        		//options changed - handle!
-	        		
+	        		//new symbols settings require restart (in this version)
+	        		ForexBot.work_frame.LockButtons(false, true, true, false);
 	        	}
 	        }
 
@@ -151,6 +151,7 @@ public class OptionFrame extends JDialog implements Table{
 			ForexBot.user_settings.setSymbols(selected);
 			UserSettings.SaveSettings(ForexBot.user_settings);
 			ForexBot.log.addLogINFO("Symbols data saved! - restart required.");
+			ForexBot.work_frame.PostLog("Symbols data saved! - restart required.");
 		}
 		
 	}

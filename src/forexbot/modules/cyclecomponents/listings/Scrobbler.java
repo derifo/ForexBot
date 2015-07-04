@@ -9,12 +9,12 @@ public class Scrobbler {
 	 * returns array of listings back to calling class (Controller) for processing
 	 */
 	
-	public Scrobbler(String[] symbols){
-		this.symbols = symbols;
+	public Scrobbler(){
+
 	}
 
 	
-	public SymbolListing[] Scrobble(){
+	public SymbolListing[] Scrobble(String[] symbols){
 		SymbolListing[] out = new SymbolListing[symbols.length];
 		
 		for(int i = 0; i < symbols.length; i++){
@@ -24,6 +24,5 @@ public class Scrobbler {
 		return out;
 	}
 	
-	
-	private String[] symbols;
+
 }
