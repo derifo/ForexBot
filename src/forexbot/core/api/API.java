@@ -2,19 +2,27 @@ package forexbot.core.api;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 
 import forexbot.ForexBot;
+import forexbot.core.containers.Balance;
 import forexbot.core.containers.SymbolListing;
+import forexbot.core.containers.Transaction;
+import pro.xstore.api.message.codes.REQUEST_STATUS;
 import pro.xstore.api.message.command.APICommandFactory;
 import pro.xstore.api.message.error.APICommandConstructionException;
 import pro.xstore.api.message.error.APICommunicationException;
 import pro.xstore.api.message.error.APIReplyParseException;
 import pro.xstore.api.message.records.SymbolRecord;
+import pro.xstore.api.message.records.TradeRecord;
 import pro.xstore.api.message.response.APIErrorResponse;
 import pro.xstore.api.message.response.AllSymbolsResponse;
 import pro.xstore.api.message.response.LoginResponse;
 import pro.xstore.api.message.response.MarginLevelResponse;
 import pro.xstore.api.message.response.SymbolResponse;
+import pro.xstore.api.message.response.TradeTransactionResponse;
+import pro.xstore.api.message.response.TradeTransactionStatusResponse;
+import pro.xstore.api.message.response.TradesResponse;
 import pro.xstore.api.sync.Credentials;
 import pro.xstore.api.sync.ServerData.ServerEnum;
 import pro.xstore.api.sync.SyncAPIConnector;
@@ -120,34 +128,81 @@ public class API {
 	
 	//Transaction section (draft)
 	
-	public double getBalance(){
+	public Balance getBalance(){
 		
 		MarginLevelResponse marginLevelResponse;
 		try {
 			marginLevelResponse = APICommandFactory.executeMarginLevelCommand(connector);
 			double balance = marginLevelResponse.getBalance();
-			return balance;
+			String currency = marginLevelResponse.getCurrency();
+			return new Balance(balance, currency);
 		} catch (APICommandConstructionException e) {
-			e.printStackTrace();
+			if(ForexBot.DEBUG) e.printStackTrace();
 		} catch (APIReplyParseException e) {
-			e.printStackTrace();
+			if(ForexBot.DEBUG) e.printStackTrace();
 		} catch (APICommunicationException e) {
-			e.printStackTrace();
+			if(ForexBot.DEBUG) e.printStackTrace();
 		} catch (APIErrorResponse e) {
-
-			e.printStackTrace();
+			if(ForexBot.DEBUG) e.printStackTrace();
 		}
 		
 		
-		return -1;
+		return null;
 	}//method returns actual account balance
 	
-	public void MakeTransaction(){
+	public Transaction MakeTransaction(Transaction transaction, String code) throws APICommandConstructionException, APIReplyParseException, APICommunicationException, APIErrorResponse{
+		/*
+		 * Method executes transaction order returning transaction request with order number from API
+		 * this number is essential for closing deals
+		 */
 		
+		TradeTransactionResponse response = APICommandFactory.executeTradeTransactionCommand(connector, transaction.generatTransactionInfo(code));
+		
+		transaction.setOrder(response.getOrder());
+				
+		return transaction;
 	}
 	
-	public void getOpenTransactions(){
+	public int getTransactionStatus(long order) throws APICommandConstructionException, APIReplyParseException, APICommunicationException, APIErrorResponse{
+		/*
+		 * Method for checking transaction status
+		 * 
+		 * if transaction was accepted by server site it should return code 3 in case of code 1 transaction is still pending 
+		 * any other code means that transaction request failed
+		 */
 		
+		TradeTransactionStatusResponse response = APICommandFactory.executeTradeTransactionStatusCommand(connector, order);
+		
+		int status = 0;// Error
+		
+		if(response.getRequestStatus().equals(REQUEST_STATUS.ACCEPTED) ) status = 3;//The transaction has been executed successfully
+		else if(response.getRequestStatus().equals(REQUEST_STATUS.PENDING) ) status = 1;//Pending
+		else if(response.getRequestStatus().equals(REQUEST_STATUS.REJECTED) ) status = 4;//The transaction has been rejected
+		
+		return 	status;
+	}
+	
+	public ArrayList<Transaction> getOpenTransactions() throws APICommandConstructionException, APIReplyParseException, APICommunicationException, APIErrorResponse{
+		/*
+		 * Method returns a list of open deals with theirs numbers
+		 * 
+		 * Transaction objects from this method does not contain all the data!
+		 * only necessary for assessing profit or loses and closing deal  
+		 */
+		
+		TradesResponse tradeResponse = APICommandFactory.executeTradesCommand(connector, true);
+		ArrayList<Transaction> open_deals = new ArrayList<Transaction>();
+		
+		for(TradeRecord t : tradeResponse.getTradeRecords()){
+			Transaction tr = new Transaction();
+			
+			tr.setOrder(t.getOrder2());	 //transaction actual number
+			tr.setProfit(t.getProfit());
+			
+			open_deals.add(tr);
+		}
+		
+		return open_deals;
 	}
 	
 	public void CloseTransaction(){
