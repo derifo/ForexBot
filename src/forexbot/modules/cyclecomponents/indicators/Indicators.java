@@ -82,7 +82,7 @@ public class Indicators {
 		double G = 0.0;
 		double L = 0.0;
 		
-		for(int i = periods.get("RSI_period"); i > 0; i--){
+		for(int i = 0; i < periods.get("RSI_period"); i++){
 			if((cache[i].bid - cache[i+1].bid) > 0){
 				G += cache[i].bid;
 			}else if((cache[i].bid - cache[i+1].bid) < 0){
@@ -97,7 +97,7 @@ public class Indicators {
 	}
 	
 	public double Calculate_RSI(){
-		return 100 - (100 / (1-Partial_RS()) );
+		return 100 - (100 / (1+Partial_RS()) ); //value 0-100
 	}
 	
 	//============================ MACD

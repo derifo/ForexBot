@@ -44,7 +44,7 @@ public class CycleController implements Control{
 		
 		//initialize cycle specifics 		
 		available_symbols = new AvailableSymbols();
-		cache = new LocalCache(100, this);
+		cache = new LocalCache(43200, this);//cache size is equal to one day (24h)
 		scrobbler = new Scrobbler();
 		indicators = new Indicators(this);
 		decision_module = new DecisionModule(this);
@@ -75,6 +75,9 @@ public class CycleController implements Control{
 			indicators.setIndicatorsPeriods(14, 12, 26, 9, 5, 3);//replace later with evolver data!
 		
 			work_flag = true;
+			
+			
+			
 			ForexBot.work_frame.PostLog("Cycle started...");
 			ForexBot.log.addLogINFO("Cycle started...");
 		}else{
@@ -205,6 +208,10 @@ public class CycleController implements Control{
 			error_flag = true;
 			StopCycle();
 		}
+		
+	}
+	
+	public void EvolverInput(){
 		
 	}
 	

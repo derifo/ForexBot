@@ -13,6 +13,7 @@ import pro.xstore.api.message.records.SymbolRecord;
 import pro.xstore.api.message.response.APIErrorResponse;
 import pro.xstore.api.message.response.AllSymbolsResponse;
 import pro.xstore.api.message.response.LoginResponse;
+import pro.xstore.api.message.response.MarginLevelResponse;
 import pro.xstore.api.message.response.SymbolResponse;
 import pro.xstore.api.sync.Credentials;
 import pro.xstore.api.sync.ServerData.ServerEnum;
@@ -46,6 +47,8 @@ public class API {
 			        connector,         // APIConnector
 			        credentials        // Credentials
 			);
+			
+			
 			
 			if(loginResponse.getStatus() == true){
 				
@@ -117,9 +120,27 @@ public class API {
 	
 	//Transaction section (draft)
 	
-	public void getAvailableMoney(){
+	public double getBalance(){
 		
-	}
+		MarginLevelResponse marginLevelResponse;
+		try {
+			marginLevelResponse = APICommandFactory.executeMarginLevelCommand(connector);
+			double balance = marginLevelResponse.getBalance();
+			return balance;
+		} catch (APICommandConstructionException e) {
+			e.printStackTrace();
+		} catch (APIReplyParseException e) {
+			e.printStackTrace();
+		} catch (APICommunicationException e) {
+			e.printStackTrace();
+		} catch (APIErrorResponse e) {
+
+			e.printStackTrace();
+		}
+		
+		
+		return -1;
+	}//method returns actual account balance
 	
 	public void MakeTransaction(){
 		
@@ -133,10 +154,12 @@ public class API {
 		
 	}
 
-	
+
 	private SyncAPIConnector connector;
 	private Credentials credentials;
 	private LoginResponse loginResponse;
 	
 	public static String api_login = null;
+
+	
 }

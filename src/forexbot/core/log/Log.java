@@ -21,13 +21,32 @@ public class Log implements Runnable{
 	 * level specified by user) will be stored and saved in txt file (possible to redirect copy to database) 
 	 */
 	
-	private static String DIR = "logs\\";
+	private static String DIR = "logs";
 
 	public Log(int LOG_LEVEL){
 		this.LOG_LEVEL = LOG_LEVEL;
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm");
 		Date date = new Date();
+		
+		File theDir = new File(DIR);
+		if (!theDir.exists()) {
+		   if(ForexBot.DEBUG)  System.out.println("creating directory: " + DIR);
+		    boolean result = false;
+
+		    try{
+		        theDir.mkdir();
+		        result = true;
+		    } 
+		    catch(SecurityException se){
+		    	if(ForexBot.DEBUG) System.out.println("DIR creation failed!");  
+		    }        
+		    if(result) {    
+		    	if(ForexBot.DEBUG) System.out.println("DIR created");  
+		    }
+		}
+		
+		DIR =  DIR + "\\";
 		
 		FILE_NAME = DIR + dateFormat.format(date) + "_log.txt";
 		log = new ConcurrentLinkedQueue<LogInput>();
@@ -115,12 +134,7 @@ public class Log implements Runnable{
 					} catch (IOException e) {
 						if(ForexBot.DEBUG) e.printStackTrace();
 					}
-				}else{
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e) {
-						if(ForexBot.DEBUG) e.printStackTrace();
-					}
+				
 				}
 				//debug log
 				if(!debug_log.isEmpty() && Dbw != null){
@@ -132,7 +146,7 @@ public class Log implements Runnable{
 					}
 				}else{
 					try {
-						Thread.sleep(100);
+						Thread.sleep(10);
 					} catch (InterruptedException e) {
 						if(ForexBot.DEBUG) e.printStackTrace();
 					}
