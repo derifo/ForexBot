@@ -73,6 +73,7 @@ public class CycleController implements Control{
 		if(!error_flag){
 		
 			indicators.setIndicatorsPeriods(14, 12, 26, 9, 5, 3);//replace later with evolver data!
+			decision_module.CreateIndicatorCache(ForexBot.user_settings.getUserSymbols());//initiate indicator cache
 		
 			work_flag = true;
 			
@@ -115,8 +116,7 @@ public class CycleController implements Control{
 	@Override
 	public void UploaderQueue(String query) {
 		
-		ForexBot.uploader.addUploadQuery(query);
-		
+		ForexBot.uploader.addUploadQuery(query);		
 	}
 	
 	
@@ -153,44 +153,45 @@ public class CycleController implements Control{
 				
 				if(work_flag){
 					long start_time = System.currentTimeMillis();
-					//download
+					//download***********************************************************************************
 					SymbolListing[] temp = scrobbler.Scrobble(ForexBot.user_settings.getUserSymbols());
-					for(SymbolListing l : temp){
-						if(ForexBot.DEBUG) System.out.println(l.toString());
-						cache.addListingToCache(l.symbol_name, l);//add downloaded listings to cache
-					//calculate	
-						try {
-							indicators.LoadCache(0, l.symbol_name);
-						} catch (Exception e) {
-							ForexBot.log.addLogDEBUG("Too few listings in cache for ["+l.symbol_name+"]");
-							continue;//if not enough listings skip this cycle for symbol
+						for(SymbolListing l : temp){
+							if(ForexBot.DEBUG) System.out.println(l.toString());
+							cache.addListingToCache(l.symbol_name, l);//add downloaded listings to cache
+						//calculate******************************************************************************
+							try {
+								indicators.LoadCache(0, l.symbol_name);
+							} catch (Exception e) {
+								ForexBot.log.addLogDEBUG("Too few listings in cache for ["+l.symbol_name+"]");
+								continue;//if not enough listings skip this cycle for symbol
+							}
+							RSI = indicators.Calculate_RSI();
+							MACD = indicators.Calculate_MACD();
+							MACD_H = indicators.Calculate_MACD_Histogram();
+							STOCHASTIC_D = indicators.Calculate_Stochastic_D();
+							STOCHASTIC_K = indicators.Calculate_Stochastic_K(0);
+							
+							ForexBot.log.addLogDEBUG("======Indicators for ["+l.symbol_name+"]========");
+							ForexBot.log.addLogDEBUG("RSI "+RSI);
+							ForexBot.log.addLogDEBUG("MACD "+MACD+" / Histogram "+MACD_H);
+							ForexBot.log.addLogDEBUG("Stochastic %K "+STOCHASTIC_K+ " Stochastic %D "+STOCHASTIC_D);
+							ForexBot.log.addLogDEBUG("");
+							
+						//decide***********************************************************************************
+							decision_module.LoadIndicators(RSI, MACD, MACD_H, STOCHASTIC_K, STOCHASTIC_D, l.symbol_name);
+							decision_module.MakeDecision(l.symbol_name);
+							
+							t = decision_module.Transaction(l.symbol_name);
+							
+						//trade***********************************************************************************
+							if(trade_flag){
+								
+								ForexBot.transaction_module.addTransaction(t);
+								
+							}
 						}
-						RSI = indicators.Calculate_RSI();
-						MACD = indicators.Calculate_MACD();
-						MACD_H = indicators.Calculate_MACD_Histogram();
-						STOCHASTIC_D = indicators.Calculate_Stochastic_D();
-						STOCHASTIC_K = indicators.Calculate_Stochastic_K(0);
-						
-						ForexBot.log.addLogDEBUG("======Indicators for ["+l.symbol_name+"]========");
-						ForexBot.log.addLogDEBUG("RSI "+RSI);
-						ForexBot.log.addLogDEBUG("MACD "+MACD+" / Histogram "+MACD_H);
-						ForexBot.log.addLogDEBUG("Stochastic %K "+STOCHASTIC_K+ " Stochastic %D "+STOCHASTIC_D);
-						ForexBot.log.addLogDEBUG("");
-						
-					//decide
-						decision_module.LoadIndicators(RSI, MACD, MACD_H, STOCHASTIC_K, STOCHASTIC_D);
-						decision_module.CalculatePredictions();
-						decision_module.MakeDecision();
-						
-						t = decision_module.Transaction();
-					}
 					
-					//trade
-					if(trade_flag){
-						
-						ForexBot.transaction_module.addTransaction(t);
-						
-					}
+					
 					
 					TikClock(start_time, 1999);
 					if(ForexBot.DEBUG) cache.DEBUG_PRINT_CACHE();

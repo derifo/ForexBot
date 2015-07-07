@@ -103,11 +103,11 @@ public class Indicators {
 	//============================ MACD
 	
 	public double Calculate_MACD(){
-		return EMA(periods.get("MACDs_period")) - EMA(periods.get("MACDl_period"));
+		return (EMA(periods.get("MACDs_period")) - EMA(periods.get("MACDl_period")));
 	}
 	
 	public double Calculate_MACD_Histogram(){
-		return Calculate_MACD() - EMA(periods.get("MACDh_period"));
+		return (Calculate_MACD() - EMA(periods.get("MACDh_period")));
 	}
 	
 	//============================ STOCHASTIC 
