@@ -6,8 +6,8 @@ import javax.swing.JOptionPane;
 
 import forexbot.ForexBot;
 import forexbot.core.containers.AvailableSymbols;
+import forexbot.core.containers.Recommendation;
 import forexbot.core.containers.SymbolListing;
-import forexbot.core.containers.Transaction;
 import forexbot.core.containers.UserSettings;
 import forexbot.core.dbc.DataUploader;
 import forexbot.interfaces.Control;
@@ -16,6 +16,7 @@ import forexbot.modules.cyclecomponents.indicators.Indicators;
 import forexbot.modules.cyclecomponents.listings.Scrobbler;
 import forexbot.modules.cyclecomponents.transactions.DecisionModule;
 import forexbot.modules.cyclecomponents.transactions.TransactionModule;
+import forexbot.modules.evolver.EvolutionaryAlgorithm;
 
 public class CycleController implements Control{
 	/*
@@ -41,6 +42,10 @@ public class CycleController implements Control{
 		
 		Thread tr_module = new Thread(ForexBot.transaction_module);
 		tr_module.start();//transaction module thread start
+		
+		ForexBot.EVOLVER = new EvolutionaryAlgorithm(this);
+		Thread evolver_th = new Thread(ForexBot.EVOLVER);
+		evolver_th.start();//evolutionary tree start
 		
 		//initialize cycle specifics 		
 		available_symbols = new AvailableSymbols();
@@ -135,7 +140,7 @@ public class CycleController implements Control{
 	//Thread loop --------------------------------------------------
 	@Override
 	public void run() {
-		Transaction t = null;
+		Recommendation r = null;
 		double RSI;
 		double MACD;
 		double MACD_H;
@@ -179,14 +184,15 @@ public class CycleController implements Control{
 							
 						//decide***********************************************************************************
 							decision_module.LoadIndicators(RSI, MACD, MACD_H, STOCHASTIC_K, STOCHASTIC_D, l.symbol_name);
-							decision_module.MakeDecision(l.symbol_name);
-							
-							t = decision_module.Transaction(l.symbol_name);
+														
+							r = decision_module.MakeDecision(l.symbol_name);
 							
 						//trade***********************************************************************************
 							if(trade_flag){
 								
-								ForexBot.transaction_module.addTransaction(t);
+								ForexBot.work_frame.PostLog(r.toString());
+								ForexBot.log.addLogINFO(r.toString());
+								ForexBot.transaction_module.addRecommendation(r);
 								
 							}
 						}
@@ -229,7 +235,7 @@ public class CycleController implements Control{
 	private boolean trade_flag;
 	private boolean error_flag;
 
-	public boolean PrepareDatabase(){
+	private boolean PrepareDatabase(){
 		ForexBot.log.addLogDEBUG("Preparing database..");
 		boolean clear = true;
 		

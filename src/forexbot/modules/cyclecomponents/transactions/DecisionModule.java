@@ -5,14 +5,13 @@ import java.util.HashMap;
 import org.apache.commons.collections4.queue.CircularFifoQueue;
 
 import forexbot.interfaces.Control;
+import forexbot.core.containers.Recommendation;
 import forexbot.core.containers.SymbolListing;
-import forexbot.core.containers.Transaction;
-
 
 public class DecisionModule {
 	
-	private static final int CACHE_SIZE = 20;
-	private static final int ASSESSMENT_PERIOD = 5;
+	private final int CACHE_SIZE = 20;
+	private final int ASSESSMENT_PERIOD = 5;
 	
 	public DecisionModule(Control controller){
 		CONTROLLER = controller;		
@@ -36,7 +35,7 @@ public class DecisionModule {
 		indicators.get(name).addInstance(RSI, MACDs, MACD_histogram, StochasticK, StochasticD);		
 	}
 	
-	public void MakeDecision(String name){
+	public Recommendation MakeDecision(String name){
 		/*
 		 * Each recommendation should return value between 1 and -1 where
 		 * 	1  - BUY
@@ -44,6 +43,8 @@ public class DecisionModule {
 		 * 
 		 * There are four recommendations so value above  
 		 */
+		Recommendation R = new Recommendation();
+		R.setName(name);
 		
 		double r_rsi, r_macd, r_stochastic, r_trend;
 		r_rsi = recomendation_RSI(name);
@@ -53,23 +54,28 @@ public class DecisionModule {
 		
 		double rr = r_rsi + r_macd + r_stochastic + r_trend;
 		
-		if(rr >= 2) recomendation = "BUY";
-		else if(rr <= -2) recomendation = "SELL";
-		else recomendation = "KEEP";
-		
-		CONTROLLER.LogEntry("DEBUG", "Partial: RSI "+r_rsi +" MACD " + r_macd + " Stochastic " + r_stochastic + " Trend " + r_trend + " || DECISION : "+ recomendation);
-	}
-	
-	public Transaction Transaction(String name){
-		if(recomendation.equals("BUY")){
-			
-		}else if(recomendation.equals("SELL")){
-			
-		}else{
-			
+		if(rr >= 2){
+			R.setDecision("BUY");
+			R.setCertainty(50);
+			if(rr >= 3){
+				R.setCertainty(90);
+			}
+		}
+		else if(rr <= -2){
+			R.setDecision("SELL");
+			R.setCertainty(50);
+			if(rr <= -3){
+				R.setCertainty(90);
+			}
+		}
+		else{
+			R.setDecision("KEEP");
+			if(rr <= 1 && rr >= -1) R.setCertainty(90);
+			else R.setCertainty(50);
 		}
 		
-		return null;
+		CONTROLLER.LogEntry("DEBUG", "Partial: RSI "+r_rsi +" MACD " + r_macd + " Stochastic " + r_stochastic + " Trend " + r_trend + " || DECISION : "+ R.getDecision());
+		return R;
 	}
 	
 	private double TrendAssessment(String name){
@@ -118,7 +124,6 @@ public class DecisionModule {
 
 	private HashMap<String, IndicatorCache> indicators;
 	private Control CONTROLLER;
-	private String recomendation;
 	
 	private class IndicatorCache {
 		
@@ -139,6 +144,7 @@ public class DecisionModule {
 			values_D.add(StochasticD);
 		}
 		
+		@SuppressWarnings("unused")
 		public final String name;
 		
 		public CircularFifoQueue<Double> values_RSI;

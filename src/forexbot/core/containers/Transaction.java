@@ -17,10 +17,11 @@ public class Transaction {
 	}
 
 	public Transaction(double price, double sl, double tp, String symbol,
-			double volume) {
+			double volume, String position) {
 		
 		this();
 
+		this.position = position;
 		this.price = price;
 		this.sl = sl;
 		this.tp = tp;
@@ -76,6 +77,14 @@ public class Transaction {
 	public void setOrder(long order) {
 		this.order = order;
 	}
+	
+	public long getOrder2() {
+		return order2;
+	}
+
+	public void setOrder2(long order2) {
+		this.order2 = order2;
+	}
 
 	public String getCustomComment() {
 		return customComment;
@@ -107,15 +116,25 @@ public class Transaction {
 	private double tp = 0.0;
 	private String symbol;
 	private double volume;
-	private long order = 0;
+	private long order = 0;//number of opening deal
+	private long order2 = 0;//number of closing deal
 	private String customComment = null;
 	private long expiration = 0;
 	
 	private double profit = 0.0;
-	private boolean open = false;
+	private int open = 0;// 0 - not confirmed, 1 - open, -1 - closed
+	private String position;
 	private Timestamp date;
 	private int request_status;
 	
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
 	public int getRequest_status() {
 		return request_status;
 	}
@@ -132,11 +151,11 @@ public class Transaction {
 		this.profit = profit;
 	}
 
-	public boolean isOpen() {
+	public int isOpen() {
 		return open;
 	}
 
-	public void setOpen(boolean open) {
+	public void setOpen(int open) {
 		this.open = open;
 	}
 
@@ -168,13 +187,23 @@ public class Transaction {
 		
 		if(customComment == null || customComment.equals("")) customComment = "bot";
 		
-		if(code.equals("OPEN")){
+		if(code.equals("OPEN") && position.equals("BUY")){
 			
 			transaction_info = new TradeTransInfoRecord(TRADE_OPERATION_CODE.BUY, TRADE_TRANSACTION_TYPE.OPEN, price, sl, tp, symbol, volume, order, customComment, expiration);
 			
-		}else if(code.equals("CLOSE")){
+		}else if(code.equals("CLOSE") && position.equals("BUY")){
 			
 			transaction_info = new TradeTransInfoRecord(TRADE_OPERATION_CODE.BUY, TRADE_TRANSACTION_TYPE.CLOSE, price, sl, tp, symbol, volume, order, customComment, expiration);
+			
+		}
+		
+		else if(code.equals("OPEN") && position.equals("SELL")){
+			
+			transaction_info = new TradeTransInfoRecord(TRADE_OPERATION_CODE.SELL, TRADE_TRANSACTION_TYPE.OPEN, price, sl, tp, symbol, volume, order, customComment, expiration);
+			
+		}else if(code.equals("CLOSE") && position.equals("SELL")){
+			
+			transaction_info = new TradeTransInfoRecord(TRADE_OPERATION_CODE.SELL, TRADE_TRANSACTION_TYPE.CLOSE, price, sl, tp, symbol, volume, order, customComment, expiration);
 			
 		}
 		

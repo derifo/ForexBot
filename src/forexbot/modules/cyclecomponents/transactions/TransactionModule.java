@@ -9,6 +9,7 @@ import pro.xstore.api.message.error.APIReplyParseException;
 import pro.xstore.api.message.response.APIErrorResponse;
 import forexbot.ForexBot;
 import forexbot.core.containers.Balance;
+import forexbot.core.containers.Recommendation;
 import forexbot.core.containers.Transaction;
 
 public class TransactionModule implements Runnable{
@@ -16,6 +17,7 @@ public class TransactionModule implements Runnable{
 	public TransactionModule(){
 		toMake = new ConcurrentLinkedQueue<Transaction>();
 		active = new ArrayList<Transaction>();
+		recommendations = new ArrayList<Recommendation>();
 	}
 
 	
@@ -25,34 +27,37 @@ public class TransactionModule implements Runnable{
 		
 	}
 	
-	public void addTransaction(Transaction t){
+	public void addRecommendation(Recommendation r){
 		//Public method for adding new transaction orders to queue by DecisionModule
-		toMake.add(t);
+		recommendations.add(r);
 	}
 	
 	
 	@Override
 	public void run() {
-		
 
 		ForexBot.log.addLogINFO("Transaction module started!");
 		
-		ForexBot.log.addLogINFO(getBalance().toString());
+		balance = getBalance();
+		if(balance != null) ForexBot.log.addLogINFO(getBalance().toString());		
 		
 		do{
 		//Main loop for processing transactions
 			
-			//get open deals
-			ComapreActive();
+			//get open deals*****************************************************
+			if(ComapreActive()){
 			
-			//asses profits/losses 
-			
-			//close deals
-			
-			//open deals
-			
+			//asses profits/losses **********************************************
+				AssessOpenDeals();
+			//close deals********************************************************
+				CloseUnprofitable();
+			//open deals*********************************************************
+				CreateTransacions();
+				OpenDeal();
+			}
 			try {
-				Thread.sleep(10);
+				if(toMake.isEmpty())Thread.sleep(200);
+				else Thread.sleep(50);
 			} catch (InterruptedException e) {
 				if(ForexBot.DEBUG) e.printStackTrace();
 			}
@@ -61,15 +66,43 @@ public class TransactionModule implements Runnable{
 		
 		if(ForexBot.DEBUG) System.out.println("Transaction module terminated!");
 		
-	}
-	
-	
+	}	
 	
 	//---------------------------------------------------------------------------------
 
-	
+	private ArrayList<Recommendation> recommendations;
 	private ConcurrentLinkedQueue<Transaction> toMake;//queue for pending transaction orders
 	private ArrayList<Transaction> active;//list off open deals
+	private Balance balance;
+	
+	private void AssessOpenDeals(){
+		/*
+		 * Marks transactions that needs to be closed
+		 */
+		
+	}
+	
+	private void CloseUnprofitable(){
+		/*
+		 * Closes unprofitable and capitalizes profits 
+		 */
+		
+	}
+	
+	private void CreateTransacions(){
+		/*
+		 * Creates Transaction objects based on current recommendations
+		 */
+		balance = getBalance();
+		
+	}
+	
+	private void OpenDeal(){
+		/*
+		 * Opens new deals based on pending queue
+		 */
+		
+	}
 	
 	private void ProcessRemoved(Transaction t){
 		//add info to log about mismatch 
@@ -79,6 +112,8 @@ public class TransactionModule implements Runnable{
 	
 	
 	private boolean ComapreActive(){
+		ForexBot.log.addLogDEBUG("Checking open deals...");
+		
 		ArrayList<Transaction> temp = null;
 		//get list of open deals
 		try {
@@ -106,13 +141,13 @@ public class TransactionModule implements Runnable{
 			return true;
 			
 		} catch (APICommandConstructionException e1) {
-			e1.printStackTrace();
+			if(ForexBot.DEBUG) e1.printStackTrace();
 		} catch (APIReplyParseException e1) {
-			e1.printStackTrace();
+			if(ForexBot.DEBUG) e1.printStackTrace();
 		} catch (APICommunicationException e1) {
-			e1.printStackTrace();
+			if(ForexBot.DEBUG) e1.printStackTrace();
 		} catch (APIErrorResponse e1) {
-			e1.printStackTrace();
+			if(ForexBot.DEBUG) e1.printStackTrace();
 		}		
 		
 		return false;

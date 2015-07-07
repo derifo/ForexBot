@@ -126,7 +126,7 @@ public class API {
 		return null;
 	}
 	
-	//Transaction section (draft)
+	//Transaction section
 	
 	public Balance getBalance(){
 		
@@ -136,6 +136,7 @@ public class API {
 			double balance = marginLevelResponse.getBalance();
 			String currency = marginLevelResponse.getCurrency();
 			return new Balance(balance, currency);
+			
 		} catch (APICommandConstructionException e) {
 			if(ForexBot.DEBUG) e.printStackTrace();
 		} catch (APIReplyParseException e) {
@@ -146,19 +147,20 @@ public class API {
 			if(ForexBot.DEBUG) e.printStackTrace();
 		}
 		
-		
+		ForexBot.log.addLogERROR("API can't get account balance! Error!"); 
 		return null;
 	}//method returns actual account balance
 	
-	public Transaction MakeTransaction(Transaction transaction, String code) throws APICommandConstructionException, APIReplyParseException, APICommunicationException, APIErrorResponse{
+	public Transaction MakeTransaction(Transaction transaction) throws APICommandConstructionException, APIReplyParseException, APICommunicationException, APIErrorResponse{
 		/*
 		 * Method executes transaction order returning transaction request with order number from API
 		 * this number is essential for closing deals
 		 */
 		
-		TradeTransactionResponse response = APICommandFactory.executeTradeTransactionCommand(connector, transaction.generatTransactionInfo(code));
+		TradeTransactionResponse response = APICommandFactory.executeTradeTransactionCommand(connector, transaction.generatTransactionInfo("OPEN"));
 		
 		transaction.setOrder(response.getOrder());
+		transaction.setOpen(1);
 				
 		return transaction;
 	}
@@ -205,8 +207,19 @@ public class API {
 		return open_deals;
 	}
 	
-	public void CloseTransaction(){
+	public Transaction CloseTransaction(Transaction transaction) throws APICommandConstructionException, APIReplyParseException, APICommunicationException, APIErrorResponse{
+		/*
+		 * Method closes transaction with specific order number
+		 * 
+		 * !Important not to switch BUY with SELL orders
+		 */
 		
+		TradeTransactionResponse response = APICommandFactory.executeTradeTransactionCommand(connector, transaction.generatTransactionInfo("CLOSE"));
+		
+		transaction.setOrder2(response.getOrder());
+		transaction.setOpen(-1);
+				
+		return transaction;
 	}
 
 

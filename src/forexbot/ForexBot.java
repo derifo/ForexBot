@@ -12,6 +12,7 @@ import forexbot.core.gui.ReportFrame;
 import forexbot.core.gui.WorkFrame;
 import forexbot.core.log.Log;
 import forexbot.modules.cyclecomponents.transactions.TransactionModule;
+import forexbot.modules.evolver.EvolutionaryAlgorithm;
 
 public class ForexBot {
 	public static final String VERSION = "v0.1.00";
@@ -72,6 +73,8 @@ public class ForexBot {
 	public static DataUploader uploader;
 	//Main Cycle controller
 	public static CycleController CYCLE;
+	//Evolutionary tree
+	public static EvolutionaryAlgorithm EVOLVER;
 	
 	
 	
