@@ -40,7 +40,7 @@ public class TransactionModule implements Runnable{
 		
 		balance = getBalance();
 		if(balance != null) ForexBot.log.addLogINFO(getBalance().toString());		
-		
+		/*
 		do{
 		//Main loop for processing transactions
 			
@@ -65,7 +65,7 @@ public class TransactionModule implements Runnable{
 		}while(!ForexBot.GLOBAL_EXIT);
 		
 		if(ForexBot.DEBUG) System.out.println("Transaction module terminated!");
-		
+		*/
 	}	
 	
 	//---------------------------------------------------------------------------------

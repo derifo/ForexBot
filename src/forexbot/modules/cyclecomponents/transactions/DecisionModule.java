@@ -109,6 +109,32 @@ public class DecisionModule {
 	
 	private double recomendation_RSI(String name){
 		
+		double rsi[] = indicators.get(name).getRSI(1);
+		//------------------------------------
+		if(rsi[0] >= 50){
+			
+			if(rsi[0] > 70){
+					
+				if(rsi[0] > 90){
+					return -1;						//price will fall
+				}
+				return -0.8;
+			}
+			
+			return ((rsi[0] - 50)/20 * (-0.8));
+		//------------------------------------
+		}else if(rsi[0] < 50){
+			
+			if(rsi[0] < 30){
+				
+				if(rsi[0] < 10){
+					return 1;						//price will rise
+				}
+				return 0.8;
+			}
+			return ((50 - rsi[0])/20 * (0.8));
+		}
+		
 		return 0.0;
 	}
 	
@@ -142,6 +168,66 @@ public class DecisionModule {
 			values_Histogram.add(MACD_histogram);
 			values_K.add(StochasticK);
 			values_D.add(StochasticD);
+		}
+		
+		public double[] getRSI(int x){
+			double array[] = new double[x];
+			
+			int p  = 0;
+			for(int i = (values_RSI.size()-1); i > 0 ; i-- ){
+				array[p] = values_RSI.get(i);
+				p++;
+			}
+			
+			return array;
+		}
+		
+		public double[] getMACD(int x){
+			double array[] = new double[x];
+			
+			int p  = 0;
+			for(int i = (values_MACD.size()-1); i > 0 ; i-- ){
+				array[p] = values_MACD.get(i);
+				p++;
+			}
+			
+			return array;
+		}
+		
+		public double[] getHistogram(int x){
+			double array[] = new double[x];
+			
+			int p  = 0;
+			for(int i = (values_Histogram.size()-1); i > 0 ; i-- ){
+				array[p] = values_Histogram.get(i);
+				p++;
+			}
+			
+			return array;
+		}
+		
+		public double[] getK(int x){
+			double array[] = new double[x];
+			
+			int p  = 0;
+			for(int i = (values_K.size()-1); i > 0 ; i-- ){
+				array[p] = values_K.get(i);
+				p++;
+			}
+			
+			return array;
+		}
+		
+		public double[] getD(int x){
+			double array[] = new double[x];
+			
+			int p  = 0;
+			for(int i = (values_D.size()-1); i > 0 ; i-- ){
+				array[p] = values_D.get(i);
+				p++;
+			}
+			
+			return array;
 		}
 		
 		@SuppressWarnings("unused")

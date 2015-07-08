@@ -59,15 +59,15 @@ public class Indicators {
 	private double EMA(int period){
 		double ema = 0.0;
 		double top,bot;
-		double a = 0.0;
+		double a = 1.0 - (2.0/ (period+1.0));
 		
 		top = cache[0].bid;//newest
 		bot = 1.0;
 		
 		for(int i = 1; i < period; i++){
-			a = 2/ (i+1.0);
-			top += Math.pow((1 - a), i) * cache[i].bid;
-			bot += Math.pow((1 - a), i);
+			
+			top += Math.pow(a, i) * cache[i].bid;
+			bot += Math.pow(a, i);
 		}
 		
 		ema = top / bot;
@@ -90,7 +90,8 @@ public class Indicators {
 			}
 		}
 		
-		if(G == 0.0 || L == 0.0) return RS;
+		if(L == 0.0) return G;
+
 		RS = ( G / periods.get("RSI_period") ) / ( L / periods.get("RSI_period") );
 		
 		return RS;
