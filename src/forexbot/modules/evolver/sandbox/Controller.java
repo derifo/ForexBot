@@ -7,9 +7,11 @@ import forexbot.modules.cyclecomponents.LocalCache;
 import forexbot.modules.cyclecomponents.indicators.Indicators;
 import forexbot.modules.cyclecomponents.transactions.DecisionModule;
 import forexbot.modules.evolver.SandboxController;
+import forexbot.modules.evolver.containers.Genom;
 
 public class Controller implements Control{
 	public final int ID;
+	public final Genom GENOM;
 	/*
 	 * Purpose of this class is to emulate main cycle loop for evolutionary algorithm purposes 
 	 * 
@@ -17,8 +19,9 @@ public class Controller implements Control{
 	 * and TransactionModule (emulated by Evaluator)
 	 */
 	
-	public Controller(SandboxController SANDBOX_CONTROLLER, int ID){
+	public Controller(SandboxController SANDBOX_CONTROLLER, int ID, Genom GENOM){
 		this.SANDBOX_CONTROLLER = SANDBOX_CONTROLLER;
+		this.GENOM = GENOM;
 		this.ID = ID;
 		
 		work_flag = false;
@@ -34,6 +37,7 @@ public class Controller implements Control{
 		cache.CreateSymbolCache(SANDBOX_CONTROLLER.SANDBOX_SYMBOL_NAME);
 		indicators = new Indicators(this);
 		decider = new DecisionModule(this);
+		indicators.setIndicatorsPeriods(GENOM.getValue("RSI_period"), GENOM.getValue("MACDs_period"), GENOM.getValue("MACDl_period"), GENOM.getValue("MACDh_period"), GENOM.getValue("StochasticK_period"), GENOM.getValue("StochasticD_period"));
 		
 	}
 

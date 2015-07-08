@@ -33,6 +33,15 @@ public class EvolutionaryAlgorithm implements Runnable{
 		ForexBot.work_frame.PostLog("[AI] Creating initial generation.");
 		ForexBot.log.addLogINFO("[AI] Creating initial generation.");
 		
+		//Set of min and max values for indicator periods
+		//parameters where chosen arbitrarily but with regard to indicator formulas  
+		int rsi_min = 2, rsi_max = 30;
+		int macd_s_min = 3, macd_s_max = 30;
+		int macd_l_min = 6, macd_l_max = 60;
+		int macd_h_min = 4, macd_h_max = 40;
+		int k_min = 3, k_max = 15;
+		int d_min = 2, d_max = 10;
+		
 	}
 	
 	public void CreateNewPopulation(){
