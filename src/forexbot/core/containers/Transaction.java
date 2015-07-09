@@ -127,6 +127,16 @@ public class Transaction {
 	private Timestamp date;
 	private int request_status;
 	
+	private boolean toClose;
+	
+	public boolean isToClose() {
+		return toClose;
+	}
+
+	public void setToClose(boolean toClose) {
+		this.toClose = toClose;
+	}
+
 	public String getPosition() {
 		return position;
 	}
@@ -151,7 +161,7 @@ public class Transaction {
 		this.profit = profit;
 	}
 
-	public int isOpen() {
+	public int getOpen() {
 		return open;
 	}
 

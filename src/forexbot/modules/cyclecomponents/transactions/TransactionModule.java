@@ -13,6 +13,17 @@ import forexbot.core.containers.Recommendation;
 import forexbot.core.containers.Transaction;
 
 public class TransactionModule implements Runnable{
+	/*
+	 * This class represents transaction mechanism which buys or sells forex equities 
+	 * depending on recommendations sent by decision module.
+	 * 
+	 * TRADE_TRANS_INFO
+	 * sl/tp - value in pips (must be greater then spread [ask - bid])! 
+	 * volume - 1 equals to 100k of given symbol currency (0.1 EURUSD = 10k EUR)
+	 * 
+	 * BALANCE
+	 * account currency (for DEMO) - EUR
+	 */
 	
 	public TransactionModule(){
 		toMake = new ConcurrentLinkedQueue<Transaction>();
@@ -43,6 +54,8 @@ public class TransactionModule implements Runnable{
 		
 		do{
 		//Main loop for processing transactions
+			long start_time = System.currentTimeMillis();
+			
 			try {
 				Thread.sleep(1);				
 			} catch (InterruptedException e) {
@@ -60,12 +73,8 @@ public class TransactionModule implements Runnable{
 				CreateTransacions();
 				OpenDeal();
 			}
-			try {
-				if(toMake.isEmpty())Thread.sleep(1999);
-				else Thread.sleep(50);
-			} catch (InterruptedException e) {
-				if(ForexBot.DEBUG) e.printStackTrace();
-			}
+			
+			TikClock(start_time, 1999);
 
 		}while(!ForexBot.GLOBAL_EXIT);
 		
@@ -74,6 +83,20 @@ public class TransactionModule implements Runnable{
 	}	
 	
 	//---------------------------------------------------------------------------------
+	private long TikClock(long start_time, long sleep){
+		long time_elapsed = System.currentTimeMillis() - start_time;
+		
+		ForexBot.log.addLogDEBUG("cycle - time elapsed ["+time_elapsed+"]");
+		if(time_elapsed < sleep) {
+			try {
+			    Thread.sleep(sleep - time_elapsed);                 //waits for remaining time
+			} catch(InterruptedException ex) {
+			    Thread.currentThread().interrupt();
+			}
+		}
+		
+		return time_elapsed;
+	}//method for regulating cycle time
 
 	private ArrayList<Recommendation> recommendations;
 	private ConcurrentLinkedQueue<Transaction> toMake;//queue for pending transaction orders
@@ -84,7 +107,13 @@ public class TransactionModule implements Runnable{
 		/*
 		 * Marks transactions that needs to be closed
 		 */
-		
+		if(!active.isEmpty()){
+			for(Transaction t : active){
+				
+				
+				
+			}
+		}
 	}
 	
 	private void CloseUnprofitable(){
