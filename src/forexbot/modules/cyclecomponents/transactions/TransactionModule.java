@@ -40,9 +40,14 @@ public class TransactionModule implements Runnable{
 		
 		balance = getBalance();
 		if(balance != null) ForexBot.log.addLogINFO(getBalance().toString());		
-		/*
+		
 		do{
 		//Main loop for processing transactions
+			try {
+				Thread.sleep(1);				
+			} catch (InterruptedException e) {
+				if(ForexBot.DEBUG) e.printStackTrace();
+			}
 			
 			//get open deals*****************************************************
 			if(ComapreActive()){
@@ -56,7 +61,7 @@ public class TransactionModule implements Runnable{
 				OpenDeal();
 			}
 			try {
-				if(toMake.isEmpty())Thread.sleep(200);
+				if(toMake.isEmpty())Thread.sleep(1999);
 				else Thread.sleep(50);
 			} catch (InterruptedException e) {
 				if(ForexBot.DEBUG) e.printStackTrace();
@@ -65,7 +70,7 @@ public class TransactionModule implements Runnable{
 		}while(!ForexBot.GLOBAL_EXIT);
 		
 		if(ForexBot.DEBUG) System.out.println("Transaction module terminated!");
-		*/
+		
 	}	
 	
 	//---------------------------------------------------------------------------------
@@ -113,42 +118,46 @@ public class TransactionModule implements Runnable{
 	
 	private boolean ComapreActive(){
 		ForexBot.log.addLogDEBUG("Checking open deals...");
-		
-		ArrayList<Transaction> temp = null;
-		//get list of open deals
-		try {
-			temp = ForexBot.api.getOpenTransactions();
-			
-			//compare with local table
-			for(int i = 0; i < active.size(); i++){
-				boolean match = false;
+		if(!active.isEmpty()){
+			ArrayList<Transaction> temp = null;
+			//get list of open deals
+			try {
+				temp = ForexBot.api.getOpenTransactions();
 				
-				for(Transaction tmp : temp){
-					if(active.get(i).getOrder() == tmp.getOrder()){
-						active.get(i).setProfit(tmp.getProfit());
-						match = true;
-						ForexBot.log.addLogINFO("Transaction ["+active.get(i).getOrder()+"] profit: "+ active.get(i).getProfit());
-						break;
-					}//if transaction form local table is in open deals list -> update profit
+				//compare with local table
+				for(int i = 0; i < active.size(); i++){
+					boolean match = false;
+					
+					for(Transaction tmp : temp){
+						if(active.get(i).getOrder() == tmp.getOrder()){
+							active.get(i).setProfit(tmp.getProfit());
+							match = true;
+							ForexBot.log.addLogINFO("Transaction ["+active.get(i).getOrder()+"] profit: "+ active.get(i).getProfit());
+							break;
+						}//if transaction form local table is in open deals list -> update profit
+					}
+					
+					if(!match){
+						ProcessRemoved(active.get(i));
+						active.remove(i);
+					}//if there is no match -> remove from local cache, process removed
 				}
 				
-				if(!match){
-					ProcessRemoved(active.get(i));
-					active.remove(i);
-				}//if there is no match -> remove from local cache, process removed
-			}
-			
-			return true;
-			
-		} catch (APICommandConstructionException e1) {
-			if(ForexBot.DEBUG) e1.printStackTrace();
-		} catch (APIReplyParseException e1) {
-			if(ForexBot.DEBUG) e1.printStackTrace();
-		} catch (APICommunicationException e1) {
-			if(ForexBot.DEBUG) e1.printStackTrace();
-		} catch (APIErrorResponse e1) {
-			if(ForexBot.DEBUG) e1.printStackTrace();
-		}		
+				return true;
+				
+			} catch (APICommandConstructionException e1) {
+				if(ForexBot.DEBUG) e1.printStackTrace();
+			} catch (APIReplyParseException e1) {
+				if(ForexBot.DEBUG) e1.printStackTrace();
+			} catch (APICommunicationException e1) {
+				if(ForexBot.DEBUG) e1.printStackTrace();
+			} catch (APIErrorResponse e1) {
+				if(ForexBot.DEBUG) e1.printStackTrace();
+			}		
+		
+		}else{
+			ForexBot.log.addLogDEBUG("No open transactions.");
+		}
 		
 		return false;
 	}

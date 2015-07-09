@@ -4,8 +4,8 @@ import forexbot.modules.evolver.sandbox.Controller;
 
 public class SandboxController {
 	
-	public static int SANDBOX_CACHE_SIZE;
-	public static String SANDBOX_SYMBOL_NAME;
+	public int SANDBOX_CACHE_SIZE;
+	public String SANDBOX_SYMBOL_NAME;
 	
 	public SandboxController(EvolutionaryAlgorithm HANDLER){
 		this.HANDLER = HANDLER;

@@ -126,6 +126,12 @@ public class Log implements Runnable{
 		if(bw != null){
 					
 			do{
+				try {
+					Thread.sleep(1);
+				} catch (InterruptedException e) {
+					if(ForexBot.DEBUG) e.printStackTrace();
+				}
+				
 				//normal log
 				if(!log.isEmpty()){
 					try {
@@ -146,7 +152,7 @@ public class Log implements Runnable{
 					}
 				}else{
 					try {
-						Thread.sleep(10);
+						Thread.sleep(9);
 					} catch (InterruptedException e) {
 						if(ForexBot.DEBUG) e.printStackTrace();
 					}

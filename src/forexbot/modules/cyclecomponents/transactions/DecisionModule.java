@@ -139,13 +139,79 @@ public class DecisionModule {
 	}
 	
 	private double recomendation_MACD(String name){
+		if(indicators.get(name).values_Histogram.size() >= 10){
+		
+			double h[] = indicators.get(name).getHistogram(10);
+			double extreme = 0.0;
+					
+			if(h[0] > 0){
+				extreme = h[0];
+				for(int i = 1; i < 10; i++){
+					if(extreme < h[i]) extreme = h[i];
+					else if(h[i] <=0) break;
+				}
+				
+				double m = extreme - h[0];
+				m = m/extreme;
+				
+				return m*(-1);
+				
+			}else if(h[0] < 0){
+				extreme = h[0];
+				for(int i = 0; i < 10; i++){
+					if(extreme > h[i]) extreme = h[i];
+					else if(h[i] >=0) break;
+				}
+				
+				double m = Math.abs(extreme - h[0]);
+				m = m/extreme;
+				
+				return m;
+				
+			}			
+				
+		}else{
+			CONTROLLER.LogEntry("DEBUG", "Not enough indicators in cache for MACD ["+name+"] !");
+		}
 		
 		return 0.0;
 	}
 	
 	private double recomendation_STOCHASTIC(String name){
+		if(indicators.get(name).values_K.size() >= 2){
 		
-		return 0.0;
+			double k[], d[];
+			
+			k = indicators.get(name).getK(2);
+			d = indicators.get(name).getD(2);
+			
+			double power_p, power_n;
+			
+			if(k[0] >= 80 ) power_n = -1; //above 80 - bigger changes
+			else power_n = -0.8;
+			
+			if(k[0] <=20) power_p = 1; //below 20 - bigger changes
+			else power_p = 0.8;
+			
+			if(k[1] > d[1]){
+				
+				if(k[0] < d[0]){
+					return power_n; // K line crosses D line form above - price will fall
+				}
+				
+			}else if(k[1] < d[1]){
+				
+				if(k[0] > d[0]){
+					return power_p; // K line crosses D line from below - price will rise
+				}
+				
+			}
+		
+		}else{
+			CONTROLLER.LogEntry("DEBUG", "Not enough indicators in cache for STOCHASTIC ["+name+"] !");
+		}
+		
+		return 0.0;		
 	}
 
 	private HashMap<String, IndicatorCache> indicators;
@@ -174,7 +240,8 @@ public class DecisionModule {
 			double array[] = new double[x];
 			
 			int p  = 0;
-			for(int i = (values_RSI.size()-1); i > 0 ; i-- ){
+			int last = (values_RSI.size()-1);
+			for(int i = last; i > (last - x) ; i-- ){
 				array[p] = values_RSI.get(i);
 				p++;
 			}
@@ -182,11 +249,13 @@ public class DecisionModule {
 			return array;
 		}
 		
+		@SuppressWarnings("unused")
 		public double[] getMACD(int x){
 			double array[] = new double[x];
 			
 			int p  = 0;
-			for(int i = (values_MACD.size()-1); i > 0 ; i-- ){
+			int last = (values_MACD.size()-1);
+			for(int i = last; i > (last - x) ; i-- ){
 				array[p] = values_MACD.get(i);
 				p++;
 			}
@@ -198,7 +267,8 @@ public class DecisionModule {
 			double array[] = new double[x];
 			
 			int p  = 0;
-			for(int i = (values_Histogram.size()-1); i > 0 ; i-- ){
+			int last = (values_Histogram.size()-1);
+			for(int i = last; i > (last - x) ; i-- ){
 				array[p] = values_Histogram.get(i);
 				p++;
 			}
@@ -210,7 +280,8 @@ public class DecisionModule {
 			double array[] = new double[x];
 			
 			int p  = 0;
-			for(int i = (values_K.size()-1); i > 0 ; i-- ){
+			int last = (values_K.size()-1);
+			for(int i = last; i > (last - x) ; i-- ){
 				array[p] = values_K.get(i);
 				p++;
 			}
@@ -222,7 +293,8 @@ public class DecisionModule {
 			double array[] = new double[x];
 			
 			int p  = 0;
-			for(int i = (values_D.size()-1); i > 0 ; i-- ){
+			int last = (values_D.size()-1);
+			for(int i = last; i > (last - x) ; i-- ){
 				array[p] = values_D.get(i);
 				p++;
 			}
