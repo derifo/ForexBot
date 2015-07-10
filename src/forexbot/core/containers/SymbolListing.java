@@ -2,6 +2,8 @@ package forexbot.core.containers;
 
 import java.sql.Timestamp;
 
+import forexbot.ForexBot;
+
 public class SymbolListing {
 	/*
 	 * Container class for single symbol listing
@@ -10,20 +12,19 @@ public class SymbolListing {
 	 * methods and modules 
 	 */
 	
-	public SymbolListing(double bid, double ask, double high, double low, String currency, String symbol_name, Timestamp date_time){
+	public SymbolListing(double bid, double ask, double high, double low, String currency, Timestamp date_time){
 		this.bid = bid;
 		this.ask = ask;
 		this.high = high;
 		this.low = low;
 		this.currency = currency;
-		this.symbol_name = symbol_name;
 		this.date_time = date_time;
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Override public String toString(){
 		String out;
-		out = symbol_name+"/"+currency+"/["+date_time.toLocaleString()+"]/A "+ask+"/B "+bid+"/L "+low+"/H "+high;
+		out = ForexBot.SYMBOL+" /"+currency+"/["+date_time.toLocaleString()+"]/A "+ask+"/B "+bid+"/L "+low+"/H "+high;
 		return out;
 	}
 	
@@ -32,6 +33,5 @@ public class SymbolListing {
 	public final double high;
 	public final double low;
 	public final String currency;
-	public final String symbol_name;
 	public final Timestamp date_time;
 }

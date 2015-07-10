@@ -1,7 +1,6 @@
 package forexbot.modules.evolver.sandbox;
 
 import forexbot.ForexBot;
-import forexbot.core.containers.AvailableSymbols;
 import forexbot.interfaces.Control;
 import forexbot.modules.cyclecomponents.LocalCache;
 import forexbot.modules.cyclecomponents.indicators.Indicators;
@@ -34,10 +33,10 @@ public class Controller implements Control{
 	public void InitializeCycle() {
 		// Initialize this instance of sandbox thread
 		cache = new LocalCache(SANDBOX_CONTROLLER.SANDBOX_CACHE_SIZE, this);
-		cache.CreateSymbolCache(SANDBOX_CONTROLLER.SANDBOX_SYMBOL_NAME);
+		cache.CreateSymbolCache();
 		indicators = new Indicators(this);
 		decider = new DecisionModule(this);
-		indicators.setIndicatorsPeriods(GENOM.getValue("RSI_period"), GENOM.getValue("MACDs_period"), GENOM.getValue("MACDl_period"), GENOM.getValue("MACDh_period"), GENOM.getValue("StochasticK_period"), GENOM.getValue("StochasticD_period"));
+		indicators.setIndicatorsPeriods(GENOM.getValue("StochasticK_period"), GENOM.getValue("StochasticD_period"), GENOM.getValue("Stochastic_Slow"));
 		
 	}
 
@@ -55,13 +54,6 @@ public class Controller implements Control{
 		// Stop virtual cycle
 		
 		work_flag = false;
-	}
-	
-
-	@Override
-	public AvailableSymbols getAvailableSymbols() {
-		// Method mask
-		return null;
 	}
 
 	@Override

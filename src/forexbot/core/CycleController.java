@@ -1,14 +1,10 @@
 package forexbot.core;
 
-import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
 
 import forexbot.ForexBot;
-import forexbot.core.containers.AvailableSymbols;
 import forexbot.core.containers.Recommendation;
 import forexbot.core.containers.SymbolListing;
-import forexbot.core.containers.UserSettings;
 import forexbot.core.dbc.DataUploader;
 import forexbot.interfaces.Control;
 import forexbot.modules.cyclecomponents.LocalCache;
@@ -17,17 +13,21 @@ import forexbot.modules.cyclecomponents.listings.Scrobbler;
 import forexbot.modules.cyclecomponents.transactions.DecisionModule;
 import forexbot.modules.cyclecomponents.transactions.TransactionModule;
 import forexbot.modules.evolver.EvolutionaryAlgorithm;
+import forexbot.modules.evolver.containers.Genom;
 
 public class CycleController implements Control{
 	/*
 	 * Purpose of this class is to control and maintain of main cycle loop 
 	 */
+	private Genom GENOM;
 
 	public CycleController(){
 		
 		work_flag = false;
 		trade_flag = false;
 		error_flag = false;
+		
+		GENOM = new Genom(5,3,3);
 	}
 	
 	@Override
@@ -35,31 +35,26 @@ public class CycleController implements Control{
 		//initialize globals
 		ForexBot.dbc.Conect();
 		ForexBot.uploader = new DataUploader();
-		ForexBot.transaction_module = new TransactionModule();
+		transaction_module = new TransactionModule();
 		
 		Thread data_up = new Thread(ForexBot.uploader);
 		data_up.start();//data uploader thread start
-		
-		Thread tr_module = new Thread(ForexBot.transaction_module);
-		tr_module.start();//transaction module thread start
 		
 		ForexBot.EVOLVER = new EvolutionaryAlgorithm(this);
 		Thread evolver_th = new Thread(ForexBot.EVOLVER);
 		evolver_th.start();//evolutionary tree start
 		
 		//initialize cycle specifics 		
-		available_symbols = new AvailableSymbols();
-		cache = new LocalCache(43200, this);//cache size is equal to one day (24h)
+		cache = new LocalCache(100, this);//cache size
 		scrobbler = new Scrobbler();
 		indicators = new Indicators(this);
 		decision_module = new DecisionModule(this);
 		
 		//do checking
 		if(PrepareDatabase()){
-			CheckUserSymbols();//check for obsolete
-			for(String s : ForexBot.user_settings.getUserSymbols()) cache.CreateSymbolCache(s);//create cache for user symbols
-			
-			
+
+			 cache.CreateSymbolCache();//create cache for user symbols
+				
 		}else{
 			error_flag = true;
 		}
@@ -77,11 +72,10 @@ public class CycleController implements Control{
 	public void StartCycle() {
 		if(!error_flag){
 		
-			indicators.setIndicatorsPeriods(14, 12, 26, 9, 5, 3);//replace later with evolver data!
-			decision_module.CreateIndicatorCache(ForexBot.user_settings.getUserSymbols());//initiate indicator cache
+			indicators.setIndicatorsPeriods(GENOM.getValue("StochasticK_period"), GENOM.getValue("StochasticD_period"), GENOM.getValue("Stochastic_Slow"));
+			decision_module.CreateIndicatorCache();//initiate indicator cache
 		
-			work_flag = true;
-			
+			work_flag = true;			
 			
 			
 			ForexBot.work_frame.PostLog("Cycle started...");
@@ -96,8 +90,7 @@ public class CycleController implements Control{
 
 	@Override
 	public void StopCycle() {
-		
-		
+				
 		work_flag = false;
 		ForexBot.work_frame.PostLog("Cycle stopped.");
 		ForexBot.log.addLogINFO("Cycle stopped.");
@@ -105,6 +98,9 @@ public class CycleController implements Control{
 
 	public void EnableTrade(){
 		trade_flag = true;
+		
+		ForexBot.work_frame.PostLog("Sufficient level of AI reached - starting trade!");
+		ForexBot.log.addLogINFO("Sufficient level of AI reached - starting trade!");
 	}
 	
 	@Override
@@ -124,12 +120,6 @@ public class CycleController implements Control{
 		ForexBot.uploader.addUploadQuery(query);		
 	}
 	
-	
-	@Override
-	public AvailableSymbols getAvailableSymbols() {
-
-		return available_symbols;
-	}
 
 	@Override
 	public LocalCache getCache() {
@@ -141,9 +131,7 @@ public class CycleController implements Control{
 	@Override
 	public void run() {
 		Recommendation r = null;
-		double RSI;
-		double MACD;
-		double MACD_H;
+
 		double STOCHASTIC_D;
 		double STOCHASTIC_K;
 		
@@ -158,48 +146,42 @@ public class CycleController implements Control{
 				
 				if(work_flag){
 					long start_time = System.currentTimeMillis();
+					
 					//download***********************************************************************************
-					SymbolListing[] temp = scrobbler.Scrobble(ForexBot.user_settings.getUserSymbols());
-						for(SymbolListing l : temp){
-							if(ForexBot.DEBUG) System.out.println(l.toString());
-							cache.addListingToCache(l.symbol_name, l);//add downloaded listings to cache
-						//calculate******************************************************************************
-							try {
-								indicators.LoadCache(0, l.symbol_name);
-							} catch (Exception e) {
-								ForexBot.log.addLogDEBUG("Too few listings in cache for ["+l.symbol_name+"]");
-								continue;//if not enough listings skip this cycle for symbol
-							}
-							RSI = indicators.Calculate_RSI();
-							MACD = indicators.Calculate_MACD();
-							MACD_H = indicators.Calculate_MACD_Histogram();
+					SymbolListing temp = scrobbler.Scrobble();
+
+					if(ForexBot.DEBUG) System.out.println(temp.toString());
+					cache.addListingToCache(temp);//add downloaded listing to cache
+					
+					//calculate******************************************************************************
+					if(indicators.LoadCache(0)){
+							
 							STOCHASTIC_D = indicators.Calculate_Stochastic_D();
 							STOCHASTIC_K = indicators.Calculate_Stochastic_K(0);
-							
-							ForexBot.log.addLogDEBUG("======Indicators for ["+l.symbol_name+"]========");
-							ForexBot.log.addLogDEBUG("RSI "+RSI);
-							ForexBot.log.addLogDEBUG("MACD "+MACD+" / Histogram "+MACD_H);
+								
+
 							ForexBot.log.addLogDEBUG("Stochastic %K "+STOCHASTIC_K+ " Stochastic %D "+STOCHASTIC_D);
 							ForexBot.log.addLogDEBUG("");
-							
-						//decide***********************************************************************************
-							decision_module.LoadIndicators(RSI, MACD, MACD_H, STOCHASTIC_K, STOCHASTIC_D, l.symbol_name);
+								
+							//decide***********************************************************************************
+							decision_module.addIndicators(STOCHASTIC_K, STOCHASTIC_D);
 														
-							r = decision_module.MakeDecision(l.symbol_name);
-							
-						//trade***********************************************************************************
+							r = decision_module.MakeDecision();
+								
+							//trade***********************************************************************************
 							if(trade_flag){
-								
-								ForexBot.work_frame.PostLog(r.toString());
-								ForexBot.log.addLogINFO(r.toString());
-								ForexBot.transaction_module.addRecommendation(r);
-								
+									
+									ForexBot.work_frame.PostLog(r.toString());
+									ForexBot.log.addLogINFO(r.toString());
+									
+									transaction_module.addRecommendation(r);
+									
+									//transaction cycle processing									
+									transaction_module.Process();	
 							}
-						}
+					}					
 					
-					
-					
-					TikClock(start_time, 1999);
+					TikClock(start_time, 5999);
 					if(ForexBot.DEBUG) cache.DEBUG_PRINT_CACHE();
 				}			
 				
@@ -218,13 +200,19 @@ public class CycleController implements Control{
 		
 	}
 	
-	public void EvolverInput(){
+	public void EvolverInput(Genom g){
+		
+		StopCycle();
+		
+		GENOM = g;
+		
+		StartCycle();
 		
 	}
 	
 	
 	//variables (handlers)
-	private AvailableSymbols available_symbols;
+	private TransactionModule transaction_module;
 	private LocalCache cache;
 	private Scrobbler scrobbler;
 	private Indicators indicators;
@@ -239,11 +227,11 @@ public class CycleController implements Control{
 		ForexBot.log.addLogDEBUG("Preparing database..");
 		boolean clear = true;
 		
-		for(String s : available_symbols.getSymbolsAvailableNames()){
-			if(!ForexBot.dbc.CrateSymbolTable(s)){
+
+		if(!ForexBot.dbc.CrateSymbolTable("EURUSD")){
 				clear = false;
-			}
 		}
+
 		
 		if(clear){
 			ForexBot.work_frame.PostLog("Database integrity - OK");
@@ -271,37 +259,4 @@ public class CycleController implements Control{
 		return time_elapsed;
 	}//method for regulating cycle time
 
-	private void CheckUserSymbols(){
-		ForexBot.log.addLogINFO("Checking user selected symbols..");
-		ArrayList<String> symbols_checked = new ArrayList<String>();
-		
-		for(String s : ForexBot.user_settings.getUserSymbols()){
-			for(String n : available_symbols.getSymbolsAvailableNames()){
-				if(s.equals(n)){
-					symbols_checked.add(s);
-					break;
-				}
-			}
-		}
-		
-		if(symbols_checked.size() != ForexBot.user_settings.getUserSymbols().length){
-			ForexBot.log.addLogWARNING("User symbol missmatch - corecting.");
-			
-			String[] t = new String[symbols_checked.size()];
-			for(int i = 0; i<t.length; i++){
-				t[i] = symbols_checked.get(i);
-			}
-			
-			ForexBot.log.addLogWARNING("User symbol missmatch - obsolate symbols removed.");
-			
-			ForexBot.user_settings.setSymbols(t);
-			UserSettings.SaveSettings(ForexBot.user_settings);
-			
-		}//if some of user selected symbols do not match available symbols removes incorrect entries form settings file 
-		
-		
-		ForexBot.work_frame.PostLog("User symbol checked.");
-		ForexBot.log.addLogINFO("User symbol checked.");
-	}//method checks for incorrect symbols in user defined list (for example outdated symbols no longer available)
-	
 }

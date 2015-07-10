@@ -12,7 +12,7 @@ import forexbot.core.containers.Balance;
 import forexbot.core.containers.Recommendation;
 import forexbot.core.containers.Transaction;
 
-public class TransactionModule implements Runnable{
+public class TransactionModule{
 	/*
 	 * This class represents transaction mechanism which buys or sells forex equities 
 	 * depending on recommendations sent by decision module.
@@ -26,9 +26,7 @@ public class TransactionModule implements Runnable{
 	 */
 	
 	public TransactionModule(){
-		toMake = new ConcurrentLinkedQueue<Transaction>();
 		active = new ArrayList<Transaction>();
-		recommendations = new ArrayList<Recommendation>();
 	}
 
 	
@@ -39,67 +37,34 @@ public class TransactionModule implements Runnable{
 	}
 	
 	public void addRecommendation(Recommendation r){
-		//Public method for adding new transaction orders to queue by DecisionModule
-		recommendations.add(r);
+		//Public method for adding new recommendation
+		recommendation = r;
 	}
 	
 	
-	@Override
-	public void run() {
+	public void Process() {
 
-		ForexBot.log.addLogINFO("Transaction module started!");
-		
 		balance = getBalance();
 		if(balance != null) ForexBot.log.addLogINFO(getBalance().toString());		
 		
-		do{
-		//Main loop for processing transactions
-			long start_time = System.currentTimeMillis();
-			
-			try {
-				Thread.sleep(1);				
-			} catch (InterruptedException e) {
-				if(ForexBot.DEBUG) e.printStackTrace();
-			}
-			
+		
 			//get open deals*****************************************************
-			if(ComapreActive()){
+		if(ComapreActive()){
 			
 			//asses profits/losses **********************************************
-				AssessOpenDeals();
-			//close deals********************************************************
-				CloseUnprofitable();
-			//open deals*********************************************************
-				CreateTransacions();
-				OpenDeal();
-			}
+			AssessOpenDeals();
 			
-			TikClock(start_time, 1999);
-
-		}while(!ForexBot.GLOBAL_EXIT);
-		
-		if(ForexBot.DEBUG) System.out.println("Transaction module terminated!");
-		
-	}	
-	
-	//---------------------------------------------------------------------------------
-	private long TikClock(long start_time, long sleep){
-		long time_elapsed = System.currentTimeMillis() - start_time;
-		
-		ForexBot.log.addLogDEBUG("cycle - time elapsed ["+time_elapsed+"]");
-		if(time_elapsed < sleep) {
-			try {
-			    Thread.sleep(sleep - time_elapsed);                 //waits for remaining time
-			} catch(InterruptedException ex) {
-			    Thread.currentThread().interrupt();
-			}
+			//close deals********************************************************
+			CloseUnprofitable();
+			
+			//open deals*********************************************************
+			CreateTransacions();
+			OpenDeal();
 		}
-		
-		return time_elapsed;
-	}//method for regulating cycle time
 
-	private ArrayList<Recommendation> recommendations;
-	private ConcurrentLinkedQueue<Transaction> toMake;//queue for pending transaction orders
+	}	
+
+	private Recommendation recommendation;
 	private ArrayList<Transaction> active;//list off open deals
 	private Balance balance;
 	

@@ -16,7 +16,6 @@ import pro.xstore.api.message.error.APIReplyParseException;
 import pro.xstore.api.message.records.SymbolRecord;
 import pro.xstore.api.message.records.TradeRecord;
 import pro.xstore.api.message.response.APIErrorResponse;
-import pro.xstore.api.message.response.AllSymbolsResponse;
 import pro.xstore.api.message.response.LoginResponse;
 import pro.xstore.api.message.response.MarginLevelResponse;
 import pro.xstore.api.message.response.SymbolResponse;
@@ -90,35 +89,18 @@ public class API {
 		return false;
 	}
 	
-	public AllSymbolsResponse getAvailableSymbols(){
-		// Create and execute all symbols command (which gets list of all symbols available for the user)
-        try {
-			AllSymbolsResponse availableSymbols = APICommandFactory.executeAllSymbolsCommand(connector);
-
-			return availableSymbols;
-		} catch (APICommandConstructionException | APIReplyParseException
-				| APICommunicationException | APIErrorResponse e) {
-			
-			ForexBot.log.addLogERROR("API can't load available symbols error!"); 
-			if(ForexBot.DEBUG) e.printStackTrace();
-			
-		}
-        
-        return null;
-	}
-	
-	public SymbolListing getSymbolRecord(String symbol){
+	public SymbolListing getSymbolRecord(){
 		try {
-			SymbolResponse record = APICommandFactory.executeSymbolCommand(connector, symbol);
+			SymbolResponse record = APICommandFactory.executeSymbolCommand(connector, ForexBot.SYMBOL);
 			SymbolRecord sr = record.getSymbol();
-			SymbolListing listing = new SymbolListing(sr.getBid(), sr.getAsk(), sr.getHigh(), sr.getLow(), sr.getCurrency(), sr.getSymbol(), new Timestamp(System.currentTimeMillis()));
+			SymbolListing listing = new SymbolListing(sr.getBid(), sr.getAsk(), sr.getHigh(), sr.getLow(), sr.getCurrency(), new Timestamp(System.currentTimeMillis()));
 			
 			
 			return listing;
 		} catch (APICommandConstructionException | APIReplyParseException
 				| APIErrorResponse | APICommunicationException e) {
 			
-			ForexBot.log.addLogERROR("API can't get symbol listing error! ["+symbol+"]"); 
+			ForexBot.log.addLogERROR("API can't get symbol listing error! ["+ForexBot.SYMBOL+"]"); 
 			if(ForexBot.DEBUG) e.printStackTrace();
 			
 		}

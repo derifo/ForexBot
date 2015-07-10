@@ -16,15 +16,12 @@ public class Genom implements Serializable{
 		periods = new HashMap<String, Integer>();
 	}
 	
-	public Genom(int RSI_period, int MACDs_period, int MACDl_period, int MACDh_period, int StochasticK_period, int StochasticD_period){
+	public Genom(int StochasticK_period, int StochasticD_period , int Stochastic_Slow){
 		this();		
 		
-		periods.put("RSI_period", RSI_period);
-		periods.put("MACDs_period", MACDs_period);
-		periods.put("MACDl_period", MACDl_period);
-		periods.put("MACDh_period", MACDh_period);
 		periods.put("StochasticK_period", StochasticK_period);
 		periods.put("StochasticD_period", StochasticD_period);
+		periods.put("Stochastic_Slow", Stochastic_Slow);
 		
 	}
 	
@@ -57,5 +54,7 @@ public class Genom implements Serializable{
 	
 	private HashMap<String, Integer> periods;
 	private int evaluation;
+	
+	public static enum KEY {StochasticD_period, StochasticK_period, Stochastic_Slow};
 	
 }

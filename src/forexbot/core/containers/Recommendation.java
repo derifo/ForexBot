@@ -6,20 +6,13 @@ public class Recommendation {
 		
 	}
 	
-	public Recommendation(String name, String decision, int certainty) {
+	public Recommendation(String decision, int certainty) {
 		super();
-		this.name = name;
 		this.decision = decision;
 		this.certainty = certainty;
 	}
 
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public String getDecision() {
 		return decision;
 	}
@@ -36,12 +29,10 @@ public class Recommendation {
 	@Override
 	public String toString(){
 		
-		return "["+name+"] recommendation - "+decision+" certainty: "+certainty;
+		return "Recommendation - "+decision+" certainty: "+certainty;
 		
 	}
 
-
-	private String name;
 	private String decision;
 	private int certainty;
 }

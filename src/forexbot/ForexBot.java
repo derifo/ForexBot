@@ -11,16 +11,15 @@ import forexbot.core.gui.LoginFrame;
 import forexbot.core.gui.ReportFrame;
 import forexbot.core.gui.WorkFrame;
 import forexbot.core.log.Log;
-import forexbot.modules.cyclecomponents.transactions.TransactionModule;
 import forexbot.modules.evolver.EvolutionaryAlgorithm;
 
 public class ForexBot {
-	public static final String VERSION = "v0.1.00";
+	public static final String VERSION = "v0.1.10 S";
 	public static final boolean DEBUG = true;//set application mode to debug mode, shows errors reports in console 
 	public static boolean GLOBAL_EXIT = false;
+	public static final String SYMBOL = "EURUSD";
 	
 	//settings flags
-	public static boolean settings_symbols;
 	public static boolean settings_dbc;
 
 	public static void main(String[] args) {
@@ -48,8 +47,7 @@ public class ForexBot {
             	login_frame.setVisible(true);
             	
             	work_frame = new WorkFrame();
-            	report_frame = new ReportFrame();
-            	
+            	report_frame = new ReportFrame();            	
             	
             	//if(api.Login("400826", "ea75aa2d")) System.out.println("Loged in!");
             }
@@ -65,7 +63,6 @@ public class ForexBot {
 	public static ReportFrame report_frame;
 	//xAPI
 	public static API api;
-	public static TransactionModule transaction_module;
 	//Logger
 	public static Log log;
 	//DBC
@@ -86,24 +83,6 @@ public class ForexBot {
 			log.addLogINFO("Settings found! Loading.");
     		
     		user_settings = UserSettings.LoadSettings();//loading saved settings
-    		
-    		if(user_settings.getUserSymbols() != null){
-    			
-    			settings_symbols = true;//looking for user selected symbols
-    			log.addLogINFO("User defined symbols loaded.");
-    			
-    		}
-    		else{
-    			
-    			settings_symbols = false;
-    			log.addLogWARNING("No trading symbols found! Select symbols in options window in order to start trade.");
-    			
-    			JOptionPane.showMessageDialog(null,        	  
-          			    "No user symbols found! Select symbols you want to trade in options window.",
-          			    "Error!",
-          			    JOptionPane.WARNING_MESSAGE);  
-    			         			
-    		}
     		
     		if(DBC.TestConnection(user_settings.getCredentials())){//testing loaded connection info
     			
@@ -133,7 +112,6 @@ public class ForexBot {
   			    JOptionPane.WARNING_MESSAGE);  
     		
     	    settings_dbc = false;
-    	    settings_symbols = false;
     		
     		user_settings = new UserSettings();
     		dbc = new DBC();

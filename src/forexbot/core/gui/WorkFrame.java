@@ -75,7 +75,7 @@ public class WorkFrame extends JFrame {
 
 	    });
 		
-		if(ForexBot.settings_symbols == false) LockButtons(false, true, true, true);
+		if(ForexBot.settings_dbc == false) LockButtons(false, true, true, true);
 		
 		ForexBot.log.addLogDEBUG("Main frame created.");		
 		

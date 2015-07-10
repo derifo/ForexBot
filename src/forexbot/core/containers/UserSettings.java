@@ -19,18 +19,16 @@ public class UserSettings implements Serializable{
 	
 	public UserSettings(){
 		credentials = null;
-		SYMBOLS = null;
 		api_login = null;
 		api_mode = null;
 	}
 	
-	public UserSettings(DBCcredentials credentials, String[] symbols){
+	public UserSettings(DBCcredentials credentials){
 		this.credentials = credentials;
-		this.SYMBOLS = symbols;		
 	}
 	
-	public UserSettings(DBCcredentials credentials, String[] symbols, String api_login, String api_mode){
-		this(credentials, symbols);
+	public UserSettings(DBCcredentials credentials, String api_login, String api_mode){
+		this(credentials);
 		this.api_login = api_login;
 		this.api_mode = api_mode;
 	}
@@ -40,13 +38,6 @@ public class UserSettings implements Serializable{
 	}	
 	public void setCredentials(DBCcredentials credentials){
 		this.credentials = credentials;
-	}
-	
-	public String[] getUserSymbols(){
-		return SYMBOLS;
-	}
-	public void setSymbols(String[] SYMBOLS){
-		this.SYMBOLS = SYMBOLS;
 	}
 	
 	public String getApiLogin(){
@@ -65,8 +56,7 @@ public class UserSettings implements Serializable{
 
 	//DB settings
 	private DBCcredentials credentials;
-	//Trade settings - selected by user
-	private String[] SYMBOLS;
+
 	//API settings
 	private String api_login;
 	private String api_mode;

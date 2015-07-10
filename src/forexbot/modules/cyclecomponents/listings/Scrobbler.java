@@ -14,12 +14,10 @@ public class Scrobbler {
 	}
 
 	
-	public SymbolListing[] Scrobble(String[] symbols){
-		SymbolListing[] out = new SymbolListing[symbols.length];
-		
-		for(int i = 0; i < symbols.length; i++){
-			out[i] = ForexBot.api.getSymbolRecord(symbols[i]);
-		}
+	public SymbolListing Scrobble(){
+		SymbolListing out = null;		
+
+		out = ForexBot.api.getSymbolRecord();
 		
 		return out;
 	}

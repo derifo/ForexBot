@@ -1,8 +1,6 @@
 package forexbot.modules.cyclecomponents;
 
 import java.sql.Timestamp;
-import java.util.HashMap;
-import java.util.Map.Entry;
 
 import org.apache.commons.collections4.queue.CircularFifoQueue;
 
@@ -19,18 +17,17 @@ public class LocalCache {
 	public LocalCache(int cache_size, Control controller){
 		CACHE_SIZE =  cache_size;
 		CONTROLLER = controller;
-		cache = new HashMap<String, SymbolCache>();
 	}
 	
-	public synchronized void CreateSymbolCache(String name){
+	public synchronized void CreateSymbolCache(){
 		
-		SymbolCache scache = new SymbolCache(name, CACHE_SIZE);
-		cache.put(name, scache);
-		CONTROLLER.LogEntry("DEBUG", "Cache for - "+name+" created!");
+		cache = new SymbolCache(ForexBot.SYMBOL, CACHE_SIZE);
+
+		CONTROLLER.LogEntry("DEBUG", "Symbol cache created!");
 		
 	}
 	
-	public static synchronized void LoadSymbolListings(String name, LocalCache exit_cache){
+	public static synchronized void LoadSymbolListings(LocalCache exit_cache){
 		/*
 		 * Downloading records for specified symbol from database based on cache size
 		 * 
@@ -40,32 +37,32 @@ public class LocalCache {
 				String[] s = {"total"};
 				
 			
-				Object[][] r = DBC.ResultSetToObject(s , ForexBot.dbc.SELECT("SELECT COUNT(ID) AS total FROM "+name));
+				Object[][] r = DBC.ResultSetToObject(s , ForexBot.dbc.SELECT("SELECT COUNT(ID) AS total FROM "+ForexBot.SYMBOL));
 					
 				if(r != null){
 					total_records = (long) r[0][0];
-					exit_cache.CONTROLLER.LogEntry("DEBUG", "Total DB records for "+name+" -> "+total_records);
+					exit_cache.CONTROLLER.LogEntry("DEBUG", "Total DB records  -> "+total_records);
 				}
 				//if there are symbol records commencing download
 				if(total_records > 0){
 					int records_to_download;
-					if(total_records > exit_cache.cache.get(name).getMaxIndex()){
+					if(total_records > exit_cache.cache.getMaxIndex()){
 						
-						records_to_download = exit_cache.cache.get(name).getMaxIndex();
+						records_to_download = exit_cache.cache.getMaxIndex();
 					
 					}else{
 						records_to_download = (int) total_records;				
 					}
 								
-						String query = "SELECT * FROM `"+name+"` WHERE id > ((SELECT COUNT(id) FROM `"+name+"`) - "+records_to_download+") ORDER BY id ASC ";
+						String query = "SELECT * FROM `"+ForexBot.SYMBOL+"` WHERE id > ((SELECT COUNT(id) FROM `"+ForexBot.SYMBOL+"`) - "+records_to_download+") ORDER BY id ASC ";
 							
-						s = new String[]{"id", "ask", "bid", "low", "high", "currency", "symbol", "date_time"};
+						s = new String[]{"id", "ask", "bid", "low", "high", "currency", "date_time"};
 						r = DBC.ResultSetToObject(s , ForexBot.dbc.SELECT(query));
 								
 						if(r != null){
 							for(Object[] row : r){
 								double a,b,l,h;
-								String cu,sy;
+								String cu;
 								Timestamp dt;
 								
 								a = Double.parseDouble(row[1].toString());
@@ -73,60 +70,59 @@ public class LocalCache {
 								l = Double.parseDouble(row[3].toString());
 								h = Double.parseDouble(row[4].toString());
 								cu = row[5].toString();
-								sy = row[6].toString();
 								Object o = row[7];
 								dt = (Timestamp) o;
 								
-								SymbolListing listing = new SymbolListing(b, a, h, l, cu, sy, dt);
+								SymbolListing listing = new SymbolListing(b, a, h, l, cu, dt);
 							
-								exit_cache.cache.get(name).setLastLoadedIndex(exit_cache.cache.get(name).add(listing));
+								exit_cache.cache.setLastLoadedIndex(exit_cache.cache.add(listing));
 							}
 						}
 							
 				}		
 	}
 	
-	public void addListingToCache(String cache_name, SymbolListing listing){
+	public void addListingToCache(SymbolListing listing){
 		/*
 		 * Adds new item to cache, if cache is full change last_loaded
 		 * new items are sent to database
 		 */
 		
-		if(cache.get(cache_name).isFull()) cache.get(cache_name).setLastLoadedIndex((cache.get(cache_name).getLastloadedIndex()-1));
+		if(cache.isFull()) cache.setLastLoadedIndex((cache.getLastloadedIndex()-1));
 		
-		cache.get(cache_name).add(listing);
-		
-		CONTROLLER.LogEntry("DEBUG", "Sending to upload for: "+cache_name);
+			cache.add(listing);
 			
-		String query = "INSERT INTO `"+cache_name+"`("
-					+ "`ask`, `bid`, `low`, `high`, `currency`, `symbol`, `date_time`)"
-					+ " VALUES ("
-					+ listing.ask+","
-					+ listing.bid+","
-					+ listing.low+","
-					+ listing.high+","
-					+ "'"+listing.currency+"',"
-					+ "'"+listing.symbol_name+"',"
-					+ "'"+listing.date_time+"'"
-					+ ")";
-		
-		CONTROLLER.UploaderQueue(query);
+			CONTROLLER.LogEntry("DEBUG", "Sending to upload for: "+ForexBot.SYMBOL);
+				
+			String query = "INSERT INTO `"+ForexBot.SYMBOL+"`("
+						+ "`ask`, `bid`, `low`, `high`, `currency`, `symbol`, `date_time`)"
+						+ " VALUES ("
+						+ listing.ask+","
+						+ listing.bid+","
+						+ listing.low+","
+						+ listing.high+","
+						+ "'"+listing.currency+"',"
+						+ "'"+ForexBot.SYMBOL+"',"
+						+ "'"+listing.date_time+"'"
+						+ ")";
+			
+			CONTROLLER.UploaderQueue(query);
 	}
 	
-	public SymbolListing[] getListingsFromCache(String cache_name, int number_of_listings) throws Exception{
+	public SymbolListing[] getListingsFromCache(int number_of_listings) throws Exception{
 		/*
 		 * Symbols are fetched from newest (last index) to oldest (last - number_of_listings) 
 		 * results are returned in reverse order - [0] index is newest
 		 */
 		
 		SymbolListing[] l = new SymbolListing[number_of_listings];
-		int last_index = cache.get(cache_name).getLastIndex();
+		int last_index = cache.getLastIndex();
 		
 		if(last_index < number_of_listings) throw new Exception("Not enaught listings in cache!");
 		
 		int p = 0;
 		for(int i = last_index; i > (last_index-number_of_listings); i--){
-			l[p] = cache.get(cache_name).get(i);
+			l[p] = cache.get(i);
 			p++;
 		}
 		
@@ -141,19 +137,16 @@ public class LocalCache {
 			CONTROLLER.LogEntry("DEBUG", "===================================================");
 			CONTROLLER.LogEntry("DEBUG", "-----------------DEBUG CACHE DUMP ----------------");
 			
-			for(Entry<String, SymbolCache> entry : cache.entrySet()) {
-			    @SuppressWarnings("unused")
-				String key = entry.getKey();
-			    SymbolCache value = entry.getValue();
+			
 
-			    CONTROLLER.LogEntry("DEBUG", value.symbol_name+" / last index: "+value.getLastIndex()+" / last loaded: "+value.getLastloadedIndex());
-			}
+			CONTROLLER.LogEntry("DEBUG", cache.symbol_name+" / last index: "+cache.getLastIndex()+" / last loaded: "+cache.getLastloadedIndex());
+			
 			
 			CONTROLLER.LogEntry("DEBUG", "===================================================");
 		}
 	}
 	
-	private HashMap<String, SymbolCache> cache;
+	private SymbolCache cache;
 	
 	//=====================================================================================================================
 	

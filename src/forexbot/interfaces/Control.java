@@ -1,6 +1,5 @@
 package forexbot.interfaces;
 
-import forexbot.core.containers.AvailableSymbols;
 import forexbot.modules.cyclecomponents.LocalCache;
 
 public interface Control extends Runnable{
@@ -17,7 +16,6 @@ public interface Control extends Runnable{
 	public void StopCycle();
 	
 	//
-	public AvailableSymbols getAvailableSymbols();
 	public LocalCache getCache();
 	
 	//methods masks

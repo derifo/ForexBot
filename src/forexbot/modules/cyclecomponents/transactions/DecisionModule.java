@@ -1,9 +1,8 @@
 package forexbot.modules.cyclecomponents.transactions;
 
-import java.util.HashMap;
-
 import org.apache.commons.collections4.queue.CircularFifoQueue;
 
+import forexbot.ForexBot;
 import forexbot.interfaces.Control;
 import forexbot.core.containers.Recommendation;
 import forexbot.core.containers.SymbolListing;
@@ -11,31 +10,27 @@ import forexbot.core.containers.SymbolListing;
 public class DecisionModule {
 	
 	private final int CACHE_SIZE = 20;
-	private final int ASSESSMENT_PERIOD = 5;
+	private final int ASSESSMENT_PERIOD = 10;
 	
 	public DecisionModule(Control controller){
 		CONTROLLER = controller;		
 	}
 	
-	public void CreateIndicatorCache(String[] symbols){
+	public void CreateIndicatorCache(){
 		/*
 		 * Create cache for all user symbols
 		 */
-		indicators = new HashMap<String, IndicatorCache>();
-		
-		for(String s : symbols){
-			indicators.put(s, new IndicatorCache(s));
-		}
+		indicators = new IndicatorCache();
 	}
 	
-	public void LoadIndicators(double RSI, double MACDs, double MACD_histogram, double StochasticK, double StochasticD , String name){
+	public void addIndicators(double StochasticK, double StochasticD){
 		/*
 		 * Load calculated values to respective symbol cache for further processing
 		 */		
-		indicators.get(name).addInstance(RSI, MACDs, MACD_histogram, StochasticK, StochasticD);		
+		indicators.addInstance(StochasticK, StochasticD);		
 	}
 	
-	public Recommendation MakeDecision(String name){
+	public Recommendation MakeDecision(){
 		/*
 		 * Each recommendation should return value between 1 and -1 where
 		 * 	1  - BUY
@@ -44,41 +39,39 @@ public class DecisionModule {
 		 * There are four recommendations so value above  
 		 */
 		Recommendation R = new Recommendation();
-		R.setName(name);
 		
-		double r_rsi, r_macd, r_stochastic, r_trend;
-		r_rsi = recomendation_RSI(name);
-		r_macd = recomendation_MACD(name);
-		r_stochastic = recomendation_STOCHASTIC(name);
-		r_trend = TrendAssessment(name);
+		double r_stochastic, r_trend;
+
+		r_stochastic = recomendation_STOCHASTIC();
+		r_trend = TrendAssessment();
 		
-		double rr = r_rsi + r_macd + r_stochastic + r_trend;
+		double rr = r_stochastic + r_trend;
 		
-		if(rr >= 2){
+		if(rr >= 1){
 			R.setDecision("BUY");
 			R.setCertainty(50);
-			if(rr >= 3){
+			if(rr >= 1.5){
 				R.setCertainty(90);
 			}
 		}
-		else if(rr <= -2){
+		else if(rr <= -1){
 			R.setDecision("SELL");
 			R.setCertainty(50);
-			if(rr <= -3){
+			if(rr <= -1.5){
 				R.setCertainty(90);
 			}
 		}
 		else{
 			R.setDecision("KEEP");
-			if(rr <= 1 && rr >= -1) R.setCertainty(90);
+			if(rr <= 0.5 && rr >= -0.5) R.setCertainty(90);
 			else R.setCertainty(50);
 		}
 		
-		CONTROLLER.LogEntry("DEBUG", "Partial: RSI "+r_rsi +" MACD " + r_macd + " Stochastic " + r_stochastic + " Trend " + r_trend + " || DECISION : "+ R.getDecision());
+		CONTROLLER.LogEntry("DEBUG", " Stochastic " + r_stochastic + " Trend " + r_trend + " || DECISION : "+ R.getDecision());
 		return R;
 	}
 	
-	private double TrendAssessment(String name){
+	private double TrendAssessment(){
 		/*
 		 * Purpose of this method is to assess current trend 
 		 * there are two options:
@@ -89,101 +82,32 @@ public class DecisionModule {
 		 */
 		double partial = 0.0;
 		try {
-			SymbolListing[] listings = CONTROLLER.getCache().getListingsFromCache(name, ASSESSMENT_PERIOD);
+			SymbolListing[] listings = CONTROLLER.getCache().getListingsFromCache(ASSESSMENT_PERIOD);
 			
 			//for(int i = 0; i < ASSESSMENT_PERIOD; i++ ){
 				//
 			//}
 			
 			partial = listings[0].bid - listings[ASSESSMENT_PERIOD-1].bid; 
-			if(partial > 0) return 1;
-			else if(partial < 0) return -1;
+			if(partial > 0) return 0.8;
+			else if(partial < 0) return -0.8;
 			
 		} catch (Exception e) {
-			CONTROLLER.LogEntry("DEBUG", "Not enough listings in cache for assessment ["+name+"] !");
+			CONTROLLER.LogEntry("DEBUG", "Not enough listings in cache for assessment ["+ForexBot.SYMBOL+"] !");
 		}
 		
 		
 		return 0.0;
 	}
 	
-	private double recomendation_RSI(String name){
-		
-		double rsi[] = indicators.get(name).getRSI(1);
-		//------------------------------------
-		if(rsi[0] >= 50){
-			
-			if(rsi[0] > 70){
-					
-				if(rsi[0] > 90){
-					return -1;						//price will fall
-				}
-				return -0.8;
-			}
-			
-			return ((rsi[0] - 50)/20 * (-0.8));
-		//------------------------------------
-		}else if(rsi[0] < 50){
-			
-			if(rsi[0] < 30){
-				
-				if(rsi[0] < 10){
-					return 1;						//price will rise
-				}
-				return 0.8;
-			}
-			return ((50 - rsi[0])/20 * (0.8));
-		}
-		
-		return 0.0;
-	}
 	
-	private double recomendation_MACD(String name){
-		if(indicators.get(name).values_Histogram.size() >= 10){
-		
-			double h[] = indicators.get(name).getHistogram(10);
-			double extreme = 0.0;
-					
-			if(h[0] > 0){
-				extreme = h[0];
-				for(int i = 1; i < 10; i++){
-					if(extreme < h[i]) extreme = h[i];
-					else if(h[i] <=0) break;
-				}
-				
-				double m = extreme - h[0];
-				m = m/extreme;
-				
-				return m*(-1);
-				
-			}else if(h[0] < 0){
-				extreme = h[0];
-				for(int i = 0; i < 10; i++){
-					if(extreme > h[i]) extreme = h[i];
-					else if(h[i] >=0) break;
-				}
-				
-				double m = Math.abs(extreme - h[0]);
-				m = m/extreme;
-				
-				return m;
-				
-			}			
-				
-		}else{
-			CONTROLLER.LogEntry("DEBUG", "Not enough indicators in cache for MACD ["+name+"] !");
-		}
-		
-		return 0.0;
-	}
-	
-	private double recomendation_STOCHASTIC(String name){
-		if(indicators.get(name).values_K.size() >= 2){
+	private double recomendation_STOCHASTIC(){
+		if(indicators.values_K.size() >= 2){
 		
 			double k[], d[];
 			
-			k = indicators.get(name).getK(2);
-			d = indicators.get(name).getD(2);
+			k = indicators.getK(2);
+			d = indicators.getD(2);
 			
 			double power_p, power_n;
 			
@@ -208,72 +132,27 @@ public class DecisionModule {
 			}
 		
 		}else{
-			CONTROLLER.LogEntry("DEBUG", "Not enough indicators in cache for STOCHASTIC ["+name+"] !");
+			CONTROLLER.LogEntry("DEBUG", "Not enough indicators in cache for STOCHASTIC!");
 		}
 		
 		return 0.0;		
 	}
 
-	private HashMap<String, IndicatorCache> indicators;
+	private IndicatorCache indicators;
 	private Control CONTROLLER;
 	
 	private class IndicatorCache {
 		
-		public IndicatorCache(String name){
-			this.name = name;
-			values_RSI = new CircularFifoQueue<Double>(CACHE_SIZE);
-			values_MACD = new CircularFifoQueue<Double>(CACHE_SIZE);
-			values_Histogram = new CircularFifoQueue<Double>(CACHE_SIZE);
+		public IndicatorCache(){
+			
 			values_K = new CircularFifoQueue<Double>(CACHE_SIZE);
 			values_D = new CircularFifoQueue<Double>(CACHE_SIZE);
 		}
 		
-		public void addInstance(double RSI, double MACDs, double MACD_histogram, double StochasticK, double StochasticD){
-			values_RSI.add(RSI);
-			values_MACD.add(MACDs);
-			values_Histogram.add(MACD_histogram);
+		public void addInstance(double StochasticK, double StochasticD){
+			
 			values_K.add(StochasticK);
 			values_D.add(StochasticD);
-		}
-		
-		public double[] getRSI(int x){
-			double array[] = new double[x];
-			
-			int p  = 0;
-			int last = (values_RSI.size()-1);
-			for(int i = last; i > (last - x) ; i-- ){
-				array[p] = values_RSI.get(i);
-				p++;
-			}
-			
-			return array;
-		}
-		
-		@SuppressWarnings("unused")
-		public double[] getMACD(int x){
-			double array[] = new double[x];
-			
-			int p  = 0;
-			int last = (values_MACD.size()-1);
-			for(int i = last; i > (last - x) ; i-- ){
-				array[p] = values_MACD.get(i);
-				p++;
-			}
-			
-			return array;
-		}
-		
-		public double[] getHistogram(int x){
-			double array[] = new double[x];
-			
-			int p  = 0;
-			int last = (values_Histogram.size()-1);
-			for(int i = last; i > (last - x) ; i-- ){
-				array[p] = values_Histogram.get(i);
-				p++;
-			}
-			
-			return array;
 		}
 		
 		public double[] getK(int x){
@@ -300,14 +179,8 @@ public class DecisionModule {
 			}
 			
 			return array;
-		}
+		}		
 		
-		@SuppressWarnings("unused")
-		public final String name;
-		
-		public CircularFifoQueue<Double> values_RSI;
-		public CircularFifoQueue<Double> values_MACD;
-		public CircularFifoQueue<Double> values_Histogram;
 		public CircularFifoQueue<Double> values_K;
 		public CircularFifoQueue<Double> values_D;
 	}
