@@ -108,6 +108,20 @@ public class API {
 		return null;
 	}
 	
+	public SymbolResponse getSymbolResponse(){
+		
+		try {
+			SymbolResponse r = APICommandFactory.executeSymbolCommand(connector, ForexBot.SYMBOL);
+			return r;
+		} catch (APICommandConstructionException | APIReplyParseException
+				| APIErrorResponse | APICommunicationException e) {
+
+			ForexBot.log.addLogERROR("API can't get symbol response error! ["+ForexBot.SYMBOL+"]"); 
+		}
+		
+		return null;
+	}
+	
 	//Transaction section
 	
 	public Balance getBalance(){

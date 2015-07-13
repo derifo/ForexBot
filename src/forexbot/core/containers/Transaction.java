@@ -2,7 +2,6 @@ package forexbot.core.containers;
 
 import java.sql.Timestamp;
 
-import forexbot.ForexBot;
 import pro.xstore.api.message.codes.TRADE_OPERATION_CODE;
 import pro.xstore.api.message.codes.TRADE_TRANSACTION_TYPE;
 import pro.xstore.api.message.records.TradeTransInfoRecord;
@@ -15,7 +14,6 @@ public class Transaction {
 	
 	public Transaction(){
 		date = new Timestamp(System.currentTimeMillis());
-		this.symbol = ForexBot.SYMBOL;
 	}
 
 	public Transaction(double price, double sl, double tp,
@@ -112,7 +110,7 @@ public class Transaction {
 	private double price;
 	private double sl = 0.0;
 	private double tp = 0.0;
-	private final String symbol;
+	private String symbol;
 	private double volume;
 	private long order = 0;//number of opening deal
 	private long order2 = 0;//number of closing deal
@@ -174,11 +172,17 @@ public class Transaction {
 	public void setDate(Timestamp date) {
 		this.date = date;
 	}
+	
+	public void setSymbol(String symbol) {
+		this.symbol = symbol;
+	}
 
 
 	private TradeTransInfoRecord transaction_info;
 	
 	
+	
+
 	public TradeTransInfoRecord generatTransactionInfo(String code){
 		/*
 		 * Method prepares API object from container class fields in order to make new transaction
