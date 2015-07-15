@@ -181,6 +181,10 @@ public class Transaction {
 	private TradeTransInfoRecord transaction_info;
 	
 	
+	@Override
+	public String toString(){
+		return symbol + " " + position + " volume: "+ volume;
+	}
 	
 
 	public TradeTransInfoRecord generatTransactionInfo(String code){
@@ -205,7 +209,7 @@ public class Transaction {
 			
 		}else if(code.equals("CLOSE") && position.equals("BUY")){
 			
-			transaction_info = new TradeTransInfoRecord(TRADE_OPERATION_CODE.BUY, TRADE_TRANSACTION_TYPE.CLOSE, price, sl, tp, symbol, volume, order, customComment, expiration);
+			transaction_info = new TradeTransInfoRecord(TRADE_OPERATION_CODE.BUY, TRADE_TRANSACTION_TYPE.CLOSE, price, sl, tp, symbol, volume, order2, customComment, expiration);
 			
 		}
 		
@@ -215,7 +219,7 @@ public class Transaction {
 			
 		}else if(code.equals("CLOSE") && position.equals("SELL")){
 			
-			transaction_info = new TradeTransInfoRecord(TRADE_OPERATION_CODE.SELL, TRADE_TRANSACTION_TYPE.CLOSE, price, sl, tp, symbol, volume, order, customComment, expiration);
+			transaction_info = new TradeTransInfoRecord(TRADE_OPERATION_CODE.SELL, TRADE_TRANSACTION_TYPE.CLOSE, price, sl, tp, symbol, volume, order2, customComment, expiration);
 			
 		}
 		

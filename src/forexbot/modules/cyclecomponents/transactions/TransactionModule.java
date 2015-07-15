@@ -45,7 +45,7 @@ public class TransactionModule{
 	
 	
 	public void Process() {
-
+		Transaction t = null;
 		balance = getBalance();
 		if(balance != null) ForexBot.log.addLogINFO(getBalance().toString());		
 		
@@ -57,12 +57,12 @@ public class TransactionModule{
 			AssessOpenDeals();
 			
 			//close deals********************************************************
-			CloseUnprofitable();
+			CloseUnprofitable();			
 			
-			//open deals*********************************************************
-			Transaction t = CreateTransacions();
-			if(t != null) OpenDeal(t);
 		}
+		//open deals*********************************************************
+		t = CreateTransacions();
+		if(t != null) OpenDeal(t);
 
 	}	
 
@@ -85,12 +85,27 @@ public class TransactionModule{
 				if(Math.abs(margin) > 0.01 && active.get(i).getVolume() <= 0.1){
 					active.get(i).setToClose(true);
 					ForexBot.log.addLogDEBUG("Transaction value change exceeded 1% (vlue < 0.1 LOT) "+ active.get(i).getOrder());
+					
 				}else if(Math.abs(margin) > 0.005 && active.get(i).getVolume() <= 0.2 ){
 					active.get(i).setToClose(true);
 					ForexBot.log.addLogDEBUG("Transaction value change exceeded 0,5% (vlue < 0.2 LOT) "+ active.get(i).getOrder());
+					
 				}else if(Math.abs(margin) > 0.0025 && active.get(i).getVolume() <= 0.5 ){
 					active.get(i).setToClose(true);
 					ForexBot.log.addLogDEBUG("Transaction value change exceeded 0,25% (vlue < 0.5 LOT) "+ active.get(i).getOrder());
+					
+				}else {
+					if(active.get(i).getPosition().equals("BUY")){
+						if(recommendation.getDecision().equals("SELL")){
+							active.get(i).setToClose(true);
+							ForexBot.log.addLogDEBUG("Trend changed - to close "+ active.get(i).getOrder());
+						}
+					}else if(active.get(i).getPosition().equals("SELL")){
+						if(recommendation.getDecision().equals("BUY")){
+							active.get(i).setToClose(true);
+							ForexBot.log.addLogDEBUG("Trend changed - to close "+ active.get(i).getOrder());
+						}
+					}
 				}
 				
 			}
@@ -109,7 +124,7 @@ public class TransactionModule{
 					Transaction t = ForexBot.api.CloseTransaction(active.get(i));//close transaction
 					
 					ForexBot.log.addLogDEBUG("Transaction closed "+ t.getOrder());
-					active.get(i).setOrder2(t.getOrder2());
+					ForexBot.work_frame.PostLog("Transaction closed "+ t.getOrder());
 					active.get(i).setOpen(t.getOpen());
 					
 				} catch (APICommandConstructionException
@@ -129,42 +144,58 @@ public class TransactionModule{
 		/*
 		 * Create Transaction object based on current recommendation
 		 */
+		ForexBot.log.addLogDEBUG("Creating transaction...");
+		
 		balance = getBalance();
+		
+		if(active.size() >= 2){
+			ForexBot.log.addLogINFO("Transaction limit reached!");
+			
+			return null;
+		}
+			
+		
 		Transaction t = new Transaction();
 		
 		SymbolResponse R = ForexBot.api.getSymbolResponse();
 		
-		if(recommendation.equals("BUY") && R != null){
+		if(recommendation.getDecision().equals("BUY") && R != null){
 			
 			t.setSymbol(R.getSymbol().getSymbol());
 			t.setPrice(R.getSymbol().getAsk());
 			
-			t.setSl(10);
-			t.setTp(10);
+			//t.setSl(-10.0);
+			//t.setTp(10.0);
 			if(balance.getAmount()/LOT > 0.8) t.setVolume(0.5);
 			else if(balance.getAmount()/LOT > 0.4) t.setVolume(0.2);
 			else t.setVolume(0.1);
 			
 			t.setPosition("BUY");
 			
+			ForexBot.log.addLogDEBUG("Transaction created: "+t.toString());
+			
 			return t;
 			
-		}else if(recommendation.equals("SELL") && R != null){
+		}else if(recommendation.getDecision().equals("SELL") && R != null){
 			
 			t.setSymbol(R.getSymbol().getSymbol());
 			t.setPrice(R.getSymbol().getBid());
 			
-			t.setSl(10);
-			t.setTp(10);
+			//t.setSl(-10.0);
+			//t.setTp(10.0);
 			if(balance.getAmount()/LOT > 0.8) t.setVolume(0.5);
 			else if(balance.getAmount()/LOT > 0.4) t.setVolume(0.2);
 			else t.setVolume(0.1);
 			
 			t.setPosition("SELL");
 			
+			ForexBot.log.addLogDEBUG("Transaction created: "+t.toString());
+			
 			return t;
 			
 		}
+		
+		if(R == null) ForexBot.log.addLogERROR("Transaction creation error!");
 				
 		return null;
 	}
@@ -173,16 +204,20 @@ public class TransactionModule{
 		/*
 		 * Opens new deal
 		 */
+		ForexBot.log.addLogDEBUG("Opening transaction...");
 		
 		try {
 			Transaction temp = ForexBot.api.MakeTransaction(t);
 			active.add(temp);
 			
+			ForexBot.log.addLogINFO("Transaction opened : "+t.toString());
+			ForexBot.work_frame.PostLog("Transaction opened : "+t.toString());
+			
 			return true;
 		} catch (APICommandConstructionException | APIReplyParseException
 				| APICommunicationException | APIErrorResponse e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			if(ForexBot.DEBUG) e.printStackTrace();
 		}
 		
 		return false;
@@ -210,6 +245,7 @@ public class TransactionModule{
 					for(Transaction tmp : temp){
 						if(active.get(i).getOrder() == tmp.getOrder()){
 							active.get(i).setProfit(tmp.getProfit());
+							active.get(i).setOrder2(tmp.getOrder2());
 							match = true;
 							ForexBot.log.addLogINFO("Transaction ["+active.get(i).getOrder()+"] profit: "+ active.get(i).getProfit());
 							break;

@@ -24,7 +24,7 @@ public class CycleController implements Control{
 	public CycleController(){
 		
 		work_flag = false;
-		trade_flag = false;
+		trade_flag = true;
 		error_flag = false;
 		
 		GENOM = new Genom(5,3,3);

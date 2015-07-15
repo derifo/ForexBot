@@ -195,6 +195,7 @@ public class API {
 			Transaction tr = new Transaction();
 			
 			tr.setOrder(t.getOrder2());	 //transaction actual number
+			tr.setOrder2(t.getOrder()); 
 			tr.setProfit(t.getProfit());
 			
 			open_deals.add(tr);
