@@ -2,7 +2,7 @@ package forexbot.interfaces;
 
 import forexbot.modules.cyclecomponents.LocalCache;
 
-public interface Control extends Runnable{
+public interface Control{
 	/*
 	 * Interface for control modules
 	 * 

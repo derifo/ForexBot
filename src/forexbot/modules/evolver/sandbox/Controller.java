@@ -1,5 +1,7 @@
 package forexbot.modules.evolver.sandbox;
 
+import java.util.concurrent.Callable;
+
 import forexbot.ForexBot;
 import forexbot.interfaces.Control;
 import forexbot.modules.cyclecomponents.LocalCache;
@@ -8,7 +10,7 @@ import forexbot.modules.cyclecomponents.transactions.DecisionModule;
 import forexbot.modules.evolver.SandboxController;
 import forexbot.modules.evolver.containers.Genom;
 
-public class Controller implements Control{
+public class Controller implements Control, Callable{
 	public final int ID;
 	public final Genom GENOM;
 	/*
@@ -92,9 +94,11 @@ public class Controller implements Control{
 		private boolean error_flag;
 		private boolean terminate_flag;
 
-	@Override
-	public void run() {
+	
 
+	@Override
+	public Object call() throws Exception {
+		
 		do{
 			
 			try {
@@ -122,6 +126,7 @@ public class Controller implements Control{
 			
 		}while(!terminate_flag);
 		
+		return null;
 	}
 
 }

@@ -15,7 +15,7 @@ import forexbot.modules.cyclecomponents.transactions.TransactionModule;
 import forexbot.modules.evolver.EvolutionaryAlgorithm;
 import forexbot.modules.evolver.containers.Genom;
 
-public class CycleController implements Control{
+public class CycleController implements Control, Runnable{
 	/*
 	 * Purpose of this class is to control and maintain of main cycle loop 
 	 */

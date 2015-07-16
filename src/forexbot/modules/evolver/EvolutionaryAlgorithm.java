@@ -20,9 +20,16 @@ public class EvolutionaryAlgorithm implements Runnable{
 	 *  profit margin.
 	 */
 	
+	
+	//Set of min and max values for indicator periods
+	//parameters where chosen arbitrarily but with regard to indicator formulas  
+	public static final int k_min = 2, k_max = 20, d_min = 2, d_max = 20, slow_min = 1, slow_max = 10;
+	
 	public EvolutionaryAlgorithm(CycleController cycle_handle){
 		CYCLE_HANDLE = cycle_handle;
-		sandbox = new SandboxController(this);
+		
+		//14400 - number of listings from entire day
+		sandbox = new SandboxController(this, 1000);//for testing purposes 
 		generation_number = 0;
 	}
 
@@ -33,11 +40,7 @@ public class EvolutionaryAlgorithm implements Runnable{
 		ForexBot.work_frame.PostLog("[AI] Creating initial generation.");
 		ForexBot.log.addLogINFO("[AI] Creating initial generation.");
 		
-		//Set of min and max values for indicator periods
-		//parameters where chosen arbitrarily but with regard to indicator formulas  
-		int k_min = 2, k_max = 20;
-		int d_min = 2, d_max = 20;
-		int slow_min = 1, slow_max = 10;
+		
 		
 	}
 	

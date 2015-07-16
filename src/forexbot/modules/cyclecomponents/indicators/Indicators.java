@@ -26,7 +26,7 @@ public class Indicators {
 		periods.put("StochasticD_period", StochasticD_period);
 		periods.put("Stochastic_Slow", Stochastic_Slow);
 		
-		CONTROLLER.LogEntry("INFO", "Indicators periods set:  Stochastic "+StochasticK_period + "/"+StochasticD_period );
+		CONTROLLER.LogEntry("INFO", "Indicators periods set:  Stochastic "+StochasticK_period + "/"+StochasticD_period + "/"+Stochastic_Slow);
 	}
 	
 	public boolean LoadCache(int offset){
