@@ -47,7 +47,7 @@ public class DecisionModule {
 		
 		double rr = r_stochastic + r_trend;
 		
-		/*
+		
 		 if(rr >= 1){
 		
 			R.setDecision("BUY");
@@ -68,11 +68,11 @@ public class DecisionModule {
 			if(rr <= 0.5 && rr >= -0.5) R.setCertainty(90);
 			else R.setCertainty(50);
 		}
-		 */
 		
-		if(r_stochastic > 0)R.setDecision("BUY");
-		else if (r_stochastic < 0) R.setDecision("SELL");
-		else R.setDecision("KEEP");
+		
+		//if(r_stochastic > 0)R.setDecision("BUY");
+		//else if (r_stochastic < 0) R.setDecision("SELL");
+		//else R.setDecision("KEEP");
 		
 		CONTROLLER.LogEntry("DEBUG", " Stochastic " + r_stochastic + " Trend " + r_trend + " || DECISION : "+ R.getDecision());
 		return R;

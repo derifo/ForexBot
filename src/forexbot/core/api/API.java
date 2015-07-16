@@ -195,8 +195,15 @@ public class API {
 			Transaction tr = new Transaction();
 			
 			tr.setOrder(t.getOrder2());	 //transaction actual number
-			tr.setOrder2(t.getOrder()); 
+			tr.setOrder2(t.getOrder()); //id for closing deal
 			tr.setProfit(t.getProfit());
+			tr.setPrice(t.getClose_price());
+			tr.setVolume(t.getVolume());
+			if(t.getCmd() == 0){
+				tr.setPosition("BUY");
+			}else if(t.getCmd() == 1){
+				tr.setPosition("SELL");
+			}
 			
 			open_deals.add(tr);
 		}

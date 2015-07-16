@@ -70,6 +70,28 @@ public class TransactionModule{
 	private ArrayList<Transaction> active;//list off open deals
 	private Balance balance;
 	
+	public void CloseAll(){
+		
+		ArrayList<Transaction> temp = null;
+		try {
+			temp = ForexBot.api.getOpenTransactions();
+			
+			for(Transaction t : temp){
+				t.setSymbol(ForexBot.SYMBOL);
+				Transaction tr = ForexBot.api.CloseTransaction(t);
+				ForexBot.log.addLogINFO("Closed : "+tr.toString());
+				ForexBot.work_frame.PostLog("Closed : "+tr.toString());
+			}
+			
+		} catch (APICommandConstructionException | APIReplyParseException
+				| APICommunicationException | APIErrorResponse e) {
+
+			ForexBot.log.addLogERROR("Transactions closing error - can't close open deals!");
+			ForexBot.work_frame.PostLog("Transactions closing error - close open deals manually!");
+		}
+		
+	}
+	
 	private void AssessOpenDeals(){
 		/*
 		 * Marks transactions that needs to be closed

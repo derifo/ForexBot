@@ -92,6 +92,9 @@ public class CycleController implements Control, Runnable{
 	public void StopCycle() {
 				
 		work_flag = false;
+		
+		transaction_module.CloseAll();//in case of stopping cycle all open deal have to be closed
+		
 		ForexBot.work_frame.PostLog("Cycle stopped.");
 		ForexBot.log.addLogINFO("Cycle stopped.");
 	}
@@ -201,6 +204,7 @@ public class CycleController implements Control, Runnable{
 	}
 	
 	public void EvolverInput(Genom g){
+		ForexBot.log.addLogINFO("New settings from AI, loading...");
 		
 		StopCycle();
 		
@@ -208,6 +212,8 @@ public class CycleController implements Control, Runnable{
 		
 		StartCycle();
 		
+		ForexBot.log.addLogINFO("New settings from AI, loaded!");
+		ForexBot.work_frame.PostLog("New settings from AI, loaded!");
 	}
 	
 	
