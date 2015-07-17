@@ -27,60 +27,7 @@ public class LocalCache {
 		
 	}
 	
-	public static synchronized void LoadSymbolListings(LocalCache exit_cache){
-		/*
-		 * Downloading records for specified symbol from database based on cache size
-		 * 
-		 * if there is not enough  
-		 */
-				long total_records = 0;
-				String[] s = {"total"};
-				
-			
-				Object[][] r = DBC.ResultSetToObject(s , ForexBot.dbc.SELECT("SELECT COUNT(ID) AS total FROM "+ForexBot.SYMBOL));
-					
-				if(r != null){
-					total_records = (long) r[0][0];
-					exit_cache.CONTROLLER.LogEntry("DEBUG", "Total DB records  -> "+total_records);
-				}
-				//if there are symbol records commencing download
-				if(total_records > 0){
-					int records_to_download;
-					if(total_records > exit_cache.cache.getMaxIndex()){
-						
-						records_to_download = exit_cache.cache.getMaxIndex();
-					
-					}else{
-						records_to_download = (int) total_records;				
-					}
-								
-						String query = "SELECT * FROM `"+ForexBot.SYMBOL+"` WHERE id > ((SELECT COUNT(id) FROM `"+ForexBot.SYMBOL+"`) - "+records_to_download+") ORDER BY id ASC ";
-							
-						s = new String[]{"id", "ask", "bid", "low", "high", "currency", "date_time"};
-						r = DBC.ResultSetToObject(s , ForexBot.dbc.SELECT(query));
-								
-						if(r != null){
-							for(Object[] row : r){
-								double a,b,l,h;
-								String cu;
-								Timestamp dt;
-								
-								a = Double.parseDouble(row[1].toString());
-								b = Double.parseDouble(row[2].toString());
-								l = Double.parseDouble(row[3].toString());
-								h = Double.parseDouble(row[4].toString());
-								cu = row[5].toString();
-								Object o = row[7];
-								dt = (Timestamp) o;
-								
-								SymbolListing listing = new SymbolListing(b, a, h, l, cu, dt);
-							
-								exit_cache.cache.setLastLoadedIndex(exit_cache.cache.add(listing));
-							}
-						}
-							
-				}		
-	}
+	
 	
 	public void addListingToCache(SymbolListing listing){
 		/*
@@ -217,4 +164,70 @@ public class LocalCache {
 		private CircularFifoQueue<SymbolListing> cache;
 		private int last_loaded_index;
 	}
+	
+	//-------------------------------------------------------------
+	
+	public static synchronized SymbolListing[] LoadSymbolListings(int listings_to_load){
+		/*
+		 * Downloading records for processing from database
+		 * 
+		 * if there is not enough download all
+		 * 
+		 * Symbol listings are returned in table in order form oldest to newest
+		 */
+		SymbolListing[] result = null;
+		
+				long total_records = 0;
+				String[] s = {"total"};
+				
+			
+				Object[][] r = DBC.ResultSetToObject(s , ForexBot.dbc.SELECT("SELECT COUNT(ID) AS total FROM "+ForexBot.SYMBOL));
+					
+				if(r != null){
+					total_records = (long) r[0][0];
+				}
+				
+				//if there are symbol records commencing download
+				if(total_records > 0){
+					int records_to_download;
+					if(total_records > listings_to_load){						
+						records_to_download = listings_to_load;		
+					}else{
+						records_to_download = (int) total_records;				
+					}
+					
+					result = new SymbolListing[records_to_download];
+					
+					String query = "SELECT * FROM `"+ForexBot.SYMBOL+"` WHERE id > ((SELECT COUNT(id) FROM `"+ForexBot.SYMBOL+"`) - "+records_to_download+") ORDER BY id ASC";
+							
+					s = new String[]{"id", "ask", "bid", "low", "high", "currency", "date_time"};
+					r = DBC.ResultSetToObject(s , ForexBot.dbc.SELECT(query));
+								
+					if(r != null){
+						int pom = 0;
+						for(Object[] row : r){
+								double a,b,l,h;
+								String cu;
+								Timestamp dt;
+								
+								a = Double.parseDouble(row[1].toString());
+								b = Double.parseDouble(row[2].toString());
+								l = Double.parseDouble(row[3].toString());
+								h = Double.parseDouble(row[4].toString());
+								cu = row[5].toString();
+								Object o = row[7];
+								dt = (Timestamp) o;
+								
+								SymbolListing listing = new SymbolListing(b, a, h, l, cu, dt);
+							
+								result[pom] = listing;
+								pom++;
+						}
+					}
+							
+				}	
+				
+			return result;
+	}
+	
 }

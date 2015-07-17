@@ -13,15 +13,16 @@ public class Genom implements Serializable{
 	 * serializable in case evolution tree needs to be stopped before completion
 	 */
 	private static final long serialVersionUID = 2631109610137427744L;
-	
+	public final int ID;
 
 
-	public Genom(){
+	public Genom(int ID){
 		periods = new HashMap<String, Integer>();
+		this.ID = ID;
 	}
 	
-	public Genom(int StochasticK_period, int StochasticD_period , int Stochastic_Slow){
-		this();		
+	public Genom(int ID , int StochasticK_period, int StochasticD_period , int Stochastic_Slow){
+		this(ID);		
 		
 		periods.put("StochasticK_period", StochasticK_period);
 		periods.put("StochasticD_period", StochasticD_period);

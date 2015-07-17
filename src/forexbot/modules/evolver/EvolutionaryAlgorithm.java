@@ -48,6 +48,9 @@ public class EvolutionaryAlgorithm implements Runnable{
 		ForexBot.work_frame.PostLog("[AI] Creating new generation.");
 		ForexBot.log.addLogINFO("[AI] Creating new generation.");
 		
+		ID += 1000000;//designation for next generation (0-gen 1,2,3.. 1-gen 1000001,1000002... )
+		generation_number++;
+		
 	}
 
 	public void Evolve(){
@@ -73,10 +76,18 @@ public class EvolutionaryAlgorithm implements Runnable{
 		
 	}
 	
+	public int getGenerationNUmber(){
+		return generation_number;
+	}
 	
 	private CycleController CYCLE_HANDLE;
-	private Evaluator evaluator;
 	private SandboxController sandbox;
-	private int generation_number;
+	private int generation_number ;
+	
+	private static int ID = 0;	
+	private static int getID(){
+		ID++;
+		return ID;
+	}
 	
 }

@@ -24,10 +24,10 @@ public class CycleController implements Control, Runnable{
 	public CycleController(){
 		
 		work_flag = false;
-		trade_flag = true;
+		trade_flag = false;
 		error_flag = false;
 		
-		GENOM = new Genom(5,3,3);
+		GENOM = new Genom(0,5,3,3);
 	}
 	
 	@Override
@@ -169,7 +169,7 @@ public class CycleController implements Control, Runnable{
 							//decide***********************************************************************************
 							decision_module.addIndicators(STOCHASTIC_K, STOCHASTIC_D);
 														
-							r = decision_module.MakeDecision();
+							r = decision_module.MakeDecision("WORK");
 								
 							//trade***********************************************************************************
 							if(trade_flag){

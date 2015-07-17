@@ -30,7 +30,7 @@ public class DecisionModule {
 		indicators.addInstance(StochasticK, StochasticD);		
 	}
 	
-	public Recommendation MakeDecision(){
+	public Recommendation MakeDecision(String mode){
 		/*
 		 * Each recommendation should return value between 1 and -1 where
 		 * 	1  - BUY
@@ -47,34 +47,37 @@ public class DecisionModule {
 		
 		double rr = r_stochastic + r_trend;
 		
-		
-		 if(rr >= 1){
-		
-			R.setDecision("BUY");
-			R.setCertainty(50);
-			if(rr >= 1.5){
-				R.setCertainty(90);
+		if(mode.equals("WORK")){
+			 if(rr >= 1){
+			
+				R.setDecision("BUY");
+				R.setCertainty(50);
+				if(rr >= 1.5){
+					R.setCertainty(90);
+				}
 			}
-		}
-		else if(rr <= -1){
-			R.setDecision("SELL");
-			R.setCertainty(50);
-			if(rr <= -1.5){
-				R.setCertainty(90);
+			else if(rr <= -1){
+				R.setDecision("SELL");
+				R.setCertainty(50);
+				if(rr <= -1.5){
+					R.setCertainty(90);
+				}
 			}
-		}
-		else{
-			R.setDecision("KEEP");
-			if(rr <= 0.5 && rr >= -0.5) R.setCertainty(90);
-			else R.setCertainty(50);
-		}
+			else{
+				R.setDecision("KEEP");
+				if(rr <= 0.5 && rr >= -0.5) R.setCertainty(90);
+				else R.setCertainty(50);
+			}
+			 
+			CONTROLLER.LogEntry("DEBUG", " Stochastic " + r_stochastic + " Trend " + r_trend + " || DECISION : "+ R.getDecision());
+			 
+		}else if(mode.equals("SANDBOX")){
+			if(r_stochastic > 0)R.setDecision("BUY");
+			else if (r_stochastic < 0) R.setDecision("SELL");
+			else R.setDecision("KEEP");
+		}		
 		
 		
-		//if(r_stochastic > 0)R.setDecision("BUY");
-		//else if (r_stochastic < 0) R.setDecision("SELL");
-		//else R.setDecision("KEEP");
-		
-		CONTROLLER.LogEntry("DEBUG", " Stochastic " + r_stochastic + " Trend " + r_trend + " || DECISION : "+ R.getDecision());
 		return R;
 	}
 	

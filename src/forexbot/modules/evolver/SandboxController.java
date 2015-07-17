@@ -1,8 +1,12 @@
 package forexbot.modules.evolver;
 
+import java.util.ArrayList;
+
+import forexbot.ForexBot;
 import forexbot.core.containers.SymbolListing;
 import forexbot.modules.evolver.containers.Genom;
 import forexbot.modules.evolver.sandbox.Controller;
+import forexbot.modules.evolver.sandbox.Evaluator;
 
 public class SandboxController {
 	
@@ -22,22 +26,58 @@ public class SandboxController {
 		GENERATION = new Controller[generation.length];
 		
 		for(int i = 0; i < generation.length; i++){
-			GENERATION[i] = new Controller(this, getID(), generation[i]);
+			GENERATION[i] = new Controller(this, generation[i]);
 		}
 		
-		ID += 1000000;//designation for next generation (0-gen 1,2,3.. 1-gen 1000001,1000002... )
+		ForexBot.log.addLogINFO("[AI] Generation "+HANDLER.getGenerationNUmber()+ " added to sandbox.");
+	}
+	//--------------------------------------------------------------
+	public void LogEvent(String log){
+		ForexBot.log.addLogDEBUG("[AI] "+log);
 	}
 	
+	public void LogEventError(String log){
+		ForexBot.log.addLogWARNING("[AI Error] "+log);
+	}
+	//--------------------------------------------------------------
 	public void InitiateGeneration(){
+		//Set variables
+		for(Controller c : GENERATION){
+			c.InitializeCycle();
+		}
 		
+		ForexBot.log.addLogINFO("[AI] Generation "+HANDLER.getGenerationNUmber()+ " initiated.");
 	}
 	
-	public void ProcessGeneration(){
+	public boolean ProcessGeneration(){
+		//Process
+				
+		ForexBot.log.addLogINFO("[AI] Generation "+HANDLER.getGenerationNUmber()+ " finished processing simulations.");
 		
+		return false;
 	}
 	
-	public void EvaluateGeneration(){
+	public Genom[] EvaluateGeneration(){
+		//Calculate evaluations
+		ArrayList<Genom> temp = new ArrayList<Genom>();
 		
+		for(int i = 0; i < outcome.size(); i++){
+			Genom g = outcome.get(i).getGenom();
+			
+			int score = outcome.get(i).Evaluate();
+			g.setEvaluation(score);
+			
+			temp.add(g);			
+		}
+		
+		Genom[] result = new Genom[temp.size()];
+		for(int i2 = 0; i2 < result.length; i2++){
+			result[i2] = temp.get(i2);
+		}
+		
+		ForexBot.log.addLogINFO("[AI] Generation "+HANDLER.getGenerationNUmber()+ " successfully evaluated.");
+		
+		return result;
 	}
 	
 	public SymbolListing[] DataToProcess(){
@@ -50,9 +90,5 @@ public class SandboxController {
 	
 	private SymbolListing[] listing_cache;
 	
-	private static int ID = 0;	
-	private static int getID(){
-		ID++;
-		return ID;
-	}
+	private ArrayList<Evaluator> outcome;
 }
