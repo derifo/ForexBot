@@ -1,5 +1,8 @@
 package forexbot.core;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.swing.JOptionPane;
 
 import forexbot.ForexBot;
@@ -26,6 +29,7 @@ public class CycleController implements Control, Runnable{
 		work_flag = false;
 		trade_flag = false;
 		error_flag = false;
+		trade_hours = true;
 		
 		GENOM = new Genom(0,5,3,3);
 	}
@@ -75,7 +79,10 @@ public class CycleController implements Control, Runnable{
 			indicators.setIndicatorsPeriods(GENOM.getValue("StochasticK_period"), GENOM.getValue("StochasticD_period"), GENOM.getValue("Stochastic_Slow"));
 			decision_module.CreateIndicatorCache();//initiate indicator cache
 		
-			work_flag = true;			
+			work_flag = true;
+			
+			trade_hours = CheckMarketHours();
+			if(!trade_hours) ForexBot.work_frame.PostLog("Market currenlty closed - waiting");
 			
 			
 			ForexBot.work_frame.PostLog("Cycle started...");
@@ -147,46 +154,65 @@ public class CycleController implements Control, Runnable{
 					if(ForexBot.DEBUG) e1.printStackTrace();
 				}//Apparently loop need wait time to check conditions below (doesn't work without)
 				
-				if(work_flag){
-					long start_time = System.currentTimeMillis();
-					
-					//download***********************************************************************************
-					SymbolListing temp = scrobbler.Scrobble();
-
-					if(ForexBot.DEBUG) System.out.println(temp.toString());
-					cache.addListingToCache(temp);//add downloaded listing to cache
-					
-					//calculate******************************************************************************
-					if(indicators.LoadCache(0)){
-							
-							STOCHASTIC_D = indicators.Calculate_Stochastic_D();
-							STOCHASTIC_K = indicators.Calculate_Stochastic_K(0);
+				if(trade_hours){
+					//if market is open
+					if(work_flag){
+						long start_time = System.currentTimeMillis();
+						
+						//download***********************************************************************************
+						SymbolListing temp = scrobbler.Scrobble();
+	
+						if(ForexBot.DEBUG) System.out.println(temp.toString());
+						cache.addListingToCache(temp);//add downloaded listing to cache
+						
+						//calculate******************************************************************************
+						if(indicators.LoadCache(0)){
 								
-
-							ForexBot.log.addLogDEBUG("Stochastic %K "+STOCHASTIC_K+ " Stochastic %D "+STOCHASTIC_D);
-							ForexBot.log.addLogDEBUG("");
-								
-							//decide***********************************************************************************
-							decision_module.addIndicators(STOCHASTIC_K, STOCHASTIC_D);
-														
-							r = decision_module.MakeDecision("WORK");
-								
-							//trade***********************************************************************************
-							if(trade_flag){
+								STOCHASTIC_D = indicators.Calculate_Stochastic_D();
+								STOCHASTIC_K = indicators.Calculate_Stochastic_K(0);
 									
-									ForexBot.work_frame.PostLog(r.toString());
-									ForexBot.log.addLogINFO(r.toString());
+	
+								ForexBot.log.addLogDEBUG("Stochastic %K "+STOCHASTIC_K+ " Stochastic %D "+STOCHASTIC_D);
+								ForexBot.log.addLogDEBUG("");
 									
-									transaction_module.addRecommendation(r);
+								//decide***********************************************************************************
+								decision_module.addIndicators(STOCHASTIC_K, STOCHASTIC_D);
+															
+								r = decision_module.MakeDecision("WORK");
 									
-									//transaction cycle processing									
-									transaction_module.Process();	
-							}
-					}					
+								//trade***********************************************************************************
+								if(trade_flag){
+										
+										ForexBot.work_frame.PostLog(r.toString());
+										ForexBot.log.addLogINFO(r.toString());
+										
+										transaction_module.addRecommendation(r);
+										
+										//transaction cycle processing									
+										transaction_module.Process();	
+								}
+						}					
+						
+						TikClock(start_time, 5999);
+						if(ForexBot.DEBUG) cache.DEBUG_PRINT_CACHE();
+					}	
 					
-					TikClock(start_time, 5999);
-					if(ForexBot.DEBUG) cache.DEBUG_PRINT_CACHE();
-				}			
+				}else{
+					//in case of market closed - wait					
+					
+					try {
+					    Thread.sleep(120000);//2min           
+					} catch(InterruptedException ex) {
+					    Thread.currentThread().interrupt();
+					}
+					
+					if(CheckMarketHours()){
+						trade_hours = true;
+						ForexBot.work_frame.PostLog("Market opened - resuming");
+					}else{
+						ForexBot.work_frame.PostLog("Market closed - waiting");
+					}
+				}
 				
 				
 			}while(!ForexBot.GLOBAL_EXIT);
@@ -203,6 +229,26 @@ public class CycleController implements Control, Runnable{
 		
 	}
 	
+	private boolean CheckMarketHours(){
+		/*
+		 * Forex is closed in Saturday and Sunday,
+		 * method is checking on each call if day is the day when market is open
+		 */
+		if(!ForexBot.EA_TEST){
+			Calendar c = Calendar.getInstance();
+			
+			c.setTime(new Date());
+			int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+			
+			if(dayOfWeek == 1) return false;
+			else if(dayOfWeek == 7) return false;
+			else return true;
+		}else{
+			return false;
+		}
+
+	}
+	
 	public void EvolverInput(Genom g){
 		ForexBot.log.addLogINFO("New settings from AI, loading...");
 		
@@ -214,6 +260,10 @@ public class CycleController implements Control, Runnable{
 		
 		ForexBot.log.addLogINFO("New settings from AI, loaded!");
 		ForexBot.work_frame.PostLog("New settings from AI, loaded!");
+	}
+	
+	public int getScore(){
+		return GENOM.getEvaluation();
 	}
 	
 	
@@ -228,6 +278,7 @@ public class CycleController implements Control, Runnable{
 	private boolean work_flag;
 	private boolean trade_flag;
 	private boolean error_flag;
+	private boolean trade_hours;
 
 	private boolean PrepareDatabase(){
 		ForexBot.log.addLogDEBUG("Preparing database..");

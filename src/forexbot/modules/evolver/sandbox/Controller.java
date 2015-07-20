@@ -1,8 +1,5 @@
 package forexbot.modules.evolver.sandbox;
 
-import java.util.concurrent.Callable;
-
-import forexbot.ForexBot;
 import forexbot.core.containers.Recommendation;
 import forexbot.core.containers.SymbolListing;
 import forexbot.interfaces.Control;
@@ -12,7 +9,7 @@ import forexbot.modules.cyclecomponents.transactions.DecisionModule;
 import forexbot.modules.evolver.SandboxController;
 import forexbot.modules.evolver.containers.Genom;
 
-public class Controller implements Control, Callable<Evaluator>{
+public class Controller implements Control{
 	public final int ID;
 	public final Genom GENOM;
 	/*
@@ -25,7 +22,7 @@ public class Controller implements Control, Callable<Evaluator>{
 	public Controller(SandboxController SANDBOX_CONTROLLER, Genom GENOM){
 		this.SANDBOX_CONTROLLER = SANDBOX_CONTROLLER;
 		this.GENOM = GENOM;
-		this.ID = GENOM.ID;
+		this.ID = GENOM.getID();
 		
 		work_flag = false;
 		error_flag = false;
@@ -43,7 +40,7 @@ public class Controller implements Control, Callable<Evaluator>{
 		indicators.setIndicatorsPeriods(GENOM.getValue("StochasticK_period"), GENOM.getValue("StochasticD_period"), GENOM.getValue("Stochastic_Slow"));
 		evaluator = new Evaluator(GENOM);
 		
-		SANDBOX_CONTROLLER.LogEvent("Specimen "+ID+ "created.");
+		SANDBOX_CONTROLLER.LogEvent("Specimen "+ID+ " created.");
 	}
 
 
@@ -53,7 +50,9 @@ public class Controller implements Control, Callable<Evaluator>{
 		toProcess = SANDBOX_CONTROLLER.DataToProcess();		
 		work_flag = true;
 		
-		SANDBOX_CONTROLLER.LogEvent("Specimen "+ID+ "starting cycle.");
+		decider.CreateIndicatorCache();
+		
+		SANDBOX_CONTROLLER.LogEvent("Specimen "+ID+ " starting simulation.");
 	}
 
 	@Override
@@ -103,21 +102,15 @@ public class Controller implements Control, Callable<Evaluator>{
 		private boolean terminate_flag;
 
 	
-
-	@Override
-	public Evaluator call() throws Exception {
+	public Evaluator Simulate() {
 		int progress = 0;
 		
 		double STOCHASTIC_D;
 		double STOCHASTIC_K;
 		
+		StartCycle();
+		
 		do{
-			
-			try {
-				Thread.sleep(1);
-			} catch (InterruptedException e1) {
-				if(ForexBot.DEBUG) e1.printStackTrace();
-			}//Apparently loop need wait time to check conditions below (doesn't work without)
 			
 			if(work_flag){
 				
@@ -141,16 +134,12 @@ public class Controller implements Control, Callable<Evaluator>{
 				
 			}
 			
-				if(progress == toProcess.length) terminate_flag = true;
-			try {
-				Thread.sleep(9);
-			} catch (InterruptedException e1) {
-				if(ForexBot.DEBUG) e1.printStackTrace();
-			}
+			if(progress == toProcess.length) terminate_flag = true;
+			
 			
 		}while(!terminate_flag);
 		
-		SANDBOX_CONTROLLER.LogEvent("Specimen "+ID+ " finished.");
+		SANDBOX_CONTROLLER.LogEvent("Specimen "+ID+ " finished simulation.");
 		
 		return evaluator;
 	}

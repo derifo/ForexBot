@@ -1,0 +1,2306 @@
+[DEBUG] 2015-07-20 01:48:04.044 	 ForexBot version [v0.2.10 S] started.
+[DEBUG] 2015-07-20 01:48:04.047 	 Initiating settings check...
+[DEBUG] 2015-07-20 01:48:04.048 	 Settings found! Loading.
+[DEBUG] 2015-07-20 01:48:04.053 	 User settings loaded.
+[DEBUG] 2015-07-20 01:48:04.853 	 Credentials test - OK!
+[DEBUG] 2015-07-20 01:48:04.853 	 Database connection settings loaded.
+[DEBUG] 2015-07-20 01:48:05.032 	 Main frame created.
+[DEBUG] 2015-07-20 01:48:08.348 	 xStation user [400826] logged in.
+[DEBUG] 2015-07-20 01:48:08.351 	 User settings saved.
+[DEBUG] 2015-07-20 01:48:09.677 	 Start button pressed.
+[DEBUG] 2015-07-20 01:48:10.313 	 Connected to the database 91.121.193.177
+[DEBUG] 2015-07-20 01:48:10.314 	 Uploader thread crated.
+[DEBUG] 2015-07-20 01:48:10.315 	 [AI] Machine learning module started - initializing evolutionary tree...
+[DEBUG] 2015-07-20 01:48:10.315 	 Main window log posted. [[AI] Machine learning module started.]
+[DEBUG] 2015-07-20 01:48:10.317 	 Preparing database..
+[DEBUG] 2015-07-20 01:48:10.32 	 Loading form dbc...
+[DEBUG] 2015-07-20 01:48:10.381 	 Table created or already existed [EURUSD]
+[DEBUG] 2015-07-20 01:48:10.381 	 Main window log posted. [Database integrity - OK]
+[DEBUG] 2015-07-20 01:48:10.382 	 Database integrity - OK
+[DEBUG] 2015-07-20 01:48:10.384 	 Symbol cache created!
+[DEBUG] 2015-07-20 01:48:10.384 	 Main window log posted. [Variables initialized.]
+[DEBUG] 2015-07-20 01:48:10.385 	 Variables initialized.
+[DEBUG] 2015-07-20 01:48:10.385 	 Indicators periods set:  Stochastic 5/3/3
+[DEBUG] 2015-07-20 01:48:10.385 	 Main window log posted. [Market currenlty closed - waiting]
+[DEBUG] 2015-07-20 01:48:10.386 	 Main window log posted. [Cycle started...]
+[DEBUG] 2015-07-20 01:48:10.386 	 Cycle started...
+[DEBUG] 2015-07-20 01:48:10.443 	 Parsing ResultSet...
+[DEBUG] 2015-07-20 01:48:10.443 	 [1] rows returned.
+[DEBUG] 2015-07-20 01:48:10.636 	 Parsing downloaded listings...
+[DEBUG] 2015-07-20 01:48:10.661 	 Loading complete.
+[DEBUG] 2015-07-20 01:48:16.663 	 Main window log posted. [[AI] Creating initial generation.]
+[DEBUG] 2015-07-20 01:48:16.663 	 [AI] Creating initial generation.
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [1] evaluation = 0 values: 2/2/1
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 0 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [2] evaluation = 0 values: 3/3/1
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 1 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [3] evaluation = 0 values: 4/4/2
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 2 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [4] evaluation = 0 values: 5/5/2
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 3 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [5] evaluation = 0 values: 6/6/3
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 4 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [6] evaluation = 0 values: 7/7/3
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 5 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [7] evaluation = 0 values: 8/8/4
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 6 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [8] evaluation = 0 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 7 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [9] evaluation = 0 values: 10/10/5
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 8 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [10] evaluation = 0 values: 11/11/5
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 9 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [11] evaluation = 0 values: 12/12/6
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 10 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [12] evaluation = 0 values: 13/13/6
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 11 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [13] evaluation = 0 values: 14/14/7
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 12 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [14] evaluation = 0 values: 15/15/7
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 13 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [15] evaluation = 0 values: 16/16/8
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 14 created
+[DEBUG] 2015-07-20 01:48:16.664 	 ID [16] evaluation = 0 values: 17/17/8
+[DEBUG] 2015-07-20 01:48:16.664 	 Controller 15 created
+[DEBUG] 2015-07-20 01:48:16.665 	 ID [17] evaluation = 0 values: 18/18/9
+[DEBUG] 2015-07-20 01:48:16.665 	 Controller 16 created
+[DEBUG] 2015-07-20 01:48:16.665 	 ID [18] evaluation = 0 values: 19/19/9
+[DEBUG] 2015-07-20 01:48:16.665 	 Controller 17 created
+[DEBUG] 2015-07-20 01:48:16.665 	 ID [19] evaluation = 0 values: 20/20/10
+[DEBUG] 2015-07-20 01:48:16.665 	 Controller 18 created
+[DEBUG] 2015-07-20 01:48:16.665 	 ID [20] evaluation = 0 values: 21/21/10
+[DEBUG] 2015-07-20 01:48:16.665 	 Controller 19 created
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Generation 0 added to sandbox.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 1 created.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 2 created.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 3 created.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 4 created.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 5 created.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 6 created.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 7 created.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 8 created.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 9 created.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 10 created.
+[DEBUG] 2015-07-20 01:48:16.665 	 [AI] Specimen 11 created.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Specimen 12 created.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Specimen 13 created.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Specimen 14 created.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Specimen 15 created.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Specimen 16 created.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Specimen 17 created.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Specimen 18 created.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Specimen 19 created.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Specimen 20 created.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Generation 0 initiated.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Generation 0 started processing simulations.
+[DEBUG] 2015-07-20 01:48:16.666 	 [AI] Specimen 1 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.685 	 [AI] Specimen 1 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.685 	 [AI] Specimen 2 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.691 	 [AI] Specimen 2 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.691 	 [AI] Specimen 3 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.697 	 [AI] Specimen 3 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.697 	 [AI] Specimen 4 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.703 	 [AI] Specimen 4 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.703 	 [AI] Specimen 5 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.708 	 [AI] Specimen 5 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.708 	 [AI] Specimen 6 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.715 	 [AI] Specimen 6 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.715 	 [AI] Specimen 7 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.722 	 [AI] Specimen 7 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.722 	 [AI] Specimen 8 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.73 	 [AI] Specimen 8 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.73 	 [AI] Specimen 9 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.737 	 [AI] Specimen 9 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.737 	 [AI] Specimen 10 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.745 	 [AI] Specimen 10 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.745 	 [AI] Specimen 11 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.755 	 [AI] Specimen 11 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.756 	 [AI] Specimen 12 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.778 	 [AI] Specimen 12 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.778 	 [AI] Specimen 13 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.791 	 [AI] Specimen 13 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.791 	 [AI] Specimen 14 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.804 	 [AI] Specimen 14 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.804 	 [AI] Specimen 15 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.82 	 [AI] Specimen 15 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.821 	 [AI] Specimen 16 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.843 	 [AI] Specimen 16 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.843 	 [AI] Specimen 17 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.869 	 [AI] Specimen 17 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.869 	 [AI] Specimen 18 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.891 	 [AI] Specimen 18 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.891 	 [AI] Specimen 19 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.918 	 [AI] Specimen 19 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.918 	 [AI] Specimen 20 starting simulation.
+[DEBUG] 2015-07-20 01:48:16.945 	 [AI] Specimen 20 finished simulation.
+[DEBUG] 2015-07-20 01:48:16.945 	 [AI] Generation 0 finished processing simulations.
+[DEBUG] 2015-07-20 01:48:16.949 	 [AI] Generation 0 successfully evaluated.
+[DEBUG] 2015-07-20 01:48:16.949 	 [AI] Generation: #0 Best specimen: ID [6] evaluation = -996 values: 7/7/3
+[DEBUG] 2015-07-20 01:48:22.951 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:48:22.951 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000021] evaluation = 0 values: 5/3/1
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 0 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000022] evaluation = 0 values: 5/5/2
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 1 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000023] evaluation = 0 values: 5/5/3
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 2 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000024] evaluation = 0 values: 5/7/3
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 3 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000025] evaluation = 0 values: 5/9/3
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 4 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000026] evaluation = 0 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 5 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000027] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 6 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000028] evaluation = 0 values: 9/11/5
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 7 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000029] evaluation = 0 values: 13/11/5
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 8 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000030] evaluation = 0 values: 13/13/5
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 9 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000031] evaluation = 0 values: 15/13/5
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 10 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000032] evaluation = 0 values: 15/13/7
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 11 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000033] evaluation = 0 values: 15/16/7
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 12 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000034] evaluation = 0 values: 15/16/8
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 13 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000035] evaluation = 0 values: 15/19/8
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 14 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000036] evaluation = 0 values: 19/19/8
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 15 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000037] evaluation = 0 values: 21/19/8
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 16 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000038] evaluation = 0 values: 21/21/10
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 17 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000039] evaluation = 0 values: 21/19/5
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 18 created
+[DEBUG] 2015-07-20 01:48:22.951 	 ID [1000040] evaluation = 0 values: 5/13/3
+[DEBUG] 2015-07-20 01:48:22.951 	 Controller 19 created
+[DEBUG] 2015-07-20 01:48:22.951 	 [AI] Generation 1 added to sandbox.
+[DEBUG] 2015-07-20 01:48:22.951 	 [AI] Specimen 1000021 created.
+[DEBUG] 2015-07-20 01:48:22.951 	 [AI] Specimen 1000022 created.
+[DEBUG] 2015-07-20 01:48:22.951 	 [AI] Specimen 1000023 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000024 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000025 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000026 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000027 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000028 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000029 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000030 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000031 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000032 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000033 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000034 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000035 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000036 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000037 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000038 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000039 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000040 created.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Generation 1 initiated.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Generation 1 started processing simulations.
+[DEBUG] 2015-07-20 01:48:22.952 	 [AI] Specimen 1000021 starting simulation.
+[DEBUG] 2015-07-20 01:48:22.954 	 [AI] Specimen 1000021 finished simulation.
+[DEBUG] 2015-07-20 01:48:22.954 	 [AI] Specimen 1000022 starting simulation.
+[DEBUG] 2015-07-20 01:48:22.957 	 [AI] Specimen 1000022 finished simulation.
+[DEBUG] 2015-07-20 01:48:22.957 	 [AI] Specimen 1000023 starting simulation.
+[DEBUG] 2015-07-20 01:48:22.959 	 [AI] Specimen 1000023 finished simulation.
+[DEBUG] 2015-07-20 01:48:22.959 	 [AI] Specimen 1000024 starting simulation.
+[DEBUG] 2015-07-20 01:48:22.962 	 [AI] Specimen 1000024 finished simulation.
+[DEBUG] 2015-07-20 01:48:22.962 	 [AI] Specimen 1000025 starting simulation.
+[DEBUG] 2015-07-20 01:48:22.965 	 [AI] Specimen 1000025 finished simulation.
+[DEBUG] 2015-07-20 01:48:22.965 	 [AI] Specimen 1000026 starting simulation.
+[DEBUG] 2015-07-20 01:48:22.97 	 [AI] Specimen 1000026 finished simulation.
+[DEBUG] 2015-07-20 01:48:22.97 	 [AI] Specimen 1000027 starting simulation.
+[DEBUG] 2015-07-20 01:48:22.974 	 [AI] Specimen 1000027 finished simulation.
+[DEBUG] 2015-07-20 01:48:22.974 	 [AI] Specimen 1000028 starting simulation.
+[DEBUG] 2015-07-20 01:48:22.98 	 [AI] Specimen 1000028 finished simulation.
+[DEBUG] 2015-07-20 01:48:22.98 	 [AI] Specimen 1000029 starting simulation.
+[DEBUG] 2015-07-20 01:48:22.986 	 [AI] Specimen 1000029 finished simulation.
+[DEBUG] 2015-07-20 01:48:22.986 	 [AI] Specimen 1000030 starting simulation.
+[DEBUG] 2015-07-20 01:48:22.994 	 [AI] Specimen 1000030 finished simulation.
+[DEBUG] 2015-07-20 01:48:22.994 	 [AI] Specimen 1000031 starting simulation.
+[DEBUG] 2015-07-20 01:48:23.001 	 [AI] Specimen 1000031 finished simulation.
+[DEBUG] 2015-07-20 01:48:23.002 	 [AI] Specimen 1000032 starting simulation.
+[DEBUG] 2015-07-20 01:48:23.012 	 [AI] Specimen 1000032 finished simulation.
+[DEBUG] 2015-07-20 01:48:23.012 	 [AI] Specimen 1000033 starting simulation.
+[DEBUG] 2015-07-20 01:48:23.023 	 [AI] Specimen 1000033 finished simulation.
+[DEBUG] 2015-07-20 01:48:23.023 	 [AI] Specimen 1000034 starting simulation.
+[DEBUG] 2015-07-20 01:48:23.037 	 [AI] Specimen 1000034 finished simulation.
+[DEBUG] 2015-07-20 01:48:23.037 	 [AI] Specimen 1000035 starting simulation.
+[DEBUG] 2015-07-20 01:48:23.052 	 [AI] Specimen 1000035 finished simulation.
+[DEBUG] 2015-07-20 01:48:23.052 	 [AI] Specimen 1000036 starting simulation.
+[DEBUG] 2015-07-20 01:48:23.071 	 [AI] Specimen 1000036 finished simulation.
+[DEBUG] 2015-07-20 01:48:23.071 	 [AI] Specimen 1000037 starting simulation.
+[DEBUG] 2015-07-20 01:48:23.092 	 [AI] Specimen 1000037 finished simulation.
+[DEBUG] 2015-07-20 01:48:23.092 	 [AI] Specimen 1000038 starting simulation.
+[DEBUG] 2015-07-20 01:48:23.119 	 [AI] Specimen 1000038 finished simulation.
+[DEBUG] 2015-07-20 01:48:23.119 	 [AI] Specimen 1000039 starting simulation.
+[DEBUG] 2015-07-20 01:48:23.132 	 [AI] Specimen 1000039 finished simulation.
+[DEBUG] 2015-07-20 01:48:23.133 	 [AI] Specimen 1000040 starting simulation.
+[DEBUG] 2015-07-20 01:48:23.136 	 [AI] Specimen 1000040 finished simulation.
+[DEBUG] 2015-07-20 01:48:23.136 	 [AI] Generation 1 finished processing simulations.
+[DEBUG] 2015-07-20 01:48:23.139 	 [AI] Generation 1 successfully evaluated.
+[DEBUG] 2015-07-20 01:48:23.139 	 [AI] Generation: #1 Best specimen: ID [1000026] evaluation = -996 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:29.141 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:48:29.141 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000041] evaluation = 0 values: 5/5/2
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 0 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000042] evaluation = 0 values: 5/7/3
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 1 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000043] evaluation = 0 values: 9/7/3
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 2 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000044] evaluation = 0 values: 9/7/4
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 3 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000045] evaluation = 0 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 4 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000046] evaluation = 0 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 5 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000047] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 6 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000048] evaluation = 0 values: 13/13/5
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 7 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000049] evaluation = 0 values: 13/13/5
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 8 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000050] evaluation = 0 values: 15/13/5
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 9 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000051] evaluation = 0 values: 15/16/5
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 10 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000052] evaluation = 0 values: 15/16/8
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 11 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000053] evaluation = 0 values: 15/19/8
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 12 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000054] evaluation = 0 values: 15/19/8
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 13 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000055] evaluation = 0 values: 15/21/8
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 14 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000056] evaluation = 0 values: 21/21/10
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 15 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000057] evaluation = 0 values: 5/21/10
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 16 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000058] evaluation = 0 values: 5/13/10
+[DEBUG] 2015-07-20 01:48:29.141 	 Controller 17 created
+[DEBUG] 2015-07-20 01:48:29.141 	 ID [2000059] evaluation = 0 values: 9/16/5
+[DEBUG] 2015-07-20 01:48:29.142 	 Controller 18 created
+[DEBUG] 2015-07-20 01:48:29.142 	 ID [2000060] evaluation = 0 values: 5/5/3
+[DEBUG] 2015-07-20 01:48:29.142 	 Controller 19 created
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Generation 2 added to sandbox.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000041 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000042 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000043 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000044 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000045 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000046 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000047 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000048 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000049 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000050 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000051 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000052 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000053 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000054 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000055 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000056 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000057 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000058 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000059 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000060 created.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Generation 2 initiated.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Generation 2 started processing simulations.
+[DEBUG] 2015-07-20 01:48:29.142 	 [AI] Specimen 2000041 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.148 	 [AI] Specimen 2000041 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.148 	 [AI] Specimen 2000042 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.151 	 [AI] Specimen 2000042 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.151 	 [AI] Specimen 2000043 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.154 	 [AI] Specimen 2000043 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.154 	 [AI] Specimen 2000044 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.158 	 [AI] Specimen 2000044 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.158 	 [AI] Specimen 2000045 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.162 	 [AI] Specimen 2000045 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.162 	 [AI] Specimen 2000046 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.166 	 [AI] Specimen 2000046 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.166 	 [AI] Specimen 2000047 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.171 	 [AI] Specimen 2000047 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.171 	 [AI] Specimen 2000048 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.178 	 [AI] Specimen 2000048 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.178 	 [AI] Specimen 2000049 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.185 	 [AI] Specimen 2000049 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.185 	 [AI] Specimen 2000050 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.193 	 [AI] Specimen 2000050 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.193 	 [AI] Specimen 2000051 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.202 	 [AI] Specimen 2000051 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.202 	 [AI] Specimen 2000052 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.216 	 [AI] Specimen 2000052 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.216 	 [AI] Specimen 2000053 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.231 	 [AI] Specimen 2000053 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.231 	 [AI] Specimen 2000054 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.247 	 [AI] Specimen 2000054 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.247 	 [AI] Specimen 2000055 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.264 	 [AI] Specimen 2000055 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.264 	 [AI] Specimen 2000056 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.291 	 [AI] Specimen 2000056 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.291 	 [AI] Specimen 2000057 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.302 	 [AI] Specimen 2000057 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.302 	 [AI] Specimen 2000058 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.309 	 [AI] Specimen 2000058 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.309 	 [AI] Specimen 2000059 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.316 	 [AI] Specimen 2000059 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.316 	 [AI] Specimen 2000060 starting simulation.
+[DEBUG] 2015-07-20 01:48:29.319 	 [AI] Specimen 2000060 finished simulation.
+[DEBUG] 2015-07-20 01:48:29.319 	 [AI] Generation 2 finished processing simulations.
+[DEBUG] 2015-07-20 01:48:29.322 	 [AI] Generation 2 successfully evaluated.
+[DEBUG] 2015-07-20 01:48:29.322 	 [AI] Generation: #2 Best specimen: ID [2000043] evaluation = -996 values: 9/7/3
+[DEBUG] 2015-07-20 01:48:35.324 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:48:35.324 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000061] evaluation = 0 values: 9/7/3
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 0 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000062] evaluation = 0 values: 9/7/3
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 1 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000063] evaluation = 0 values: 9/9/3
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 2 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000064] evaluation = 0 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 3 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000065] evaluation = 0 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 4 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000066] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 5 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000067] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 6 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000068] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 7 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000069] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 8 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000070] evaluation = 0 values: 15/9/8
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 9 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000071] evaluation = 0 values: 15/9/8
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 10 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000072] evaluation = 0 values: 15/9/8
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 11 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000073] evaluation = 0 values: 21/9/8
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 12 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000074] evaluation = 0 values: 21/9/10
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 13 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000075] evaluation = 0 values: 21/13/10
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 14 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000076] evaluation = 0 values: 5/13/10
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 15 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000077] evaluation = 0 values: 5/13/5
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 16 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000078] evaluation = 0 values: 5/16/5
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 17 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000079] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 18 created
+[DEBUG] 2015-07-20 01:48:35.324 	 ID [3000080] evaluation = 0 values: 3/9/6
+[DEBUG] 2015-07-20 01:48:35.324 	 Controller 19 created
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Generation 3 added to sandbox.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000061 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000062 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000063 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000064 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000065 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000066 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000067 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000068 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000069 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000070 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000071 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000072 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000073 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000074 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000075 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000076 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000077 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000078 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000079 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000080 created.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Generation 3 initiated.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Generation 3 started processing simulations.
+[DEBUG] 2015-07-20 01:48:35.325 	 [AI] Specimen 3000061 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.328 	 [AI] Specimen 3000061 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.328 	 [AI] Specimen 3000062 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.332 	 [AI] Specimen 3000062 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.332 	 [AI] Specimen 3000063 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.335 	 [AI] Specimen 3000063 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.335 	 [AI] Specimen 3000064 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.339 	 [AI] Specimen 3000064 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.339 	 [AI] Specimen 3000065 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.343 	 [AI] Specimen 3000065 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.343 	 [AI] Specimen 3000066 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.348 	 [AI] Specimen 3000066 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.348 	 [AI] Specimen 3000067 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.354 	 [AI] Specimen 3000067 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.354 	 [AI] Specimen 3000068 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.359 	 [AI] Specimen 3000068 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.359 	 [AI] Specimen 3000069 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.365 	 [AI] Specimen 3000069 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.365 	 [AI] Specimen 3000070 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.373 	 [AI] Specimen 3000070 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.373 	 [AI] Specimen 3000071 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.381 	 [AI] Specimen 3000071 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.381 	 [AI] Specimen 3000072 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.393 	 [AI] Specimen 3000072 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.393 	 [AI] Specimen 3000073 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.404 	 [AI] Specimen 3000073 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.404 	 [AI] Specimen 3000074 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.417 	 [AI] Specimen 3000074 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.417 	 [AI] Specimen 3000075 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.435 	 [AI] Specimen 3000075 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.435 	 [AI] Specimen 3000076 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.442 	 [AI] Specimen 3000076 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.442 	 [AI] Specimen 3000077 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.446 	 [AI] Specimen 3000077 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.446 	 [AI] Specimen 3000078 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.452 	 [AI] Specimen 3000078 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.452 	 [AI] Specimen 3000079 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.455 	 [AI] Specimen 3000079 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.455 	 [AI] Specimen 3000080 starting simulation.
+[DEBUG] 2015-07-20 01:48:35.458 	 [AI] Specimen 3000080 finished simulation.
+[DEBUG] 2015-07-20 01:48:35.458 	 [AI] Generation 3 finished processing simulations.
+[DEBUG] 2015-07-20 01:48:35.461 	 [AI] Generation 3 successfully evaluated.
+[DEBUG] 2015-07-20 01:48:35.461 	 [AI] Generation: #3 Best specimen: ID [3000061] evaluation = -996 values: 9/7/3
+[DEBUG] 2015-07-20 01:48:41.463 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000081] evaluation = 0 values: 9/9/3
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 0 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000082] evaluation = 0 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 1 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000083] evaluation = 0 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 2 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000084] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 3 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000085] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 4 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000086] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 5 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000087] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 6 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000088] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 7 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000089] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 8 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000090] evaluation = 0 values: 15/9/8
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 9 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000091] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 10 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000092] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 11 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000093] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 12 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000094] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 13 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000095] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 14 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000096] evaluation = 0 values: 5/16/5
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 15 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000097] evaluation = 0 values: 5/16/6
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 16 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000098] evaluation = 0 values: 3/16/6
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 17 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000099] evaluation = 0 values: 5/16/6
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 18 created
+[DEBUG] 2015-07-20 01:48:41.463 	 ID [4000100] evaluation = 0 values: 9/3/4
+[DEBUG] 2015-07-20 01:48:41.463 	 Controller 19 created
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Generation 4 added to sandbox.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000081 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000082 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000083 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000084 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000085 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000086 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000087 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000088 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000089 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000090 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000091 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000092 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000093 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000094 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000095 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000096 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000097 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000098 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000099 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000100 created.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Generation 4 initiated.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Generation 4 started processing simulations.
+[DEBUG] 2015-07-20 01:48:41.463 	 [AI] Specimen 4000081 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.467 	 [AI] Specimen 4000081 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.467 	 [AI] Specimen 4000082 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.471 	 [AI] Specimen 4000082 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.471 	 [AI] Specimen 4000083 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.475 	 [AI] Specimen 4000083 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.475 	 [AI] Specimen 4000084 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.48 	 [AI] Specimen 4000084 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.48 	 [AI] Specimen 4000085 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.486 	 [AI] Specimen 4000085 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.486 	 [AI] Specimen 4000086 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.492 	 [AI] Specimen 4000086 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.492 	 [AI] Specimen 4000087 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.497 	 [AI] Specimen 4000087 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.497 	 [AI] Specimen 4000088 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.503 	 [AI] Specimen 4000088 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.503 	 [AI] Specimen 4000089 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.509 	 [AI] Specimen 4000089 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.509 	 [AI] Specimen 4000090 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.517 	 [AI] Specimen 4000090 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.517 	 [AI] Specimen 4000091 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.527 	 [AI] Specimen 4000091 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.527 	 [AI] Specimen 4000092 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.537 	 [AI] Specimen 4000092 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.537 	 [AI] Specimen 4000093 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.543 	 [AI] Specimen 4000093 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.543 	 [AI] Specimen 4000094 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.548 	 [AI] Specimen 4000094 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.548 	 [AI] Specimen 4000095 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.554 	 [AI] Specimen 4000095 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.554 	 [AI] Specimen 4000096 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.559 	 [AI] Specimen 4000096 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.559 	 [AI] Specimen 4000097 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.565 	 [AI] Specimen 4000097 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.565 	 [AI] Specimen 4000098 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.569 	 [AI] Specimen 4000098 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.569 	 [AI] Specimen 4000099 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.575 	 [AI] Specimen 4000099 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.575 	 [AI] Specimen 4000100 starting simulation.
+[DEBUG] 2015-07-20 01:48:41.578 	 [AI] Specimen 4000100 finished simulation.
+[DEBUG] 2015-07-20 01:48:41.578 	 [AI] Generation 4 finished processing simulations.
+[DEBUG] 2015-07-20 01:48:41.579 	 [AI] Generation 4 successfully evaluated.
+[DEBUG] 2015-07-20 01:48:41.579 	 [AI] Generation: #4 Best specimen: ID [4000081] evaluation = -996 values: 9/9/3
+[DEBUG] 2015-07-20 01:48:47.581 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000101] evaluation = 0 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 0 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000102] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 1 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000103] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 2 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000104] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 3 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000105] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 4 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000106] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 5 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000107] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 6 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000108] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 7 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000109] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 8 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000110] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 9 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000111] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 10 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000112] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 11 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000113] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 12 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000114] evaluation = 0 values: 5/16/10
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 13 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000115] evaluation = 0 values: 5/16/6
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 14 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000116] evaluation = 0 values: 5/16/6
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 15 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000117] evaluation = 0 values: 5/16/6
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 16 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000118] evaluation = 0 values: 5/16/6
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 17 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000119] evaluation = 0 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 18 created
+[DEBUG] 2015-07-20 01:48:47.581 	 ID [5000120] evaluation = 0 values: 5/15/10
+[DEBUG] 2015-07-20 01:48:47.581 	 Controller 19 created
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Generation 5 added to sandbox.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000101 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000102 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000103 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000104 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000105 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000106 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000107 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000108 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000109 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000110 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000111 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000112 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000113 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000114 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000115 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000116 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000117 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000118 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000119 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000120 created.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Generation 5 initiated.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Generation 5 started processing simulations.
+[DEBUG] 2015-07-20 01:48:47.581 	 [AI] Specimen 5000101 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.585 	 [AI] Specimen 5000101 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.585 	 [AI] Specimen 5000102 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.59 	 [AI] Specimen 5000102 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.59 	 [AI] Specimen 5000103 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.598 	 [AI] Specimen 5000103 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.598 	 [AI] Specimen 5000104 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.602 	 [AI] Specimen 5000104 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.602 	 [AI] Specimen 5000105 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.608 	 [AI] Specimen 5000105 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.608 	 [AI] Specimen 5000106 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.614 	 [AI] Specimen 5000106 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.614 	 [AI] Specimen 5000107 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.62 	 [AI] Specimen 5000107 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.62 	 [AI] Specimen 5000108 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.626 	 [AI] Specimen 5000108 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.626 	 [AI] Specimen 5000109 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.632 	 [AI] Specimen 5000109 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.632 	 [AI] Specimen 5000110 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.641 	 [AI] Specimen 5000110 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.641 	 [AI] Specimen 5000111 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.651 	 [AI] Specimen 5000111 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.651 	 [AI] Specimen 5000112 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.657 	 [AI] Specimen 5000112 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.657 	 [AI] Specimen 5000113 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.662 	 [AI] Specimen 5000113 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.662 	 [AI] Specimen 5000114 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.671 	 [AI] Specimen 5000114 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.671 	 [AI] Specimen 5000115 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.676 	 [AI] Specimen 5000115 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.676 	 [AI] Specimen 5000116 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.682 	 [AI] Specimen 5000116 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.682 	 [AI] Specimen 5000117 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.688 	 [AI] Specimen 5000117 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.688 	 [AI] Specimen 5000118 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.693 	 [AI] Specimen 5000118 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.693 	 [AI] Specimen 5000119 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.697 	 [AI] Specimen 5000119 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.697 	 [AI] Specimen 5000120 starting simulation.
+[DEBUG] 2015-07-20 01:48:47.705 	 [AI] Specimen 5000120 finished simulation.
+[DEBUG] 2015-07-20 01:48:47.705 	 [AI] Generation 5 finished processing simulations.
+[DEBUG] 2015-07-20 01:48:47.706 	 [AI] Generation 5 successfully evaluated.
+[DEBUG] 2015-07-20 01:48:47.706 	 [AI] Generation: #5 Best specimen: ID [5000101] evaluation = -996 values: 9/9/4
+[DEBUG] 2015-07-20 01:48:53.708 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000121] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 0 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000122] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 1 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000123] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 2 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000124] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 3 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000125] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 4 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000126] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 5 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000127] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 6 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000128] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 7 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000129] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 8 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000130] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 9 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000131] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 10 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000132] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 11 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000133] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 12 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000134] evaluation = 0 values: 5/16/10
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 13 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000135] evaluation = 0 values: 5/16/6
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 14 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000136] evaluation = 0 values: 5/16/6
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 15 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000137] evaluation = 0 values: 5/16/4
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 16 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000138] evaluation = 0 values: 5/9/4
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 17 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000139] evaluation = 0 values: 5/16/7
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 18 created
+[DEBUG] 2015-07-20 01:48:53.708 	 ID [6000140] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:48:53.708 	 Controller 19 created
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Generation 6 added to sandbox.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000121 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000122 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000123 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000124 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000125 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000126 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000127 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000128 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000129 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000130 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000131 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000132 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000133 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000134 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000135 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000136 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000137 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000138 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000139 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000140 created.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Generation 6 initiated.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Generation 6 started processing simulations.
+[DEBUG] 2015-07-20 01:48:53.708 	 [AI] Specimen 6000121 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.713 	 [AI] Specimen 6000121 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.713 	 [AI] Specimen 6000122 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.717 	 [AI] Specimen 6000122 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.717 	 [AI] Specimen 6000123 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.722 	 [AI] Specimen 6000123 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.722 	 [AI] Specimen 6000124 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.727 	 [AI] Specimen 6000124 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.727 	 [AI] Specimen 6000125 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.733 	 [AI] Specimen 6000125 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.733 	 [AI] Specimen 6000126 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.739 	 [AI] Specimen 6000126 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.739 	 [AI] Specimen 6000127 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.749 	 [AI] Specimen 6000127 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.749 	 [AI] Specimen 6000128 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.758 	 [AI] Specimen 6000128 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.758 	 [AI] Specimen 6000129 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.768 	 [AI] Specimen 6000129 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.768 	 [AI] Specimen 6000130 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.778 	 [AI] Specimen 6000130 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.778 	 [AI] Specimen 6000131 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.787 	 [AI] Specimen 6000131 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.787 	 [AI] Specimen 6000132 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.793 	 [AI] Specimen 6000132 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.793 	 [AI] Specimen 6000133 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.798 	 [AI] Specimen 6000133 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.798 	 [AI] Specimen 6000134 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.806 	 [AI] Specimen 6000134 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.806 	 [AI] Specimen 6000135 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.815 	 [AI] Specimen 6000135 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.815 	 [AI] Specimen 6000136 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.821 	 [AI] Specimen 6000136 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.821 	 [AI] Specimen 6000137 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.825 	 [AI] Specimen 6000137 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.825 	 [AI] Specimen 6000138 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.828 	 [AI] Specimen 6000138 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.828 	 [AI] Specimen 6000139 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.835 	 [AI] Specimen 6000139 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.835 	 [AI] Specimen 6000140 starting simulation.
+[DEBUG] 2015-07-20 01:48:53.839 	 [AI] Specimen 6000140 finished simulation.
+[DEBUG] 2015-07-20 01:48:53.839 	 [AI] Generation 6 finished processing simulations.
+[DEBUG] 2015-07-20 01:48:53.84 	 [AI] Generation 6 successfully evaluated.
+[DEBUG] 2015-07-20 01:48:53.84 	 [AI] Generation: #6 Best specimen: ID [6000121] evaluation = -996 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:59.842 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000141] evaluation = 0 values: 9/9/5
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 0 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000142] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 1 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000143] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 2 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000144] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 3 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000145] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 4 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000146] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 5 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000147] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 6 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000148] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 7 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000149] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 8 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000150] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 9 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000151] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 10 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000152] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 11 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000153] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 12 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000154] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 13 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000155] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 14 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000156] evaluation = 0 values: 5/9/4
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 15 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000157] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 16 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000158] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 17 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000159] evaluation = 0 values: 2/9/5
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 18 created
+[DEBUG] 2015-07-20 01:48:59.842 	 ID [7000160] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:48:59.842 	 Controller 19 created
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Generation 7 added to sandbox.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000141 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000142 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000143 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000144 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000145 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000146 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000147 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000148 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000149 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000150 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000151 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000152 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000153 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000154 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000155 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000156 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000157 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000158 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000159 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000160 created.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Generation 7 initiated.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Generation 7 started processing simulations.
+[DEBUG] 2015-07-20 01:48:59.842 	 [AI] Specimen 7000141 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.847 	 [AI] Specimen 7000141 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.847 	 [AI] Specimen 7000142 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.853 	 [AI] Specimen 7000142 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.853 	 [AI] Specimen 7000143 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.859 	 [AI] Specimen 7000143 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.859 	 [AI] Specimen 7000144 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.864 	 [AI] Specimen 7000144 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.864 	 [AI] Specimen 7000145 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.874 	 [AI] Specimen 7000145 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.874 	 [AI] Specimen 7000146 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.884 	 [AI] Specimen 7000146 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.884 	 [AI] Specimen 7000147 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.893 	 [AI] Specimen 7000147 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.893 	 [AI] Specimen 7000148 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.903 	 [AI] Specimen 7000148 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.903 	 [AI] Specimen 7000149 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.913 	 [AI] Specimen 7000149 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.913 	 [AI] Specimen 7000150 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.922 	 [AI] Specimen 7000150 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.922 	 [AI] Specimen 7000151 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.932 	 [AI] Specimen 7000151 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.932 	 [AI] Specimen 7000152 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.937 	 [AI] Specimen 7000152 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.937 	 [AI] Specimen 7000153 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.941 	 [AI] Specimen 7000153 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.941 	 [AI] Specimen 7000154 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.945 	 [AI] Specimen 7000154 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.945 	 [AI] Specimen 7000155 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.949 	 [AI] Specimen 7000155 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.949 	 [AI] Specimen 7000156 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.952 	 [AI] Specimen 7000156 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.952 	 [AI] Specimen 7000157 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.956 	 [AI] Specimen 7000157 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.956 	 [AI] Specimen 7000158 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.96 	 [AI] Specimen 7000158 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.96 	 [AI] Specimen 7000159 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.963 	 [AI] Specimen 7000159 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.963 	 [AI] Specimen 7000160 starting simulation.
+[DEBUG] 2015-07-20 01:48:59.972 	 [AI] Specimen 7000160 finished simulation.
+[DEBUG] 2015-07-20 01:48:59.972 	 [AI] Generation 7 finished processing simulations.
+[DEBUG] 2015-07-20 01:48:59.973 	 [AI] Generation 7 successfully evaluated.
+[DEBUG] 2015-07-20 01:48:59.973 	 [AI] Generation: #7 Best specimen: ID [7000141] evaluation = -996 values: 9/9/5
+[DEBUG] 2015-07-20 01:49:05.975 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000161] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 0 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000162] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 1 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000163] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 2 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000164] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 3 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000165] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 4 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000166] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 5 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000167] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 6 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000168] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 7 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000169] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 8 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000170] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 9 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000171] evaluation = 0 values: 15/9/6
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 10 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000172] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 11 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000173] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 12 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000174] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 13 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000175] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 14 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000176] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 15 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000177] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 16 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000178] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 17 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000179] evaluation = 0 values: 5/8/6
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 18 created
+[DEBUG] 2015-07-20 01:49:05.975 	 ID [8000180] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:05.975 	 Controller 19 created
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Generation 8 added to sandbox.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000161 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000162 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000163 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000164 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000165 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000166 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000167 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000168 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000169 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000170 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000171 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000172 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000173 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000174 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000175 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000176 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000177 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000178 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000179 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000180 created.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Generation 8 initiated.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Generation 8 started processing simulations.
+[DEBUG] 2015-07-20 01:49:05.975 	 [AI] Specimen 8000161 starting simulation.
+[DEBUG] 2015-07-20 01:49:05.981 	 [AI] Specimen 8000161 finished simulation.
+[DEBUG] 2015-07-20 01:49:05.981 	 [AI] Specimen 8000162 starting simulation.
+[DEBUG] 2015-07-20 01:49:05.987 	 [AI] Specimen 8000162 finished simulation.
+[DEBUG] 2015-07-20 01:49:05.987 	 [AI] Specimen 8000163 starting simulation.
+[DEBUG] 2015-07-20 01:49:05.993 	 [AI] Specimen 8000163 finished simulation.
+[DEBUG] 2015-07-20 01:49:05.993 	 [AI] Specimen 8000164 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.002 	 [AI] Specimen 8000164 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.002 	 [AI] Specimen 8000165 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.012 	 [AI] Specimen 8000165 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.012 	 [AI] Specimen 8000166 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.025 	 [AI] Specimen 8000166 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.025 	 [AI] Specimen 8000167 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.035 	 [AI] Specimen 8000167 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.035 	 [AI] Specimen 8000168 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.045 	 [AI] Specimen 8000168 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.045 	 [AI] Specimen 8000169 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.054 	 [AI] Specimen 8000169 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.054 	 [AI] Specimen 8000170 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.064 	 [AI] Specimen 8000170 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.064 	 [AI] Specimen 8000171 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.071 	 [AI] Specimen 8000171 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.071 	 [AI] Specimen 8000172 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.074 	 [AI] Specimen 8000172 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.074 	 [AI] Specimen 8000173 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.078 	 [AI] Specimen 8000173 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.078 	 [AI] Specimen 8000174 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.082 	 [AI] Specimen 8000174 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.082 	 [AI] Specimen 8000175 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.086 	 [AI] Specimen 8000175 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.086 	 [AI] Specimen 8000176 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.09 	 [AI] Specimen 8000176 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.09 	 [AI] Specimen 8000177 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.094 	 [AI] Specimen 8000177 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.094 	 [AI] Specimen 8000178 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.099 	 [AI] Specimen 8000178 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.099 	 [AI] Specimen 8000179 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.103 	 [AI] Specimen 8000179 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.103 	 [AI] Specimen 8000180 starting simulation.
+[DEBUG] 2015-07-20 01:49:06.109 	 [AI] Specimen 8000180 finished simulation.
+[DEBUG] 2015-07-20 01:49:06.109 	 [AI] Generation 8 finished processing simulations.
+[DEBUG] 2015-07-20 01:49:06.109 	 [AI] Generation 8 successfully evaluated.
+[DEBUG] 2015-07-20 01:49:06.109 	 [AI] Generation: #8 Best specimen: ID [8000161] evaluation = -996 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:12.111 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000181] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 0 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000182] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 1 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000183] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 2 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000184] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 3 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000185] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 4 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000186] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 5 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000187] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 6 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000188] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 7 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000189] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 8 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000190] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 9 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000191] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 10 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000192] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 11 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000193] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 12 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000194] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 13 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000195] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 14 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000196] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 15 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000197] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 16 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000198] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 17 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000199] evaluation = 0 values: 5/9/2
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 18 created
+[DEBUG] 2015-07-20 01:49:12.111 	 ID [9000200] evaluation = 0 values: 12/9/10
+[DEBUG] 2015-07-20 01:49:12.111 	 Controller 19 created
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Generation 9 added to sandbox.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000181 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000182 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000183 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000184 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000185 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000186 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000187 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000188 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000189 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000190 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000191 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000192 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000193 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000194 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000195 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000196 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000197 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000198 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000199 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000200 created.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Generation 9 initiated.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Generation 9 started processing simulations.
+[DEBUG] 2015-07-20 01:49:12.111 	 [AI] Specimen 9000181 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.117 	 [AI] Specimen 9000181 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.117 	 [AI] Specimen 9000182 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.123 	 [AI] Specimen 9000182 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.123 	 [AI] Specimen 9000183 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.128 	 [AI] Specimen 9000183 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.128 	 [AI] Specimen 9000184 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.138 	 [AI] Specimen 9000184 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.138 	 [AI] Specimen 9000185 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.148 	 [AI] Specimen 9000185 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.148 	 [AI] Specimen 9000186 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.158 	 [AI] Specimen 9000186 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.158 	 [AI] Specimen 9000187 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.167 	 [AI] Specimen 9000187 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.167 	 [AI] Specimen 9000188 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.177 	 [AI] Specimen 9000188 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.177 	 [AI] Specimen 9000189 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.187 	 [AI] Specimen 9000189 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.187 	 [AI] Specimen 9000190 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.192 	 [AI] Specimen 9000190 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.192 	 [AI] Specimen 9000191 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.197 	 [AI] Specimen 9000191 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.197 	 [AI] Specimen 9000192 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.201 	 [AI] Specimen 9000192 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.201 	 [AI] Specimen 9000193 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.205 	 [AI] Specimen 9000193 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.205 	 [AI] Specimen 9000194 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.209 	 [AI] Specimen 9000194 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.209 	 [AI] Specimen 9000195 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.213 	 [AI] Specimen 9000195 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.213 	 [AI] Specimen 9000196 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.221 	 [AI] Specimen 9000196 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.221 	 [AI] Specimen 9000197 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.225 	 [AI] Specimen 9000197 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.225 	 [AI] Specimen 9000198 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.228 	 [AI] Specimen 9000198 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.228 	 [AI] Specimen 9000199 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.23 	 [AI] Specimen 9000199 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.23 	 [AI] Specimen 9000200 starting simulation.
+[DEBUG] 2015-07-20 01:49:12.239 	 [AI] Specimen 9000200 finished simulation.
+[DEBUG] 2015-07-20 01:49:12.239 	 [AI] Generation 9 finished processing simulations.
+[DEBUG] 2015-07-20 01:49:12.239 	 [AI] Generation 9 successfully evaluated.
+[DEBUG] 2015-07-20 01:49:12.239 	 [AI] Generation: #9 Best specimen: ID [9000181] evaluation = -996 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:18.241 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000201] evaluation = 0 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 0 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000202] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 1 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000203] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 2 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000204] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 3 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000205] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 4 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000206] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 5 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000207] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 6 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000208] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 7 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000209] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 8 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000210] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 9 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000211] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 10 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000212] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 11 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000213] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 12 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000214] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 13 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000215] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 14 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000216] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 15 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000217] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 16 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000218] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 17 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000219] evaluation = 0 values: 8/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 18 created
+[DEBUG] 2015-07-20 01:49:18.241 	 ID [10000220] evaluation = 0 values: 3/9/10
+[DEBUG] 2015-07-20 01:49:18.241 	 Controller 19 created
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Generation 10 added to sandbox.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000201 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000202 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000203 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000204 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000205 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000206 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000207 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000208 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000209 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000210 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000211 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000212 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000213 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000214 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000215 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000216 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000217 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000218 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000219 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000220 created.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Generation 10 initiated.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Generation 10 started processing simulations.
+[DEBUG] 2015-07-20 01:49:18.241 	 [AI] Specimen 10000201 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.247 	 [AI] Specimen 10000201 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.247 	 [AI] Specimen 10000202 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.257 	 [AI] Specimen 10000202 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.257 	 [AI] Specimen 10000203 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.267 	 [AI] Specimen 10000203 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.267 	 [AI] Specimen 10000204 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.276 	 [AI] Specimen 10000204 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.276 	 [AI] Specimen 10000205 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.286 	 [AI] Specimen 10000205 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.286 	 [AI] Specimen 10000206 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.296 	 [AI] Specimen 10000206 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.296 	 [AI] Specimen 10000207 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.305 	 [AI] Specimen 10000207 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.305 	 [AI] Specimen 10000208 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.315 	 [AI] Specimen 10000208 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.315 	 [AI] Specimen 10000209 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.325 	 [AI] Specimen 10000209 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.325 	 [AI] Specimen 10000210 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.33 	 [AI] Specimen 10000210 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.33 	 [AI] Specimen 10000211 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.335 	 [AI] Specimen 10000211 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.335 	 [AI] Specimen 10000212 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.341 	 [AI] Specimen 10000212 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.341 	 [AI] Specimen 10000213 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.346 	 [AI] Specimen 10000213 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.346 	 [AI] Specimen 10000214 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.35 	 [AI] Specimen 10000214 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.35 	 [AI] Specimen 10000215 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.354 	 [AI] Specimen 10000215 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.354 	 [AI] Specimen 10000216 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.357 	 [AI] Specimen 10000216 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.357 	 [AI] Specimen 10000217 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.362 	 [AI] Specimen 10000217 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.362 	 [AI] Specimen 10000218 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.367 	 [AI] Specimen 10000218 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.367 	 [AI] Specimen 10000219 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.374 	 [AI] Specimen 10000219 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.374 	 [AI] Specimen 10000220 starting simulation.
+[DEBUG] 2015-07-20 01:49:18.379 	 [AI] Specimen 10000220 finished simulation.
+[DEBUG] 2015-07-20 01:49:18.379 	 [AI] Generation 10 finished processing simulations.
+[DEBUG] 2015-07-20 01:49:18.379 	 [AI] Generation 10 successfully evaluated.
+[DEBUG] 2015-07-20 01:49:18.379 	 [AI] Generation: #10 Best specimen: ID [10000201] evaluation = -996 values: 15/9/5
+[DEBUG] 2015-07-20 01:49:24.381 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000221] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 0 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000222] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 1 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000223] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 2 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000224] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 3 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000225] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 4 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000226] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 5 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000227] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 6 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000228] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 7 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000229] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 8 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000230] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 9 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000231] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 10 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000232] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 11 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000233] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 12 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000234] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 13 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000235] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 14 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000236] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 15 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000237] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 16 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000238] evaluation = 0 values: 3/9/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 17 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000239] evaluation = 0 values: 15/11/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 18 created
+[DEBUG] 2015-07-20 01:49:24.381 	 ID [11000240] evaluation = 0 values: 3/18/10
+[DEBUG] 2015-07-20 01:49:24.381 	 Controller 19 created
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Generation 11 added to sandbox.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000221 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000222 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000223 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000224 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000225 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000226 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000227 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000228 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000229 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000230 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000231 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000232 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000233 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000234 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000235 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000236 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000237 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000238 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000239 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000240 created.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Generation 11 initiated.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Generation 11 started processing simulations.
+[DEBUG] 2015-07-20 01:49:24.381 	 [AI] Specimen 11000221 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.392 	 [AI] Specimen 11000221 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.392 	 [AI] Specimen 11000222 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.402 	 [AI] Specimen 11000222 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.402 	 [AI] Specimen 11000223 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.411 	 [AI] Specimen 11000223 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.411 	 [AI] Specimen 11000224 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.421 	 [AI] Specimen 11000224 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.421 	 [AI] Specimen 11000225 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.431 	 [AI] Specimen 11000225 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.431 	 [AI] Specimen 11000226 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.441 	 [AI] Specimen 11000226 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.441 	 [AI] Specimen 11000227 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.451 	 [AI] Specimen 11000227 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.451 	 [AI] Specimen 11000228 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.461 	 [AI] Specimen 11000228 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.461 	 [AI] Specimen 11000229 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.471 	 [AI] Specimen 11000229 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.471 	 [AI] Specimen 11000230 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.476 	 [AI] Specimen 11000230 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.476 	 [AI] Specimen 11000231 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.482 	 [AI] Specimen 11000231 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.482 	 [AI] Specimen 11000232 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.486 	 [AI] Specimen 11000232 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.486 	 [AI] Specimen 11000233 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.489 	 [AI] Specimen 11000233 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.489 	 [AI] Specimen 11000234 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.493 	 [AI] Specimen 11000234 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.493 	 [AI] Specimen 11000235 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.498 	 [AI] Specimen 11000235 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.498 	 [AI] Specimen 11000236 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.503 	 [AI] Specimen 11000236 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.503 	 [AI] Specimen 11000237 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.506 	 [AI] Specimen 11000237 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.506 	 [AI] Specimen 11000238 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.511 	 [AI] Specimen 11000238 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.511 	 [AI] Specimen 11000239 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.522 	 [AI] Specimen 11000239 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.522 	 [AI] Specimen 11000240 starting simulation.
+[DEBUG] 2015-07-20 01:49:24.53 	 [AI] Specimen 11000240 finished simulation.
+[DEBUG] 2015-07-20 01:49:24.53 	 [AI] Generation 11 finished processing simulations.
+[DEBUG] 2015-07-20 01:49:24.53 	 [AI] Generation 11 successfully evaluated.
+[DEBUG] 2015-07-20 01:49:24.53 	 [AI] Generation: #11 Best specimen: ID [11000221] evaluation = -996 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000241] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 0 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000242] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 1 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000243] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 2 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000244] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 3 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000245] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 4 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000246] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 5 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000247] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 6 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000248] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 7 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000249] evaluation = 0 values: 15/9/6
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 8 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000250] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 9 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000251] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 10 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000252] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 11 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000253] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 12 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000254] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 13 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000255] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 14 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000256] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 15 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000257] evaluation = 0 values: 12/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 16 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000258] evaluation = 0 values: 3/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 17 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000259] evaluation = 0 values: 14/9/10
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 18 created
+[DEBUG] 2015-07-20 01:49:30.532 	 ID [12000260] evaluation = 0 values: 5/9/8
+[DEBUG] 2015-07-20 01:49:30.532 	 Controller 19 created
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Generation 12 added to sandbox.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000241 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000242 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000243 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000244 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000245 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000246 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000247 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000248 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000249 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000250 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000251 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000252 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000253 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000254 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000255 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000256 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000257 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000258 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000259 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000260 created.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Generation 12 initiated.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Generation 12 started processing simulations.
+[DEBUG] 2015-07-20 01:49:30.532 	 [AI] Specimen 12000241 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.542 	 [AI] Specimen 12000241 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.542 	 [AI] Specimen 12000242 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.552 	 [AI] Specimen 12000242 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.552 	 [AI] Specimen 12000243 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.562 	 [AI] Specimen 12000243 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.562 	 [AI] Specimen 12000244 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.571 	 [AI] Specimen 12000244 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.571 	 [AI] Specimen 12000245 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.581 	 [AI] Specimen 12000245 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.581 	 [AI] Specimen 12000246 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.591 	 [AI] Specimen 12000246 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.591 	 [AI] Specimen 12000247 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.6 	 [AI] Specimen 12000247 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.6 	 [AI] Specimen 12000248 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.61 	 [AI] Specimen 12000248 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.61 	 [AI] Specimen 12000249 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.618 	 [AI] Specimen 12000249 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.618 	 [AI] Specimen 12000250 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.622 	 [AI] Specimen 12000250 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.622 	 [AI] Specimen 12000251 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.625 	 [AI] Specimen 12000251 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.625 	 [AI] Specimen 12000252 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.629 	 [AI] Specimen 12000252 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.629 	 [AI] Specimen 12000253 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.632 	 [AI] Specimen 12000253 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.632 	 [AI] Specimen 12000254 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.637 	 [AI] Specimen 12000254 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.637 	 [AI] Specimen 12000255 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.643 	 [AI] Specimen 12000255 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.643 	 [AI] Specimen 12000256 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.649 	 [AI] Specimen 12000256 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.649 	 [AI] Specimen 12000257 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.657 	 [AI] Specimen 12000257 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.657 	 [AI] Specimen 12000258 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.661 	 [AI] Specimen 12000258 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.661 	 [AI] Specimen 12000259 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.671 	 [AI] Specimen 12000259 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.671 	 [AI] Specimen 12000260 starting simulation.
+[DEBUG] 2015-07-20 01:49:30.675 	 [AI] Specimen 12000260 finished simulation.
+[DEBUG] 2015-07-20 01:49:30.675 	 [AI] Generation 12 finished processing simulations.
+[DEBUG] 2015-07-20 01:49:30.676 	 [AI] Generation 12 successfully evaluated.
+[DEBUG] 2015-07-20 01:49:30.676 	 [AI] Generation: #12 Best specimen: ID [12000241] evaluation = -996 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000261] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 0 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000262] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 1 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000263] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 2 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000264] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 3 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000265] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 4 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000266] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 5 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000267] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 6 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000268] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 7 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000269] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 8 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000270] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 9 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000271] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 10 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000272] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 11 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000273] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 12 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000274] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 13 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000275] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 14 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000276] evaluation = 0 values: 3/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 15 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000277] evaluation = 0 values: 3/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 16 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000278] evaluation = 0 values: 14/9/10
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 17 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000279] evaluation = 0 values: 3/14/5
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 18 created
+[DEBUG] 2015-07-20 01:49:36.678 	 ID [13000280] evaluation = 0 values: 5/9/7
+[DEBUG] 2015-07-20 01:49:36.678 	 Controller 19 created
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Generation 13 added to sandbox.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000261 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000262 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000263 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000264 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000265 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000266 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000267 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000268 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000269 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000270 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000271 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000272 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000273 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000274 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000275 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000276 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000277 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000278 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000279 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000280 created.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Generation 13 initiated.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Generation 13 started processing simulations.
+[DEBUG] 2015-07-20 01:49:36.678 	 [AI] Specimen 13000261 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.688 	 [AI] Specimen 13000261 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.688 	 [AI] Specimen 13000262 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.698 	 [AI] Specimen 13000262 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.698 	 [AI] Specimen 13000263 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.708 	 [AI] Specimen 13000263 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.708 	 [AI] Specimen 13000264 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.717 	 [AI] Specimen 13000264 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.717 	 [AI] Specimen 13000265 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.727 	 [AI] Specimen 13000265 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.727 	 [AI] Specimen 13000266 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.737 	 [AI] Specimen 13000266 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.737 	 [AI] Specimen 13000267 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.746 	 [AI] Specimen 13000267 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.746 	 [AI] Specimen 13000268 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.75 	 [AI] Specimen 13000268 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.75 	 [AI] Specimen 13000269 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.754 	 [AI] Specimen 13000269 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.754 	 [AI] Specimen 13000270 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.758 	 [AI] Specimen 13000270 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.758 	 [AI] Specimen 13000271 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.762 	 [AI] Specimen 13000271 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.762 	 [AI] Specimen 13000272 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.767 	 [AI] Specimen 13000272 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.767 	 [AI] Specimen 13000273 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.772 	 [AI] Specimen 13000273 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.772 	 [AI] Specimen 13000274 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.777 	 [AI] Specimen 13000274 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.777 	 [AI] Specimen 13000275 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.78 	 [AI] Specimen 13000275 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.78 	 [AI] Specimen 13000276 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.785 	 [AI] Specimen 13000276 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.785 	 [AI] Specimen 13000277 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.79 	 [AI] Specimen 13000277 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.79 	 [AI] Specimen 13000278 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.799 	 [AI] Specimen 13000278 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.799 	 [AI] Specimen 13000279 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.803 	 [AI] Specimen 13000279 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.803 	 [AI] Specimen 13000280 starting simulation.
+[DEBUG] 2015-07-20 01:49:36.807 	 [AI] Specimen 13000280 finished simulation.
+[DEBUG] 2015-07-20 01:49:36.807 	 [AI] Generation 13 finished processing simulations.
+[DEBUG] 2015-07-20 01:49:36.808 	 [AI] Generation 13 successfully evaluated.
+[DEBUG] 2015-07-20 01:49:36.808 	 [AI] Generation: #13 Best specimen: ID [13000261] evaluation = -996 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000281] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 0 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000282] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 1 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000283] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 2 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000284] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 3 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000285] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 4 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000286] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 5 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000287] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 6 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000288] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 7 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000289] evaluation = 0 values: 5/9/6
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 8 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000290] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 9 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000291] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 10 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000292] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 11 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000293] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 12 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000294] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 13 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000295] evaluation = 0 values: 3/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 14 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000296] evaluation = 0 values: 14/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 15 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000297] evaluation = 0 values: 3/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 16 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000298] evaluation = 0 values: 3/14/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 17 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000299] evaluation = 0 values: 12/9/10
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 18 created
+[DEBUG] 2015-07-20 01:49:42.81 	 ID [14000300] evaluation = 0 values: 5/5/6
+[DEBUG] 2015-07-20 01:49:42.81 	 Controller 19 created
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Generation 14 added to sandbox.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000281 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000282 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000283 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000284 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000285 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000286 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000287 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000288 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000289 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000290 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000291 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000292 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000293 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000294 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000295 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000296 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000297 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000298 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000299 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000300 created.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Generation 14 initiated.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Generation 14 started processing simulations.
+[DEBUG] 2015-07-20 01:49:42.81 	 [AI] Specimen 14000281 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.82 	 [AI] Specimen 14000281 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.82 	 [AI] Specimen 14000282 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.83 	 [AI] Specimen 14000282 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.83 	 [AI] Specimen 14000283 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.841 	 [AI] Specimen 14000283 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.841 	 [AI] Specimen 14000284 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.85 	 [AI] Specimen 14000284 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.85 	 [AI] Specimen 14000285 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.856 	 [AI] Specimen 14000285 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.856 	 [AI] Specimen 14000286 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.861 	 [AI] Specimen 14000286 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.861 	 [AI] Specimen 14000287 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.865 	 [AI] Specimen 14000287 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.865 	 [AI] Specimen 14000288 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.869 	 [AI] Specimen 14000288 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.869 	 [AI] Specimen 14000289 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.873 	 [AI] Specimen 14000289 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.873 	 [AI] Specimen 14000290 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.877 	 [AI] Specimen 14000290 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.877 	 [AI] Specimen 14000291 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.88 	 [AI] Specimen 14000291 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.88 	 [AI] Specimen 14000292 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.885 	 [AI] Specimen 14000292 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.885 	 [AI] Specimen 14000293 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.888 	 [AI] Specimen 14000293 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.888 	 [AI] Specimen 14000294 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.892 	 [AI] Specimen 14000294 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.892 	 [AI] Specimen 14000295 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.896 	 [AI] Specimen 14000295 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.896 	 [AI] Specimen 14000296 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.905 	 [AI] Specimen 14000296 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.905 	 [AI] Specimen 14000297 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.91 	 [AI] Specimen 14000297 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.91 	 [AI] Specimen 14000298 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.916 	 [AI] Specimen 14000298 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.916 	 [AI] Specimen 14000299 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.925 	 [AI] Specimen 14000299 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.925 	 [AI] Specimen 14000300 starting simulation.
+[DEBUG] 2015-07-20 01:49:42.928 	 [AI] Specimen 14000300 finished simulation.
+[DEBUG] 2015-07-20 01:49:42.928 	 [AI] Generation 14 finished processing simulations.
+[DEBUG] 2015-07-20 01:49:42.928 	 [AI] Generation 14 successfully evaluated.
+[DEBUG] 2015-07-20 01:49:42.928 	 [AI] Generation: #14 Best specimen: ID [14000281] evaluation = -996 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000301] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 0 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000302] evaluation = 0 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 1 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000303] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 2 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000304] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 3 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000305] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 4 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000306] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 5 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000307] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 6 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000308] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 7 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000309] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 8 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000310] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 9 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000311] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 10 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000312] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 11 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000313] evaluation = 0 values: 14/9/5
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 12 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000314] evaluation = 0 values: 14/9/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 13 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000315] evaluation = 0 values: 3/9/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 14 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000316] evaluation = 0 values: 3/9/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 15 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000317] evaluation = 0 values: 3/5/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 16 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000318] evaluation = 0 values: 5/5/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 17 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000319] evaluation = 0 values: 5/8/5
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 18 created
+[DEBUG] 2015-07-20 01:49:48.93 	 ID [15000320] evaluation = 0 values: 5/10/10
+[DEBUG] 2015-07-20 01:49:48.93 	 Controller 19 created
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Generation 15 added to sandbox.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000301 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000302 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000303 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000304 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000305 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000306 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000307 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000308 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000309 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000310 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000311 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000312 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000313 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000314 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000315 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000316 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000317 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000318 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000319 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000320 created.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Generation 15 initiated.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Generation 15 started processing simulations.
+[DEBUG] 2015-07-20 01:49:48.93 	 [AI] Specimen 15000301 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.94 	 [AI] Specimen 15000301 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.94 	 [AI] Specimen 15000302 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.95 	 [AI] Specimen 15000302 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.95 	 [AI] Specimen 15000303 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.955 	 [AI] Specimen 15000303 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.955 	 [AI] Specimen 15000304 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.961 	 [AI] Specimen 15000304 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.961 	 [AI] Specimen 15000305 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.966 	 [AI] Specimen 15000305 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.966 	 [AI] Specimen 15000306 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.972 	 [AI] Specimen 15000306 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.972 	 [AI] Specimen 15000307 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.975 	 [AI] Specimen 15000307 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.975 	 [AI] Specimen 15000308 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.979 	 [AI] Specimen 15000308 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.979 	 [AI] Specimen 15000309 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.982 	 [AI] Specimen 15000309 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.982 	 [AI] Specimen 15000310 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.987 	 [AI] Specimen 15000310 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.987 	 [AI] Specimen 15000311 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.992 	 [AI] Specimen 15000311 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.992 	 [AI] Specimen 15000312 starting simulation.
+[DEBUG] 2015-07-20 01:49:48.998 	 [AI] Specimen 15000312 finished simulation.
+[DEBUG] 2015-07-20 01:49:48.998 	 [AI] Specimen 15000313 starting simulation.
+[DEBUG] 2015-07-20 01:49:49.004 	 [AI] Specimen 15000313 finished simulation.
+[DEBUG] 2015-07-20 01:49:49.004 	 [AI] Specimen 15000314 starting simulation.
+[DEBUG] 2015-07-20 01:49:49.013 	 [AI] Specimen 15000314 finished simulation.
+[DEBUG] 2015-07-20 01:49:49.013 	 [AI] Specimen 15000315 starting simulation.
+[DEBUG] 2015-07-20 01:49:49.018 	 [AI] Specimen 15000315 finished simulation.
+[DEBUG] 2015-07-20 01:49:49.018 	 [AI] Specimen 15000316 starting simulation.
+[DEBUG] 2015-07-20 01:49:49.022 	 [AI] Specimen 15000316 finished simulation.
+[DEBUG] 2015-07-20 01:49:49.022 	 [AI] Specimen 15000317 starting simulation.
+[DEBUG] 2015-07-20 01:49:49.026 	 [AI] Specimen 15000317 finished simulation.
+[DEBUG] 2015-07-20 01:49:49.026 	 [AI] Specimen 15000318 starting simulation.
+[DEBUG] 2015-07-20 01:49:49.029 	 [AI] Specimen 15000318 finished simulation.
+[DEBUG] 2015-07-20 01:49:49.029 	 [AI] Specimen 15000319 starting simulation.
+[DEBUG] 2015-07-20 01:49:49.033 	 [AI] Specimen 15000319 finished simulation.
+[DEBUG] 2015-07-20 01:49:49.033 	 [AI] Specimen 15000320 starting simulation.
+[DEBUG] 2015-07-20 01:49:49.039 	 [AI] Specimen 15000320 finished simulation.
+[DEBUG] 2015-07-20 01:49:49.039 	 [AI] Generation 15 finished processing simulations.
+[DEBUG] 2015-07-20 01:49:49.039 	 [AI] Generation 15 successfully evaluated.
+[DEBUG] 2015-07-20 01:49:49.039 	 [AI] Generation: #15 Best specimen: ID [15000301] evaluation = -996 values: 15/9/10
+[DEBUG] 2015-07-20 01:49:55.041 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000321] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 0 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000322] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 1 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000323] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 2 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000324] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 3 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000325] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 4 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000326] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 5 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000327] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 6 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000328] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 7 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000329] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 8 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000330] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 9 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000331] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 10 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000332] evaluation = 0 values: 14/9/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 11 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000333] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 12 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000334] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 13 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000335] evaluation = 0 values: 3/5/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 14 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000336] evaluation = 0 values: 5/5/10
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 15 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000337] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 16 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000338] evaluation = 0 values: 5/8/5
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 17 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000339] evaluation = 0 values: 5/9/2
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 18 created
+[DEBUG] 2015-07-20 01:49:55.041 	 ID [16000340] evaluation = 0 values: 2/9/2
+[DEBUG] 2015-07-20 01:49:55.041 	 Controller 19 created
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Generation 16 added to sandbox.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000321 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000322 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000323 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000324 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000325 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000326 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000327 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000328 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000329 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000330 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000331 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000332 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000333 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000334 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000335 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000336 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000337 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000338 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000339 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000340 created.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Generation 16 initiated.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Generation 16 started processing simulations.
+[DEBUG] 2015-07-20 01:49:55.041 	 [AI] Specimen 16000321 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.047 	 [AI] Specimen 16000321 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.047 	 [AI] Specimen 16000322 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.052 	 [AI] Specimen 16000322 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.052 	 [AI] Specimen 16000323 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.057 	 [AI] Specimen 16000323 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.057 	 [AI] Specimen 16000324 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.063 	 [AI] Specimen 16000324 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.063 	 [AI] Specimen 16000325 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.068 	 [AI] Specimen 16000325 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.068 	 [AI] Specimen 16000326 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.072 	 [AI] Specimen 16000326 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.072 	 [AI] Specimen 16000327 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.075 	 [AI] Specimen 16000327 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.075 	 [AI] Specimen 16000328 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.079 	 [AI] Specimen 16000328 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.079 	 [AI] Specimen 16000329 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.082 	 [AI] Specimen 16000329 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.082 	 [AI] Specimen 16000330 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.087 	 [AI] Specimen 16000330 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.087 	 [AI] Specimen 16000331 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.092 	 [AI] Specimen 16000331 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.092 	 [AI] Specimen 16000332 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.098 	 [AI] Specimen 16000332 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.098 	 [AI] Specimen 16000333 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.101 	 [AI] Specimen 16000333 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.101 	 [AI] Specimen 16000334 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.104 	 [AI] Specimen 16000334 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.104 	 [AI] Specimen 16000335 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.106 	 [AI] Specimen 16000335 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.106 	 [AI] Specimen 16000336 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.11 	 [AI] Specimen 16000336 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.11 	 [AI] Specimen 16000337 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.113 	 [AI] Specimen 16000337 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.113 	 [AI] Specimen 16000338 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.116 	 [AI] Specimen 16000338 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.116 	 [AI] Specimen 16000339 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.118 	 [AI] Specimen 16000339 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.118 	 [AI] Specimen 16000340 starting simulation.
+[DEBUG] 2015-07-20 01:49:55.12 	 [AI] Specimen 16000340 finished simulation.
+[DEBUG] 2015-07-20 01:49:55.12 	 [AI] Generation 16 finished processing simulations.
+[DEBUG] 2015-07-20 01:49:55.121 	 [AI] Generation 16 successfully evaluated.
+[DEBUG] 2015-07-20 01:49:55.121 	 [AI] Generation: #16 Best specimen: ID [16000326] evaluation = -996 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000341] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 0 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000342] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 1 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000343] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 2 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000344] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 3 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000345] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 4 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000346] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 5 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000347] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 6 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000348] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 7 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000349] evaluation = 0 values: 12/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 8 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000350] evaluation = 0 values: 14/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 9 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000351] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 10 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000352] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 11 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000353] evaluation = 0 values: 3/5/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 12 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000354] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 13 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000355] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 14 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000356] evaluation = 0 values: 5/8/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 15 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000357] evaluation = 0 values: 2/8/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 16 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000358] evaluation = 0 values: 2/8/2
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 17 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000359] evaluation = 0 values: 5/8/2
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 18 created
+[DEBUG] 2015-07-20 01:50:01.123 	 ID [17000360] evaluation = 0 values: 5/18/5
+[DEBUG] 2015-07-20 01:50:01.123 	 Controller 19 created
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Generation 17 added to sandbox.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000341 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000342 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000343 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000344 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000345 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000346 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000347 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000348 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000349 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000350 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000351 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000352 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000353 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000354 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000355 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000356 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000357 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000358 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000359 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000360 created.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Generation 17 initiated.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Generation 17 started processing simulations.
+[DEBUG] 2015-07-20 01:50:01.123 	 [AI] Specimen 17000341 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.129 	 [AI] Specimen 17000341 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.129 	 [AI] Specimen 17000342 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.134 	 [AI] Specimen 17000342 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.134 	 [AI] Specimen 17000343 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.138 	 [AI] Specimen 17000343 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.138 	 [AI] Specimen 17000344 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.141 	 [AI] Specimen 17000344 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.141 	 [AI] Specimen 17000345 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.145 	 [AI] Specimen 17000345 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.145 	 [AI] Specimen 17000346 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.148 	 [AI] Specimen 17000346 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.148 	 [AI] Specimen 17000347 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.153 	 [AI] Specimen 17000347 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.153 	 [AI] Specimen 17000348 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.158 	 [AI] Specimen 17000348 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.158 	 [AI] Specimen 17000349 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.164 	 [AI] Specimen 17000349 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.164 	 [AI] Specimen 17000350 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.169 	 [AI] Specimen 17000350 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.169 	 [AI] Specimen 17000351 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.172 	 [AI] Specimen 17000351 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.172 	 [AI] Specimen 17000352 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.175 	 [AI] Specimen 17000352 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.175 	 [AI] Specimen 17000353 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.178 	 [AI] Specimen 17000353 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.178 	 [AI] Specimen 17000354 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.18 	 [AI] Specimen 17000354 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.18 	 [AI] Specimen 17000355 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.183 	 [AI] Specimen 17000355 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.183 	 [AI] Specimen 17000356 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.186 	 [AI] Specimen 17000356 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.186 	 [AI] Specimen 17000357 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.189 	 [AI] Specimen 17000357 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.189 	 [AI] Specimen 17000358 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.19 	 [AI] Specimen 17000358 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.19 	 [AI] Specimen 17000359 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.193 	 [AI] Specimen 17000359 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.193 	 [AI] Specimen 17000360 starting simulation.
+[DEBUG] 2015-07-20 01:50:01.198 	 [AI] Specimen 17000360 finished simulation.
+[DEBUG] 2015-07-20 01:50:01.198 	 [AI] Generation 17 finished processing simulations.
+[DEBUG] 2015-07-20 01:50:01.199 	 [AI] Generation 17 successfully evaluated.
+[DEBUG] 2015-07-20 01:50:01.199 	 [AI] Generation: #17 Best specimen: ID [17000343] evaluation = -996 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000361] evaluation = 0 values: 5/9/10
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 0 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000362] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 1 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000363] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 2 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000364] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 3 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000365] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 4 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000366] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 5 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000367] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 6 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000368] evaluation = 0 values: 14/9/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 7 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000369] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 8 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000370] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 9 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000371] evaluation = 0 values: 3/5/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 10 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000372] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 11 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000373] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 12 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000374] evaluation = 0 values: 5/8/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 13 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000375] evaluation = 0 values: 2/8/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 14 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000376] evaluation = 0 values: 2/8/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 15 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000377] evaluation = 0 values: 5/8/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 16 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000378] evaluation = 0 values: 5/18/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 17 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000379] evaluation = 0 values: 5/18/1
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 18 created
+[DEBUG] 2015-07-20 01:50:07.201 	 ID [18000380] evaluation = 0 values: 5/21/5
+[DEBUG] 2015-07-20 01:50:07.201 	 Controller 19 created
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Generation 18 added to sandbox.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000361 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000362 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000363 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000364 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000365 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000366 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000367 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000368 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000369 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000370 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000371 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000372 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000373 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000374 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000375 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000376 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000377 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000378 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000379 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000380 created.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Generation 18 initiated.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Generation 18 started processing simulations.
+[DEBUG] 2015-07-20 01:50:07.201 	 [AI] Specimen 18000361 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.207 	 [AI] Specimen 18000361 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.207 	 [AI] Specimen 18000362 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.21 	 [AI] Specimen 18000362 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.21 	 [AI] Specimen 18000363 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.214 	 [AI] Specimen 18000363 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.214 	 [AI] Specimen 18000364 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.217 	 [AI] Specimen 18000364 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.217 	 [AI] Specimen 18000365 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.221 	 [AI] Specimen 18000365 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.221 	 [AI] Specimen 18000366 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.224 	 [AI] Specimen 18000366 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.224 	 [AI] Specimen 18000367 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.228 	 [AI] Specimen 18000367 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.228 	 [AI] Specimen 18000368 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.233 	 [AI] Specimen 18000368 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.233 	 [AI] Specimen 18000369 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.237 	 [AI] Specimen 18000369 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.237 	 [AI] Specimen 18000370 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.24 	 [AI] Specimen 18000370 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.24 	 [AI] Specimen 18000371 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.243 	 [AI] Specimen 18000371 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.243 	 [AI] Specimen 18000372 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.245 	 [AI] Specimen 18000372 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.245 	 [AI] Specimen 18000373 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.248 	 [AI] Specimen 18000373 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.248 	 [AI] Specimen 18000374 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.251 	 [AI] Specimen 18000374 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.251 	 [AI] Specimen 18000375 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.254 	 [AI] Specimen 18000375 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.254 	 [AI] Specimen 18000376 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.256 	 [AI] Specimen 18000376 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.256 	 [AI] Specimen 18000377 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.259 	 [AI] Specimen 18000377 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.259 	 [AI] Specimen 18000378 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.265 	 [AI] Specimen 18000378 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.265 	 [AI] Specimen 18000379 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.267 	 [AI] Specimen 18000379 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.267 	 [AI] Specimen 18000380 starting simulation.
+[DEBUG] 2015-07-20 01:50:07.273 	 [AI] Specimen 18000380 finished simulation.
+[DEBUG] 2015-07-20 01:50:07.273 	 [AI] Generation 18 finished processing simulations.
+[DEBUG] 2015-07-20 01:50:07.274 	 [AI] Generation 18 successfully evaluated.
+[DEBUG] 2015-07-20 01:50:07.274 	 [AI] Generation: #18 Best specimen: ID [18000362] evaluation = -996 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:10.387 	 Main window log posted. [Market closed - waiting]
+[DEBUG] 2015-07-20 01:50:13.276 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000381] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 0 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000382] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 1 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000383] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 2 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000384] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 3 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000385] evaluation = 0 values: 14/9/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 4 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000386] evaluation = 0 values: 14/9/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 5 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000387] evaluation = 0 values: 14/9/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 6 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000388] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 7 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000389] evaluation = 0 values: 3/5/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 8 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000390] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 9 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000391] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 10 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000392] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 11 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000393] evaluation = 0 values: 2/5/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 12 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000394] evaluation = 0 values: 2/5/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 13 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000395] evaluation = 0 values: 2/18/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 14 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000396] evaluation = 0 values: 2/18/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 15 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000397] evaluation = 0 values: 5/18/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 16 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000398] evaluation = 0 values: 5/21/5
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 17 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000399] evaluation = 0 values: 5/9/1
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 18 created
+[DEBUG] 2015-07-20 01:50:13.276 	 ID [19000400] evaluation = 0 values: 19/9/1
+[DEBUG] 2015-07-20 01:50:13.276 	 Controller 19 created
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Generation 19 added to sandbox.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000381 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000382 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000383 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000384 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000385 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000386 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000387 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000388 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000389 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000390 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000391 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000392 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000393 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000394 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000395 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000396 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000397 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000398 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000399 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000400 created.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Generation 19 initiated.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Generation 19 started processing simulations.
+[DEBUG] 2015-07-20 01:50:13.276 	 [AI] Specimen 19000381 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.28 	 [AI] Specimen 19000381 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.28 	 [AI] Specimen 19000382 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.283 	 [AI] Specimen 19000382 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.283 	 [AI] Specimen 19000383 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.287 	 [AI] Specimen 19000383 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.287 	 [AI] Specimen 19000384 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.29 	 [AI] Specimen 19000384 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.29 	 [AI] Specimen 19000385 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.296 	 [AI] Specimen 19000385 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.296 	 [AI] Specimen 19000386 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.302 	 [AI] Specimen 19000386 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.302 	 [AI] Specimen 19000387 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.307 	 [AI] Specimen 19000387 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.307 	 [AI] Specimen 19000388 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.31 	 [AI] Specimen 19000388 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.31 	 [AI] Specimen 19000389 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.312 	 [AI] Specimen 19000389 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.312 	 [AI] Specimen 19000390 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.315 	 [AI] Specimen 19000390 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.315 	 [AI] Specimen 19000391 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.318 	 [AI] Specimen 19000391 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.318 	 [AI] Specimen 19000392 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.32 	 [AI] Specimen 19000392 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.32 	 [AI] Specimen 19000393 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.322 	 [AI] Specimen 19000393 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.322 	 [AI] Specimen 19000394 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.325 	 [AI] Specimen 19000394 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.325 	 [AI] Specimen 19000395 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.329 	 [AI] Specimen 19000395 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.329 	 [AI] Specimen 19000396 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.334 	 [AI] Specimen 19000396 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.334 	 [AI] Specimen 19000397 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.339 	 [AI] Specimen 19000397 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.339 	 [AI] Specimen 19000398 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.345 	 [AI] Specimen 19000398 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.345 	 [AI] Specimen 19000399 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.347 	 [AI] Specimen 19000399 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.347 	 [AI] Specimen 19000400 starting simulation.
+[DEBUG] 2015-07-20 01:50:13.35 	 [AI] Specimen 19000400 finished simulation.
+[DEBUG] 2015-07-20 01:50:13.35 	 [AI] Generation 19 finished processing simulations.
+[DEBUG] 2015-07-20 01:50:13.35 	 [AI] Generation 19 successfully evaluated.
+[DEBUG] 2015-07-20 01:50:13.35 	 [AI] Generation: #19 Best specimen: ID [19000381] evaluation = -996 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Main window log posted. [[AI] Creating new generation.]
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Creating new generation.
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000401] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 0 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000402] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 1 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000403] evaluation = 0 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 2 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000404] evaluation = 0 values: 14/9/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 3 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000405] evaluation = 0 values: 14/9/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 4 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000406] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 5 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000407] evaluation = 0 values: 3/9/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 6 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000408] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 7 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000409] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 8 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000410] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 9 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000411] evaluation = 0 values: 5/5/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 10 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000412] evaluation = 0 values: 2/5/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 11 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000413] evaluation = 0 values: 2/18/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 12 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000414] evaluation = 0 values: 2/18/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 13 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000415] evaluation = 0 values: 2/21/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 14 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000416] evaluation = 0 values: 5/21/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 15 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000417] evaluation = 0 values: 19/21/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 16 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000418] evaluation = 0 values: 19/9/1
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 17 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000419] evaluation = 0 values: 5/2/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 18 created
+[DEBUG] 2015-07-20 01:50:19.352 	 ID [20000420] evaluation = 0 values: 3/17/5
+[DEBUG] 2015-07-20 01:50:19.352 	 Controller 19 created
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Generation 20 added to sandbox.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000401 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000402 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000403 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000404 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000405 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000406 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000407 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000408 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000409 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000410 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000411 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000412 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000413 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000414 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000415 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000416 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000417 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000418 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000419 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000420 created.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Generation 20 initiated.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Generation 20 started processing simulations.
+[DEBUG] 2015-07-20 01:50:19.352 	 [AI] Specimen 20000401 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.356 	 [AI] Specimen 20000401 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.356 	 [AI] Specimen 20000402 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.359 	 [AI] Specimen 20000402 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.359 	 [AI] Specimen 20000403 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.363 	 [AI] Specimen 20000403 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.363 	 [AI] Specimen 20000404 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.368 	 [AI] Specimen 20000404 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.368 	 [AI] Specimen 20000405 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.374 	 [AI] Specimen 20000405 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.374 	 [AI] Specimen 20000406 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.377 	 [AI] Specimen 20000406 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.377 	 [AI] Specimen 20000407 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.38 	 [AI] Specimen 20000407 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.38 	 [AI] Specimen 20000408 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.383 	 [AI] Specimen 20000408 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.383 	 [AI] Specimen 20000409 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.385 	 [AI] Specimen 20000409 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.385 	 [AI] Specimen 20000410 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.388 	 [AI] Specimen 20000410 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.388 	 [AI] Specimen 20000411 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.391 	 [AI] Specimen 20000411 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.391 	 [AI] Specimen 20000412 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.393 	 [AI] Specimen 20000412 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.393 	 [AI] Specimen 20000413 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.397 	 [AI] Specimen 20000413 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.397 	 [AI] Specimen 20000414 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.401 	 [AI] Specimen 20000414 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.401 	 [AI] Specimen 20000415 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.405 	 [AI] Specimen 20000415 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.405 	 [AI] Specimen 20000416 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.411 	 [AI] Specimen 20000416 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.411 	 [AI] Specimen 20000417 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.425 	 [AI] Specimen 20000417 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.425 	 [AI] Specimen 20000418 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.427 	 [AI] Specimen 20000418 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.427 	 [AI] Specimen 20000419 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.429 	 [AI] Specimen 20000419 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.429 	 [AI] Specimen 20000420 starting simulation.
+[DEBUG] 2015-07-20 01:50:19.434 	 [AI] Specimen 20000420 finished simulation.
+[DEBUG] 2015-07-20 01:50:19.434 	 [AI] Generation 20 finished processing simulations.
+[DEBUG] 2015-07-20 01:50:19.434 	 [AI] Generation 20 successfully evaluated.
+[DEBUG] 2015-07-20 01:50:19.434 	 [AI] Generation: #20 Best specimen: ID [20000401] evaluation = -996 values: 5/9/5
+[DEBUG] 2015-07-20 01:50:19.434 	 Main window log posted. [[AI] Failed to recive positive score in 20 simulations - exiting.]
+[DEBUG] 2015-07-20 01:50:19.467 	 Main window log posted. [Cycle stopped.]
+[DEBUG] 2015-07-20 01:50:19.467 	 Cycle stopped.
+[DEBUG] 2015-07-20 01:50:19.467 	 [AI] Entering sleep mode...
+[DEBUG] 2015-07-20 01:50:25.469 	 [AI] - sleep mode...
+[DEBUG] 2015-07-20 01:50:31.471 	 [AI] - sleep mode...
+[DEBUG] 2015-07-20 01:50:37.473 	 [AI] - sleep mode...

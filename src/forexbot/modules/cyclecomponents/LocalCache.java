@@ -1,5 +1,7 @@
 package forexbot.modules.cyclecomponents;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 
 import org.apache.commons.collections4.queue.CircularFifoQueue;
@@ -135,6 +137,7 @@ public class LocalCache {
 			return getLastIndex();
 		}
 		
+		@SuppressWarnings("unused")
 		public int getMaxIndex(){
 			return cache.maxSize()-1;
 		}//maxSize() returns maximum number of elements that can be stored
@@ -201,27 +204,35 @@ public class LocalCache {
 					String query = "SELECT * FROM `"+ForexBot.SYMBOL+"` WHERE id > ((SELECT COUNT(id) FROM `"+ForexBot.SYMBOL+"`) - "+records_to_download+") ORDER BY id ASC";
 							
 					s = new String[]{"id", "ask", "bid", "low", "high", "currency", "date_time"};
-					r = DBC.ResultSetToObject(s , ForexBot.dbc.SELECT(query));
+					ResultSet re = ForexBot.dbc.SELECT(query);
 								
-					if(r != null){
+					if(re != null){
+						
+						ForexBot.log.addLogDEBUG("Parsing downloaded listings...");
+						
 						int pom = 0;
-						for(Object[] row : r){
-								double a,b,l,h;
-								String cu;
-								Timestamp dt;
+						try {
+							while(re.next()){
 								
-								a = Double.parseDouble(row[1].toString());
-								b = Double.parseDouble(row[2].toString());
-								l = Double.parseDouble(row[3].toString());
-								h = Double.parseDouble(row[4].toString());
-								cu = row[5].toString();
-								Object o = row[7];
-								dt = (Timestamp) o;
+									double a,b,l,h;
+									String cu;
+									Timestamp dt;
+									
+									a = re.getDouble("ask");
+									b = re.getDouble("bid");
+									l = re.getDouble("low"); 
+									h = re.getDouble("high");
+									cu = re.getString("currency");
+									dt = re.getTimestamp("date_time");
+									
+									SymbolListing listing = new SymbolListing(b, a, h, l, cu, dt);
 								
-								SymbolListing listing = new SymbolListing(b, a, h, l, cu, dt);
-							
-								result[pom] = listing;
-								pom++;
+									result[pom] = listing;
+									pom++;
+							}
+						} catch (SQLException e) {
+							ForexBot.log.addLogDEBUG("Loading internal error...");
+							if(ForexBot.DEBUG) e.printStackTrace();
 						}
 					}
 							

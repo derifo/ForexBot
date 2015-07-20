@@ -14,8 +14,9 @@ import forexbot.core.log.Log;
 import forexbot.modules.evolver.EvolutionaryAlgorithm;
 
 public class ForexBot {
-	public static final String VERSION = "v0.2.10 S";
+	public static final String VERSION = "v1.0.0";
 	public static final boolean DEBUG = true;//set application mode to debug mode, shows errors reports in console 
+	public static final boolean EA_TEST = true;//set EA testing mode
 	public static boolean GLOBAL_EXIT = false;
 	public static final String SYMBOL = "EURUSD";
 	
