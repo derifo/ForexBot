@@ -105,16 +105,13 @@ public class Genom implements Serializable{
 		return result;
 	}
 	
-	
+	private static  Random rand_gen = new Random();
 	public static int randInt(int min, int max) {
 
-	    // NOTE: Usually this should be a field rather than a method
-	    // variable so that it is not re-seeded every call.
-	    Random rand = new Random();
 
 	    // nextInt is normally exclusive of the top value,
 	    // so add 1 to make it inclusive
-	    int randomNum = rand.nextInt((max - min) + 1) + min;
+	    int randomNum = rand_gen.nextInt((max - min) + 1) + min;
 
 	    return randomNum;
 	}

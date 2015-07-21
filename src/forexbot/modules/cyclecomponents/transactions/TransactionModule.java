@@ -27,6 +27,10 @@ public class TransactionModule{
 	 * account currency (for DEMO) - EUR
 	 */
 	
+	public static int transaction_count = 0;
+	public static double initial_balance = -1;
+	public static double current_balance = -1;
+	
 	public TransactionModule(){
 		active = new ArrayList<Transaction>();
 	}
@@ -34,7 +38,10 @@ public class TransactionModule{
 	
 	public Balance getBalance(){		
 		//Method returns account balance and base currency
-		return ForexBot.api.getBalance();
+		Balance b = ForexBot.api.getBalance();
+				if(b != null && initial_balance == -1) initial_balance = b.getAmount();
+				if(b != null) current_balance = b.getAmount();
+		return b;
 		
 	}
 	
@@ -234,6 +241,8 @@ public class TransactionModule{
 			
 			ForexBot.log.addLogINFO("Transaction opened : "+t.toString());
 			ForexBot.work_frame.PostLog("Transaction opened : "+t.toString());
+			
+			transaction_count++;
 			
 			return true;
 		} catch (APICommandConstructionException | APIReplyParseException

@@ -16,7 +16,7 @@ import forexbot.modules.evolver.EvolutionaryAlgorithm;
 public class ForexBot {
 	public static final String VERSION = "v1.0.0";
 	public static final boolean DEBUG = true;//set application mode to debug mode, shows errors reports in console 
-	public static final boolean EA_TEST = true;//set EA testing mode
+	public static final boolean EA_TEST = false;//set EA testing mode
 	public static boolean GLOBAL_EXIT = false;
 	public static final String SYMBOL = "EURUSD";
 	
@@ -117,5 +117,25 @@ public class ForexBot {
     		user_settings = new UserSettings();
     		dbc = new DBC();
     	}
+	}
+	
+	public static int restart_count = 0;
+	public static void EvolverRestart(int base){
+		/*
+		 * Method is invoked by evolver thread to restart itself after it stops
+		 * (no improvement) 
+		 * 
+		 * New thread is created and base for simulation increased.
+		 */
+		
+		
+		ForexBot.EVOLVER = new EvolutionaryAlgorithm(CYCLE, base);
+		Thread evolver_th = new Thread(ForexBot.EVOLVER);
+		evolver_th.start();//evolutionary tree start
+		
+		restart_count++;
+		
+		log.addLogINFO("AI module has been restarted, starting "+restart_count+" generation [AI]");
+		work_frame.PostLog("AI module has been restarted, starting "+restart_count+" generation [AI]");
 	}
 }

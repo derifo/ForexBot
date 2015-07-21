@@ -16,6 +16,7 @@ public class Evaluator {
 	
 	public Evaluator(Genom genom){
 		INITIAL_BALANCE = 100000.0;
+		BALANCE = 100000.0;
 		recommendations = new ArrayList<Recommendation>();
 		listings = new ArrayList<SymbolListing>();
 		this.GENOM = genom;
@@ -28,9 +29,10 @@ public class Evaluator {
 	
 	public int Evaluate(){
 		/*
-		 * Evaluation is based on percentage difference from initial amount
+		 * Evaluation is based on profit made
 		 * score has no boundaries and can be positive or negative (gain or loss)
 		 */
+		//System.out.println("Genom "+GENOM.getID()+ " recommendations: "+recommendations.size());
 		for(int i = 0; i < recommendations.size(); i++){
 			
 			if(current_deal != null){
@@ -78,8 +80,9 @@ public class Evaluator {
 			
 		}
 		
-		double dif = (BALANCE - INITIAL_BALANCE) / INITIAL_BALANCE ;
-		int score = (int) (dif * 1000);
+		double dif = (BALANCE - INITIAL_BALANCE);
+		System.out.println("Genom "+GENOM.getID()+ " profit: "+(BALANCE - INITIAL_BALANCE));
+		int score = (int) dif;
 		
 		return score;
 	}
@@ -98,7 +101,7 @@ public class Evaluator {
 	
 	private class Deal {
 		
-		private final double VOLUME = 10000.0;// 0.1 LOT
+		private final double VOLUME = 50000.0;// 0.5 LOT
 		
 		public Deal(String type, double bid, double ask){
 			this.type = type;
@@ -110,9 +113,13 @@ public class Evaluator {
 		public double Close(double bid, double ask){
 			//returns difference between opening price and closing price
 			if(type.equals("BUY")){
-				return (VOLUME*this.ask) - (VOLUME*bid);
+				double profit  = (VOLUME*this.ask) - (VOLUME*bid);
+				//System.out.println("Genom "+GENOM.getID()+ " close deal BUY "+profit);
+				return profit;
 			}else {
-				return (VOLUME*this.bid) - (VOLUME*ask);
+				double profit  = (VOLUME*this.bid) - (VOLUME*ask);
+				//System.out.println("Genom "+GENOM.getID()+ " close deal SELL "+profit);
+				return profit;
 			}
 		}
 		

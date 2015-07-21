@@ -121,9 +121,11 @@ public class DecisionModule {
 			
 			double power_p, power_n;
 			
+			if(k[0] >= 90) return -1;
 			if(k[0] >= 80 ) power_n = -1; //above 80 - bigger changes
 			else power_n = -0.8;
 			
+			if(k[0] <= 10) return 1;
 			if(k[0] <=20) power_p = 1; //below 20 - bigger changes
 			else power_p = 0.8;
 			

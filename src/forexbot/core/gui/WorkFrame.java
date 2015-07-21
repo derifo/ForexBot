@@ -175,6 +175,8 @@ public class WorkFrame extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 			ForexBot.log.addLogDEBUG("Report button pressed.");
 			
+			ForexBot.report_frame.Refresh();
+			ForexBot.report_frame.setVisible(true);
 			
 		}
 		

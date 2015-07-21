@@ -1,5 +1,7 @@
 package forexbot.modules.evolver;
 
+import java.util.ArrayList;
+
 import forexbot.ForexBot;
 import forexbot.core.CycleController;
 import forexbot.modules.evolver.containers.Genom;
@@ -24,12 +26,14 @@ public class EvolutionaryAlgorithm implements Runnable{
 	//Set of min and max values for indicator periods
 	//parameters where chosen arbitrarily but with regard to indicator formulas  
 	public static final int k_min = 2, k_max = 21, d_min = 2, d_max = 21, slow_min = 1, slow_max = 10;
+	private final int evolution_base;
 	
-	public EvolutionaryAlgorithm(CycleController cycle_handle){
+	public EvolutionaryAlgorithm(CycleController cycle_handle, int evolution_base){
 		CYCLE_HANDLE = cycle_handle;
+		this.evolution_base = evolution_base;
 		
 		//14400 - number of listings from entire day
-		sandbox = new SandboxController(this, 1000);//for testing purposes 
+		sandbox = new SandboxController(this, this.evolution_base);//for testing purposes 
 		generation_number = 0;
 		
 		cache_downloaded = false;
@@ -66,18 +70,64 @@ public class EvolutionaryAlgorithm implements Runnable{
 		Genom[] tab = new Genom[20];
 		generation_size = 20;
 		
-		int p = slow_min;
-		boolean t = false;
-		for(int i = k_min; i <= k_max; i++){
+		ArrayList<Integer> k,d,s;
+		k = new ArrayList<Integer>();
+		d = new ArrayList<Integer>();
+		s = new ArrayList<Integer>();
+		
+		for(int i = 0; i < generation_size; i++){
+			int kk, dd, ss;
+			boolean ch;
+			//random k
+			do{
+				ch = true;
+				kk = Genom.randInt(k_min, k_max);
+				if(i > 0){
+					for(int p : k){
+						if(p == kk) ch = false;
+					}
+				}else{
+					k.add(kk);
+				}
+				
+			}while(!ch);
+			if(i > 0) k.add(kk);
 			
-			tab[i-k_min] = new Genom(getID(), i, i, p);
-			if(t){
-				p++;
-				t = false;
-			}else{
-				t = true;
-			}
-
+			//random d
+			do{
+				ch = true;
+				dd = Genom.randInt(d_min, d_max);
+				if(i > 0){
+					for(int p : d){
+						if(p == dd) ch = false;
+					}
+				}else{
+					d.add(dd);
+				}
+				
+			}while(!ch);
+			if(i > 0) d.add(dd);
+			
+			//random s
+			do{
+				ch = true;
+				ss = Genom.randInt(slow_min, slow_max);
+				if(i == 10){
+					s = new ArrayList<Integer>();
+				}
+				if(i > 0 && i != 10){
+					for(int p : s){
+						if(p == ss) ch = false;
+					}
+				}else{
+					s.add(ss);
+				}
+				
+			}while(!ch);
+			if(i > 0) s.add(ss);
+			
+			tab[i] = new Genom(getID(), kk, dd, ss);
+			
 		}
 		
 		sandbox.addNewGeneration(tab);
@@ -94,19 +144,42 @@ public class EvolutionaryAlgorithm implements Runnable{
 		int rounds = old_population.length /2;
 		Genom[] g = new Genom[rounds];
 		
+		ArrayList<Genom> tournament = new ArrayList<Genom>();
+		for(Genom pom : old_population){
+			tournament.add(pom);
+		}
+		
+		
 		int n = 0;
 		for(int i = 0; i < rounds; i++){
 			Genom A,B;
-			A = old_population[n];
-			n++;
-			B = old_population[n];
-			n++;
+						
+			int rnd1 = Genom.randInt(0, tournament.size()-1);
+			A = tournament.get(rnd1);
+			tournament.remove(rnd1);
+			
+			int rnd2 = Genom.randInt(0, tournament.size()-1);
+			B = tournament.get(rnd2);
+			tournament.remove(rnd2);
+			
 			
 			if(A.getEvaluation() > B.getEvaluation()) g[i] = A;
 			else g[i] = B;
 		}
 		//create new genoms out of best from old population
 		Genom[] newP = new Genom[generation_size];
+		//sort
+		for(int i = 0; i < g.length; i++){
+			Genom bst = g[i];
+			for(int j = i+1; j < g.length; j++){
+				if(bst.getEvaluation() < g[j].getEvaluation()){
+					bst = g[j];
+					g[j] = g[i];
+					g[i] = bst;
+				}
+			}
+			
+		}
 		
 		//cross
 		n = 0;
@@ -168,7 +241,7 @@ public class EvolutionaryAlgorithm implements Runnable{
 			if(CYCLE_HANDLE.getScore() < best.getEvaluation()){
 				//pass best result to main cycle and enable trade (for positive score)
 				CYCLE_HANDLE.EvolverInput(best);
-				if(best.getEvaluation() >= 25)	CYCLE_HANDLE.EnableTrade();//at least 2,5% income in simulation
+				if(best.getEvaluation() >= 1000)	CYCLE_HANDLE.EnableTrade();//at least 1% income in simulation
 			}else{
 				imp_counter++;
 			}
@@ -179,7 +252,7 @@ public class EvolutionaryAlgorithm implements Runnable{
 		if(imp_counter > 10){
 			//in case of no improvements for long time - suspend EA
 			ForexBot.work_frame.PostLog("[AI] No improvement in 10 simulations - suspending.");
-			Sleep(true);
+			Restart();			
 		}
 		else if(fail_counter > 20){
 			//in case of failure - end work cycle
@@ -257,11 +330,17 @@ public class EvolutionaryAlgorithm implements Runnable{
 				if(ForexBot.DEBUG) e1.printStackTrace();
 			}
 			
-			//if(generation_number == 10) Sleep(true);//
+			if(restart) break;
 			
 		}while(!ForexBot.GLOBAL_EXIT);
 		
-		if(ForexBot.DEBUG) System.out.println("Evolver terminated - global exit!");
+		if(restart){
+			ForexBot.EvolverRestart(evolution_base +1000);
+		}else{
+			if(ForexBot.DEBUG) System.out.println("Evolver terminated - global exit!");
+		}
+		
+		
 		
 	}
 	
@@ -276,7 +355,6 @@ public class EvolutionaryAlgorithm implements Runnable{
 	private boolean first_generation;
 	private boolean sleep;
 	private int imp_counter, fail_counter;
-	@SuppressWarnings("unused")//for future use
 	private boolean restart;
 	
 	private int generation_size;

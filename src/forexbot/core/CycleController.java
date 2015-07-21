@@ -44,7 +44,7 @@ public class CycleController implements Control, Runnable{
 		Thread data_up = new Thread(ForexBot.uploader);
 		data_up.start();//data uploader thread start
 		
-		ForexBot.EVOLVER = new EvolutionaryAlgorithm(this);
+		ForexBot.EVOLVER = new EvolutionaryAlgorithm(this, 1000);
 		Thread evolver_th = new Thread(ForexBot.EVOLVER);
 		evolver_th.start();//evolutionary tree start
 		
@@ -208,9 +208,9 @@ public class CycleController implements Control, Runnable{
 					
 					if(CheckMarketHours()){
 						trade_hours = true;
-						ForexBot.work_frame.PostLog("Market opened - resuming");
+						ForexBot.work_frame.PostLog("Market opened - resuming...");
 					}else{
-						ForexBot.work_frame.PostLog("Market closed - waiting");
+						ForexBot.work_frame.PostLog("Market closed - waiting...");
 					}
 				}
 				
