@@ -10,7 +10,7 @@ import forexbot.modules.cyclecomponents.transactions.TransactionModule;
 public class ReportFrame extends JFrame {
 	
 	/**
-	 * 
+	 * Frame displaying reports form application performance. 
 	 */
 	private static final long serialVersionUID = -2295473594589082727L;
 

@@ -34,6 +34,9 @@ public class API {
 	
 	
 	public boolean Login(String user, String password, String mode){
+		/*
+		 * Method establishes connection with xStation server
+		 */
 		
 		try {
 			// Create new connector
@@ -55,8 +58,6 @@ public class API {
 			        credentials        // Credentials
 			);
 			
-			
-			
 			if(loginResponse.getStatus() == true){
 				
 				api_login = user;
@@ -76,6 +77,9 @@ public class API {
 	}
 	
 	public boolean Logout(){
+		/*
+		 * Method terminates connections to server
+		 */
 		
 		try {
 			connector.close();
@@ -90,6 +94,9 @@ public class API {
 	}
 	
 	public SymbolListing getSymbolRecord(){
+		/*
+		 * Method returns single listing of current symbol (current prices)
+		 */
 		try {
 			SymbolResponse record = APICommandFactory.executeSymbolCommand(connector, ForexBot.SYMBOL);
 			SymbolRecord sr = record.getSymbol();
@@ -109,6 +116,9 @@ public class API {
 	}
 	
 	public SymbolResponse getSymbolResponse(){
+		/*
+		 * Method retrieves API container for symbol listings (needed in transaction processing)
+		 */
 		
 		try {
 			SymbolResponse r = APICommandFactory.executeSymbolCommand(connector, ForexBot.SYMBOL);
@@ -125,6 +135,9 @@ public class API {
 	//Transaction section
 	
 	public Balance getBalance(){
+		/*
+		 * Method retrieves current account balance in base currency (EUR)
+		 */
 		
 		MarginLevelResponse marginLevelResponse;
 		try {

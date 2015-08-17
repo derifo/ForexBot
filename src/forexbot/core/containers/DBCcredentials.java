@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class DBCcredentials implements Serializable{
 	
 	/**
-	 * 
+	 * Container for database credentials info
 	 */
 	private static final long serialVersionUID = 1L;
 	

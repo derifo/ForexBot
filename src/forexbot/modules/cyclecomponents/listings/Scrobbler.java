@@ -15,6 +15,7 @@ public class Scrobbler {
 
 	
 	public SymbolListing Scrobble(){
+		//method retrieves current listing values form API
 		SymbolListing out = null;		
 
 		out = ForexBot.api.getSymbolRecord();

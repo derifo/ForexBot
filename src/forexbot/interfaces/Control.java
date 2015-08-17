@@ -15,7 +15,7 @@ public interface Control{
 	public void StartCycle();
 	public void StopCycle();
 	
-	//
+	//listing cache access
 	public LocalCache getCache();
 	
 	//methods masks

@@ -21,6 +21,7 @@ public class Indicators {
 	}
 	
 	public void setIndicatorsPeriods(int StochasticK_period, int StochasticD_period, int Stochastic_Slow){
+		//method sets indicator work parameters witch are essential for calculations
 		
 		periods.put("StochasticK_period", StochasticK_period);
 		periods.put("StochasticD_period", StochasticD_period);
@@ -30,6 +31,7 @@ public class Indicators {
 	}
 	
 	public boolean LoadCache(int offset){
+		//method loads listings from local cache for calculating indicators
 		
 		int max = 1 + periods.get("StochasticK_period") + periods.get("StochasticD_period") + periods.get("Stochastic_Slow");
 		

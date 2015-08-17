@@ -17,11 +17,11 @@ public class ForexBot {
 	public static final String VERSION = "v1.0.0";
 	public static final boolean DEBUG = true;//set application mode to debug mode, shows errors reports in console 
 	public static final boolean EA_TEST = false;//set EA testing mode
-	public static boolean GLOBAL_EXIT = false;
-	public static final String SYMBOL = "EURUSD";
+	public static boolean GLOBAL_EXIT = false;//flag for terminating application cycle
+	public static final String SYMBOL = "EURUSD";//name of currently analyzed symbol
 	
 	//settings flags
-	public static boolean settings_dbc;
+	public static boolean settings_dbc;//flag for settings processing
 
 	public static void main(String[] args) {
 		/*
@@ -77,6 +77,9 @@ public class ForexBot {
 	
 	
 	private static void LoadUserSettings(){
+		/*
+		 * Method loads previously saved user settings from file
+		 */
 		log.addLogINFO("Initiating settings check...");
 		
 		if(UserSettings.LookForSettings("user_settings.dat")){//checking for saved settings

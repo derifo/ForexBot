@@ -1,6 +1,9 @@
 package forexbot.core.containers;
 
 public class Recommendation {
+	/*
+	 * Container for transaction recommendation - created by decision module
+	 */
 	
 	public Recommendation(){
 		

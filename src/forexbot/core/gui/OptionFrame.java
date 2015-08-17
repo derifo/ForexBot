@@ -18,7 +18,7 @@ import forexbot.core.dbc.DBC;
 public class OptionFrame extends JDialog{
 	
 	/**
-	 * 
+	 * Frame for options input
 	 */
 	private static final long serialVersionUID = 1L;
 

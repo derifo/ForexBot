@@ -12,6 +12,9 @@ import forexbot.ForexBot;
 import forexbot.core.containers.DBCcredentials;
 
 public class DBC {
+	/*
+	 * Class handling all database related matters, from establishing connection to executing queries. 
+	 */
 
 	public DBC(){
 		

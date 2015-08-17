@@ -8,6 +8,9 @@ import forexbot.core.containers.Recommendation;
 import forexbot.core.containers.SymbolListing;
 
 public class DecisionModule {
+	/*
+	 * Purpose of this module is to make trade decision based on calculated values from indicator module. 
+	 */
 	
 	private final int CACHE_SIZE = 20;
 	private final int ASSESSMENT_PERIOD = 10;

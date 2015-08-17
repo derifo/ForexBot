@@ -1,6 +1,9 @@
 package forexbot.core.containers;
 
 public class Balance {
+	/*
+	 * Container for balance requests
+	 */
 	
 	public Balance(){
 		

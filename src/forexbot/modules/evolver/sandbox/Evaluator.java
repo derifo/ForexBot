@@ -2,6 +2,7 @@ package forexbot.modules.evolver.sandbox;
 
 import java.util.ArrayList;
 
+import forexbot.ForexBot;
 import forexbot.core.containers.Recommendation;
 import forexbot.core.containers.SymbolListing;
 import forexbot.modules.evolver.containers.Genom;
@@ -81,7 +82,7 @@ public class Evaluator {
 		}
 		
 		double dif = (BALANCE - INITIAL_BALANCE);
-		System.out.println("Genom "+GENOM.getID()+ " profit: "+(BALANCE - INITIAL_BALANCE));
+		ForexBot.log.addLogDEBUG("Genom "+GENOM.getID()+ " profit: "+(BALANCE - INITIAL_BALANCE));
 		int score = (int) dif;
 		
 		return score;
