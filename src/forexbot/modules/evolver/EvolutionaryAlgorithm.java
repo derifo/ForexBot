@@ -61,6 +61,8 @@ public class EvolutionaryAlgorithm implements Runnable{
 		/*
 		 * Method creates initial generation for EA using predefined range of numbers
 		 * then generation is passed down to sandbox controller
+		 * 
+		 * Starting values are randomly generated from set range.
 		 */
 		ID = 0;	
 		
@@ -134,6 +136,13 @@ public class EvolutionaryAlgorithm implements Runnable{
 	}
 	
 	public void CreateNewPopulation(Genom[] old_population){
+		/*
+		 * New population is created from previous one based on tournament selection method,
+		 * from array of genoms pairs are selected (array is unsorted) and best one is passed further.
+		 * 
+		 * Outcome of tournament selection is then sorted and crossed, weakest ones are mutated in order 
+		 * to ensure diversity of generation.
+		 */
 		ForexBot.work_frame.PostLog("[AI] Creating new generation.");
 		ForexBot.log.addLogINFO("[AI] Creating new generation.");
 		
@@ -227,6 +236,14 @@ public class EvolutionaryAlgorithm implements Runnable{
 	}
 	
 	public void ProcessOutcome(Genom[] present_generation){
+		/*
+		 * This function closes the loop, based on results from processing generation scores
+		 * appropriate course of action is taken.
+		 * 
+		 * There are two sets of boundary conditions that will either break the loop or restart
+		 * EA in order to create new initial conditions (ex. in case of no further improvement or
+		 * in case of failure to obtain positive score)  
+		 */
 		
 		Genom best = present_generation[0];
 		//find best specimen in current generation 
@@ -254,12 +271,18 @@ public class EvolutionaryAlgorithm implements Runnable{
 			ForexBot.work_frame.PostLog("[AI] No improvement in 10 simulations - suspending.");
 			Restart();			
 		}
-		else if(fail_counter > 20){
+		else if(fail_counter > 10){
 			//in case of failure - end work cycle
-			ForexBot.work_frame.PostLog("[AI] Failed to recive positive score in 20 simulations - exiting.");
-			CYCLE_HANDLE.StopCycle();
-			ForexBot.work_frame.LockButtons(false, true, true, false);
-			Sleep(true);
+			if(fail_generation_counter < 10){
+				ForexBot.work_frame.PostLog("[AI] Failed to recive positive score in 20 simulations - restarting.");
+				fail_generation_counter++;
+				Restart();	
+			}else{
+				ForexBot.work_frame.PostLog("[AI] Failed to recive positive score in 10 generations - exiting.");
+				CYCLE_HANDLE.StopCycle();
+				ForexBot.work_frame.LockButtons(false, true, true, false);
+				Sleep(true);
+			}
 		}
 	}
 
@@ -270,7 +293,7 @@ public class EvolutionaryAlgorithm implements Runnable{
 		ForexBot.log.addLogINFO("[AI] Machine learning module started - initializing evolutionary tree...");
 		ForexBot.work_frame.PostLog("[AI] Machine learning module started.");
 		
-		int sleep_counter = 6000;
+		int sleep_counter = 60000;
 		Genom[] present_generation = null;
 		
 		do{
@@ -322,6 +345,7 @@ public class EvolutionaryAlgorithm implements Runnable{
 				}			
 			}else{
 				ForexBot.log.addLogDEBUG("[AI] - sleep mode...");
+				ForexBot.work_frame.PostLog("[AI] - sleep mode...");
 			}
 			//------------------------------------------------
 			try {
@@ -355,6 +379,9 @@ public class EvolutionaryAlgorithm implements Runnable{
 	private boolean first_generation;
 	private boolean sleep;
 	private int imp_counter, fail_counter;
+	
+	private static int fail_generation_counter = 0;
+	
 	private boolean restart;
 	
 	private int generation_size;

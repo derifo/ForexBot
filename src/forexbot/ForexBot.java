@@ -49,8 +49,7 @@ public class ForexBot {
             	
             	work_frame = new WorkFrame();
             	report_frame = new ReportFrame();            	
-            	
-            	//if(api.Login("400826", "ea75aa2d")) System.out.println("Loged in!");
+
             }
             
 		});
